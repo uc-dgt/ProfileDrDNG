@@ -1,0 +1,27 @@
+{
+  "title": "Theory of Computation Quiz",
+  "description": "Practice questions on DFA, NFA, Regular Languages, Context-Free Grammars, Pumping Lemma, and Automata Theory.",
+  "heading": "TOC Practice Quiz",
+  "questions": [
+    {"question": "Which of the following statements about DFA and NDFA is true?", "options": ["Every NDFA can be converted to an equivalent DFA", "NDFA has less expressive power than DFA", "DFA allows multiple transitions for same symbol", "NDFA cannot recognize regular languages"], "answer": 0},
+    {"question": "Which of the following is a correct use of the Pumping Lemma for CFL?", "options": ["To prove a language is context-free", "To show a language is not context-free", "To minimize a CFG", "To convert CFG to Chomsky Normal Form"], "answer": 1},
+    {"question": "Which represents all strings over an alphabet using a single operation?", "options": ["Kleene star", "Union", "Concatenation", "Intersection"], "answer": 0},
+    {"question": "Simplification of a CFG may involve:", "options": ["Removing useless symbols", "Eliminating null productions", "Removing unit productions", "All of the above"], "answer": 3},
+    {"question": "A sequence of symbols taken from an alphabet is called:", "options": ["String", "Word", "Sentence", "Both String and Word"], "answer": 3},
+    {"question": "A formal language is defined as a set of:", "options": ["Strings over an alphabet", "Symbols", "Grammars", "Finite automata"], "answer": 0},
+    {"question": "Which structure shows hierarchical representation of a string in CFG?", "options": ["Parse tree", "State diagram", "Transition table", "Regular expression"], "answer": 0},
+    {"question": "In CFG, a replaceable symbol is called:", "options": ["Non-terminal", "Terminal", "Start symbol", "Production"], "answer": 0},
+    {"question": "Closure properties of regular languages include:", "options": ["Union, intersection, complement", "Only concatenation", "Only Kleene star", "Only union"], "answer": 0},
+    {"question": "Ambiguity in CFG occurs when:", "options": ["A string has more than one parse tree", "Grammar has left recursion", "Grammar has unit productions", "Language is infinite"], "answer": 0},
+    {"question": "Which theorem connects regular expressions and finite automata?", "options": ["Kleene's Theorem", "Pumping Lemma", "Myhill-Nerode theorem", "Chomsky Hierarchy"], "answer": 0},
+    {"question": "Which automata is more powerful?", "options": ["NFA", "DFA", "Both have equal power", "PDA"], "answer": 2},
+    {"question": "Minimization of DFA means:", "options": ["Reducing number of states", "Reducing number of transitions", "Converting to NFA", "Eliminating dead states only"], "answer": 0},
+    {"question": "Which is NOT a closure property of regular languages?", "options": ["Union", "Intersection", "Complement", "Context-free substitution"], "answer": 3},
+    {"question": "Pumping Lemma for regular languages is used to:", "options": ["Prove a language is regular", "Prove a language is not regular", "Find minimal DFA", "Generate regular grammar"], "answer": 1},
+    {"question": "Which is NOT part of a DFA?", "options": ["Finite set of states", "Input alphabet", "Stack memory", "Transition function"], "answer": 2},
+    {"question": "A regular expression defines:", "options": ["A regular language", "A context-free language", "A recursively enumerable language", "A decidable language"], "answer": 0},
+    {"question": "Which automata allows ε-transitions?", "options": ["NFA-ε (NFA with epsilon moves)", "DFA", "Deterministic PDA", "LBA"], "answer": 0},
+    {"question": "Which normal form removes unit productions?", "options": ["Chomsky Normal Form (CNF)", "Greibach Normal Form (GNF)", "Kuroda Normal Form", "Pumping Normal Form"], "answer": 0},
+    {"question": "The language { a^n b^n | n ≥ 0 } is:", "options": ["Regular", "Context-free but not regular", "Context-sensitive but not context-free", "Recursively enumerable but not context-sensitive"], "answer": 1}
+  ]
+}
