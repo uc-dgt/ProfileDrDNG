@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive quiz for practice and learning">
+<meta name="keywords" content="quiz, practice quiz, interactive quiz, online quiz, educational quiz">
+<meta name="author" content="Dr. Deena Nath Gupta">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b2b3b">
+<link rel="canonical" href="https://www.deenanathgupta.in/quiz.html">
+<link rel="icon" type="image/x-icon" href="https://www.deenanathgupta.in/favicon.ico">
+
+<title>Interactive Quiz | Dr. Deena Nath Gupta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary-dark:#0b2b3b;
+--primary-mid:#1f4e6e;
+--primary-accent:#1f6392;
+--light-bg:#f4f7fb;
+--border-soft:#d8e3ef;
+--success-green:#2b9348;
+--error-red:#d9534f;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Source Sans 3',sans-serif;
+background:var(--light-bg);
+color:#1a2c3e;
+font-size:15.5px;
+line-height:1.6;
+}
+
+.wrap{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+/* NAVBAR */
+.nav{
+background:var(--primary-dark);
+padding:14px 0;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.nav-brand{
+color:white;
+font-family:'Lora',serif;
+font-size:20px;
+font-weight:700;
+text-decoration:none;
+transition:opacity 0.2s;
+}
+
+.nav-brand:hover{
+opacity:0.9;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+color:#d7e6f2;
+text-decoration:none;
+font-weight:500;
+font-size:14px;
+transition:color 0.2s;
+}
+
+.nav-links a:hover{
+color:white;
+text-decoration:underline;
+}
+
+/* HERO */
+.hero{
+background:var(--primary-dark);
+color:white;
+padding:30px 0;
+}
+
+.hero-grid{
+display:flex;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-monogram{
+width:70px;
+height:70px;
+border-radius:16px;
+background:var(--primary-accent);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-family:'Lora',serif;
+font-weight:700;
+}
+
+.hero-name{
+font-family:'Lora',serif;
+font-size:26px;
+font-weight:700;
+margin-bottom:5px;
+}
+
+.hero-role{
+opacity:.9;
+font-size:14px;
+}
+
+/* QUIZ CARD */
+.section{
+padding:40px 0;
+}
+
+.quiz-card{
+background:white;
+border-radius:12px;
+border:1px solid var(--border-soft);
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quiz-header{
+background:var(--primary-mid);
+color:white;
+padding:16px 20px;
+font-weight:600;
+font-size:18px;
+}
+
+.quiz-body{
+padding:20px;
+}
+
+.question{
+margin-bottom:25px;
+padding-bottom:20px;
+border-bottom:1px solid var(--border-soft);
+}
+
+.question:last-child{
+border-bottom:none;
+margin-bottom:0;
+padding-bottom:0;
+}
+
+.question h3{
+font-size:16px;
+margin-bottom:12px;
+font-weight:600;
+color:var(--primary-dark);
+}
+
+.option{
+display:block;
+background:#f7fafc;
+border:1px solid var(--border-soft);
+border-radius:8px;
+padding:10px 12px;
+margin-bottom:8px;
+cursor:pointer;
+transition:all 0.2s;
+}
+
+.option:hover{
+background:#eef4fa;
+border-color:var(--primary-accent);
+}
+
+.option.disabled-option{
+cursor:default;
+opacity:0.7;
+background:#f0f2f5;
+}
+
+.option.disabled-option:hover{
+background:#f0f2f5;
+border-color:var(--border-soft);
+}
+
+input[type=radio]{
+margin-right:10px;
+cursor:pointer;
+accent-color:var(--primary-accent);
+}
+
+input[type=radio]:disabled{
+cursor:not-allowed;
+}
+
+/* FEEDBACK STYLES */
+.feedback{
+margin-top:10px;
+padding:8px 12px;
+border-radius:8px;
+font-size:13px;
+font-weight:500;
+display:none;
+}
+
+.feedback.correct{
+background:#dff9e6;
+color:var(--success-green);
+border-left:4px solid var(--success-green);
+display:block;
+}
+
+.feedback.incorrect{
+background:#ffe6e5;
+color:var(--error-red);
+border-left:4px solid var(--error-red);
+display:block;
+}
+
+/* BUTTONS */
+.button-group{
+display:flex;
+gap:12px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+button{
+background:white;
+border:1px solid var(--border-soft);
+padding:10px 20px;
+font-weight:600;
+border-radius:8px;
+cursor:pointer;
+color:var(--primary-mid);
+font-family:inherit;
+font-size:14px;
+transition:all 0.2s;
+}
+
+button:hover{
+background:#eef4fa;
+transform:translateY(-1px);
+}
+
+.submit-btn{
+background:var(--primary-accent);
+color:white;
+border:none;
+flex:1;
+}
+
+.submit-btn:hover{
+background:var(--primary-mid);
+transform:translateY(-1px);
+}
+
+.reset-btn{
+background:#f0f2f5;
+border:1px solid var(--border-soft);
+}
+
+/* RESULT */
+.result{
+margin-top:20px;
+padding:15px;
+border-radius:10px;
+background:#eef4fa;
+display:none;
+font-weight:600;
+text-align:center;
+}
+
+/* MODAL */
+.modal-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(4px);
+z-index:1000;
+display:flex;
+align-items:center;
+justify-content:center;
+visibility:hidden;
+opacity:0;
+transition:all 0.3s ease;
+}
+
+.modal-overlay.active{
+visibility:visible;
+opacity:1;
+}
+
+.modal-container{
+background:white;
+max-width:500px;
+width:90%;
+border-radius:16px;
+overflow:hidden;
+transform:scale(0.9);
+transition:transform 0.2s ease;
+}
+
+.modal-overlay.active .modal-container{
+transform:scale(1);
+}
+
+.modal-header{
+background:var(--primary-dark);
+color:white;
+padding:18px 20px;
+font-size:18px;
+font-weight:700;
+font-family:'Lora',serif;
+}
+
+.modal-body{
+padding:25px;
+text-align:center;
+}
+
+.modal-score{
+font-size:48px;
+font-weight:800;
+color:var(--primary-accent);
+margin:10px 0;
+}
+
+.modal-message{
+margin:15px 0;
+line-height:1.5;
+}
+
+.modal-footer{
+padding:15px 20px 20px;
+display:flex;
+justify-content:center;
+gap:12px;
+}
+
+.modal-btn{
+background:var(--primary-accent);
+color:white;
+border:none;
+padding:8px 24px;
+}
+
+.modal-btn:hover{
+background:var(--primary-mid);
+}
+
+/* PROGRESS BAR */
+.progress-bar{
+background:#eef0f2;
+border-radius:10px;
+height:8px;
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+background:var(--primary-accent);
+width:0%;
+height:100%;
+transition:width 0.3s ease;
+}
+
+.progress-stats{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+font-size:13px;
+color:var(--primary-mid);
+font-weight:500;
+}
+
+/* FOOTER */
+.footer{
+background:var(--primary-dark);
+color:#cbdbe0;
+text-align:center;
+padding:25px 0;
+margin-top:50px;
+font-size:13px;
+}
+
+.footer a{
+color:#cbdbe0;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:white;
+text-decoration:underline;
+}
+
+@media(max-width:700px){
+.nav-links{
+gap:14px;
+font-size:13px;
+}
+.hero-grid{
+flex-direction:column;
+align-items:flex-start;
+}
+.button-group{
+flex-direction:column;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MODAL -->
+<div id="resultModal" class="modal-overlay">
+<div class="modal-container">
+<div class="modal-header">📊 Quiz Result</div>
+<div class="modal-body">
+<div>Your Score</div>
+<div class="modal-score" id="modalScore">0 / 20</div>
+<div class="modal-message" id="modalMessage"></div>
+</div>
+<div class="modal-footer">
+<button class="modal-btn" id="closeModalBtn">Close</button>
+</div>
+</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="https://www.deenanathgupta.in" class="nav-brand" target="_blank" rel="noopener noreferrer">
+Dr. Deena Nath Gupta
+</a>
+<ul class="nav-links">
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="index.html#impact">IMPACT</a></li>
+      <li><a href="index.html#publications">PUBLICATIONS</a></li>
+      <li><a href="index.html#service">SERVICE</a></li>
+      <li><a href="index.html#honors">HONORS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="quiz.html">QUIZ FOR STUDENTS</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-monogram">DG</div>
+<div>
+<div class="hero-name">Interactive Quiz</div>
+<div class="hero-role">Practice Questions – DFA, NFA, Regular Languages, CFG, Pumping Lemma</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- QUIZ -->
+<section class="section">
+<div class="wrap">
+<div class="quiz-card">
+<div class="quiz-header" id="quizHeading">Interactive Quiz</div>
+<div class="quiz-body">
+<div class="progress-stats">
+<span id="answeredCount">0</span> / <span id="totalQuestions">20</span> answered
+<span id="lockedIndicator">⚡ Answers lock after selection</span>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<form id="quizForm"></form>
+<div class="button-group">
+
+<button type="button" id="submitQuiz" class="submit-btn">Submit Quiz</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="wrap">
+<div>
+<strong>Dr. Deena Nath Gupta</strong> · Associate Professor
+</div>
+<div>
+Maharishi University of Information Technology, Noida
+</div>
+<div style="margin-top:8px;font-size:12px;opacity:.6;">
+© 2026 Academic Portfolio | <a href="https://www.deenanathgupta.in" target="_blank" rel="noopener noreferrer">deenanathgupta.in</a>
+</div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+/* ------------------------------
+Deenanath Gupta Quiz
+------------------------------ */
+let quizHeadingName = "";
+$(document).ready(function() {
+    // Get the 'q' parameter from URL
+    function getQuizPathFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let quizPath = urlParams.get('q');
+        
+        if (!quizPath || quizPath.trim() === '') {
+            quizPath = '/toc/toc_quiz';
+        }
+        
+        if (!quizPath.startsWith('/')) {
+            quizPath = '/' + quizPath;
+        }
+        
+        return quizPath;
+    }
+    
+    function getQuizJsonUrl() {
+        const baseUrl = 'https://raw.githubusercontent.com/uc-dgt/ProfileDrDNG/refs/heads/main/quiz';
+        const quizPath = getQuizPathFromUrl();
+        return baseUrl + quizPath + '.json';
+    }
+    
+    // FALLBACK: Simple generic metadata (immediate, before JSON loads)
+    function updateFallbackMetadata() {
+        let fallbackTitle = 'Practice Quiz';
+        let fallbackHeading = 'Quiz Practice';
+        let fallbackDescription = 'Interactive quiz for practice';
+        
+        document.title = fallbackTitle + ' | Dr. Deena Nath Gupta';
+        const quizHeadingElement = document.getElementById('quizHeading');
+        if (quizHeadingElement) {
+            quizHeadingElement.textContent = fallbackHeading;
+        }
+        
+        const heroRoleDiv = document.querySelector('.hero-role');
+        if (heroRoleDiv) {
+            heroRoleDiv.innerHTML = fallbackDescription;
+        }
+    }
+    
+    // UPDATE from JSON (overrides fallback)
+    function updateMetadataFromJson(data) {
+        // Override with JSON data if available
+        if (data.title) {
+            document.title = data.title + ' | Dr. Deena Nath Gupta';
+        }
+        
+        if (data.heading) {
+            const quizHeadingElement = document.getElementById('quizHeading');
+            if (quizHeadingElement) {
+                quizHeadingElement.textContent = data.heading;
+            }
+            quizHeadingName = data.heading || "Quiz Practice";
+            $(".hero-name").text(quizHeadingName);
+        }
+        
+        if (data.description) {
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', data.description);
+            }
+            
+            const heroRoleDiv = document.querySelector('.hero-role');
+            if (heroRoleDiv) {
+                heroRoleDiv.innerHTML = data.description;
+            }
+        }
+    }
+    
+    // Load quiz data
+    const jsonUrl = getQuizJsonUrl();
+    const quizPath = getQuizPathFromUrl();
+    
+    // STEP 1: Show fallback metadata immediately (generic, no delay)
+    updateFallbackMetadata();
+    
+    // Show loading indicator
+    const quizForm = document.getElementById('quizForm');
+    if (quizForm) {
+        quizForm.innerHTML = '<div style="text-align:center;padding:40px;">Loading quiz data...</div>';
+    }
+    
+    // STEP 2: Load JSON and override with actual data
+    $.getJSON(jsonUrl, function(data) {
+        window.quizData = data;
+        
+        // Override fallback metadata with actual JSON data
+        updateMetadataFromJson(data);
+        
+        // Initialize quiz
+        initializeQuiz();
+    }).fail(function(jqxhr, textStatus, error) {
+        console.error('Error loading quiz:', error);
+        
+        // Fallback metadata already showing, just show error in quiz area
+        if (quizForm) {
+            quizForm.innerHTML = `<div style="text-align:center;padding:40px;color:var(--error-red);">
+                Failed to load quiz data. Please try again later.<br><br>
+                <small>URL: ${jsonUrl}</small>
+            </div>`;
+        }
+    });
+});
+
+function initializeQuiz() {
+    // Check if quizData exists
+    if (!window.quizData || !window.quizData.questions) {
+        console.error('Quiz data not loaded');
+        return;
+    }
+    
+    // State: track selected answers and locked status
+    let userSelections = new Array(window.quizData.questions.length).fill(-1);
+    let questionLocked = new Array(window.quizData.questions.length).fill(false);
+    let questionStatus = new Array(window.quizData.questions.length).fill(null);
+
+    // DOM elements
+    const quizForm = document.getElementById('quizForm');
+    const submitBtn = document.getElementById('submitQuiz');
+    const modalOverlay = document.getElementById('resultModal');
+    const modalScoreSpan = document.getElementById('modalScore');
+    const modalMessageDiv = document.getElementById('modalMessage');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const answeredCountSpan = document.getElementById('answeredCount');
+    const progressFill = document.getElementById('progressFill');
+    const totalQuestionsSpan = document.getElementById('totalQuestions');
+
+    totalQuestionsSpan.textContent = window.quizData.questions.length;
+
+    // Helper: escape HTML
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    // Update progress stats
+    function updateProgress() {
+        const answered = userSelections.filter(s => s !== -1).length;
+        answeredCountSpan.textContent = answered;
+        const percent = (answered / window.quizData.questions.length) * 100;
+        progressFill.style.width = percent + '%';
+    }
+
+    // Render quiz with locked states and feedback
+    function renderQuiz() {
+        let html = '';
+        for (let i = 0; i < window.quizData.questions.length; i++) {
+            const q = window.quizData.questions[i];
+            const selected = userSelections[i];
+            const locked = questionLocked[i];
+            const status = questionStatus[i];
+            
+            // Feedback HTML
+            let feedbackHtml = '';
+            if (locked && status !== null) {
+                const correctAns = q.options[q.answer];
+                if (status === true) {
+                    feedbackHtml = `<div class="feedback correct">✅ Correct! "${escapeHtml(correctAns)}" is right.</div>`;
+                } else {
+                    const userChoice = selected !== -1 ? q.options[selected] : "No answer";
+                    feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. You chose: "${escapeHtml(userChoice)}". Correct: "${escapeHtml(correctAns)}".</div>`;
+                }
+            }
+            
+            // Options HTML
+            let optionsHtml = '';
+            for (let optIdx = 0; optIdx < q.options.length; optIdx++) {
+                const isChecked = (selected === optIdx);
+                const isDisabled = locked;
+                const optionClass = locked ? 'option disabled-option' : 'option';
+                
+                optionsHtml += `
+                    <div class="${optionClass}" data-qidx="${i}" data-optidx="${optIdx}">
+                        <input type="radio" name="q${i}" id="q${i}_opt${optIdx}" value="${optIdx}" ${isChecked ? 'checked' : ''} ${isDisabled ? 'disabled' : ''}>
+                        <label for="q${i}_opt${optIdx}">${escapeHtml(q.options[optIdx])}</label>
+                    </div>
+                `;
+            }
+            
+            html += `
+                <div class="question">
+                    <h3>${i+1}. ${escapeHtml(q.question)}</h3>
+                    ${optionsHtml}
+                    ${feedbackHtml}
+                </div>
+            `;
+        }
+        
+        quizForm.innerHTML = html;
+        updateProgress();
+        
+        // Attach change events for non-locked radios
+        for (let i = 0; i < window.quizData.questions.length; i++) {
+            if (questionLocked[i]) continue;
+            
+            const radios = document.querySelectorAll(`input[name="q${i}"]`);
+            radios.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (questionLocked[i]) return;
+                    const val = parseInt(e.target.value);
+                    if (!isNaN(val)) {
+                        userSelections[i] = val;
+                        const isCorrect = (val === window.quizData.questions[i].answer);
+                        questionStatus[i] = isCorrect;
+                        questionLocked[i] = true;  // Lock immediately
+                        renderQuiz();  // Re-render with feedback and disabled options
+                    }
+                });
+            });
+        }
+        
+        // Attach click handlers for option divs (non-locked only)
+        document.querySelectorAll('.option:not(.disabled-option)').forEach(div => {
+            div.addEventListener('click', (e) => {
+                const radio = div.querySelector('input[type="radio"]');
+                if (radio && !radio.checked && !radio.disabled) {
+                    radio.checked = true;
+                    const changeEvent = new Event('change', { bubbles: true });
+                    radio.dispatchEvent(changeEvent);
+                }
+            });
+        });
+    }
+
+    // Show modal with final score
+    function showModal(score, total, message) {
+        modalScoreSpan.textContent = `${score} / ${total}`;
+        modalMessageDiv.innerHTML = message;
+        modalOverlay.classList.add('active');
+    }
+
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+    }
+
+    // Submit quiz and show result in modal
+    function submitQuiz() {
+        let correctCount = 0;
+        let answeredCount = 0;
+        
+        for (let i = 0; i < window.quizData.questions.length; i++) {
+            if (questionLocked[i]) {
+                answeredCount++;
+                if (questionStatus[i] === true) {
+                    correctCount++;
+                }
+            }
+        }
+        
+        const total = window.quizData.questions.length;
+        const percent = Math.round((correctCount / total) * 100);
+        
+        let message = '';
+        if (correctCount === total) {
+            message = '🏆 Perfect! Master of ' + quizHeadingName + '! 🏆<br>You got all answers correct!';
+        } else if (correctCount >= Math.round(total * 0.8)) {
+            message = `🎉 Excellent! ${correctCount}/${total} (${percent}%)<br>Strong grasp of the concepts!`;
+        } else if (correctCount >= Math.round(total * 0.6)) {
+            message = `📘 Good effort! ${correctCount}/${total} (${percent}%)<br>Keep practicing to improve further.`;
+        } else if (correctCount >= Math.round(total * 0.4)) {
+            message = `📚 Score: ${correctCount}/${total} (${percent}%)<br>Review the fundamentals and try again.`;
+        } else {
+            message = `📖 Score: ${correctCount}/${total} (${percent}%)<br>Consider revisiting the study materials.`;
+        }
+        
+        const unanswered = total - answeredCount;
+        if (unanswered > 0) {
+            message += `<br><br>⚠️ ${unanswered} question(s) still unanswered (not locked). Please answer all questions for full score.`;
+        } else {
+            message += `<br><br>✅ All questions answered! Great job!`;
+        }
+        
+        showModal(correctCount, total, message);
+    }
+
+    // Event listeners
+    submitBtn.addEventListener('click', submitQuiz);
+    closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+
+    // Initialize quiz
+    renderQuiz();
+
+    // Set heading from data or use default
+    if (window.quizData.heading) {
+        const quizHeadingElement = document.getElementById('quizHeading');
+        if (quizHeadingElement) {
+            quizHeadingElement.textContent = window.quizData.heading;
+        }
+    }
+
+    // Update total in progress
+    document.getElementById('totalQuestions').textContent = window.quizData.questions.length;
+}
+</script>
+
+</body>
+</html>
