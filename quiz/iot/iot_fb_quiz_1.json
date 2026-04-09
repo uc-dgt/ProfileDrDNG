@@ -1,0 +1,107 @@
+{
+  "title": "Fill in the Blank | IoT & Theory of Computation",
+  "heading": "IoT & ToC: Fill in the Blank Challenge",
+  "description": "Complete each sentence by typing the correct word or phrase. Answers are case-insensitive and spaces are ignored.",
+  "questions": [
+    {
+      "question": "The ________ layer in IoT is responsible for sensing data from the environment.",
+      "correctAnswer": "perception",
+      "hint": "Also called the device layer or physical layer"
+    },
+    {
+      "question": "MQTT is a lightweight ________ protocol commonly used in IoT for machine-to-machine communication.",
+      "correctAnswer": "messaging",
+      "hint": "Publish-subscribe model, often compared to HTTP"
+    },
+    {
+      "question": "In the DIKW pyramid, the 'K' stands for ________.",
+      "correctAnswer": "knowledge",
+      "hint": "Comes after Information and before Wisdom"
+    },
+    {
+      "question": "A ________ automaton is more powerful than a finite automaton because it uses a stack for memory.",
+      "correctAnswer": "pushdown",
+      "hint": "Abbreviated as PDA"
+    },
+    {
+      "question": "The Pumping Lemma is used to prove that a language is ________ regular.",
+      "correctAnswer": "not",
+      "hint": "It disproves regularity, it does not prove it"
+    },
+    {
+      "question": "A DFA cannot have ________-transitions, whereas an NFA can.",
+      "correctAnswer": "epsilon",
+      "hint": "Greek letter ε, also called null transitions"
+    },
+    {
+      "question": "XaaS converts capital expenditure (CapEx) into ________ expenditure (OpEx).",
+      "correctAnswer": "operational",
+      "hint": "Opposite of capital, refers to ongoing costs"
+    },
+    {
+      "question": "________ analytics answers the question 'What will happen?' by forecasting future events.",
+      "correctAnswer": "predictive",
+      "hint": "Uses historical data and machine learning"
+    },
+    {
+      "question": "IoT ________ perform protocol translation, data aggregation, and local processing between devices and cloud systems.",
+      "correctAnswer": "gateways",
+      "hint": "Acts as a bridge between edge devices and the cloud"
+    },
+    {
+      "question": "The ________ barrier refers to the limited power availability in battery-operated IoT devices.",
+      "correctAnswer": "battery",
+      "hint": "Major constraint for long-term deployment"
+    },
+    {
+      "question": "A context-free grammar is ________ if a string has more than one leftmost derivation.",
+      "correctAnswer": "ambiguous",
+      "hint": "Leads to multiple parse trees"
+    },
+    {
+      "question": "The ________ layer in IoT architecture handles data filtering, storage, and analytics.",
+      "correctAnswer": "processing",
+      "hint": "Also called middleware or platform layer"
+    },
+    {
+      "question": "Regular languages are closed under union, concatenation, and ________ star.",
+      "correctAnswer": "kleene",
+      "hint": "Denoted by * (asterisk) operation"
+    },
+    {
+      "question": "A ________ is a virtual representation of a physical IoT device or system.",
+      "correctAnswer": "digital twin",
+      "hint": "Used for simulation and monitoring"
+    },
+    {
+      "question": "The ________ lemma for regular languages cannot prove that a language is regular; it only proves non-regularity.",
+      "correctAnswer": "pumping",
+      "hint": "Named after the pumping property"
+    },
+    {
+      "question": "In IoT, ________ computing processes data closer to devices rather than in a centralized cloud.",
+      "correctAnswer": "edge",
+      "hint": "Reduces latency and bandwidth usage"
+    },
+    {
+      "question": "A ________ symbol in a context-free grammar appears in the final strings and cannot be replaced.",
+      "correctAnswer": "terminal",
+      "hint": "Opposite of non-terminal"
+    },
+    {
+      "question": "LoRaWAN is designed for long-________, low-power IoT applications.",
+      "correctAnswer": "range",
+      "hint": "Can reach several kilometers"
+    },
+    {
+      "question": "Security by ________ means security is integrated from the initial design phase, not added later.",
+      "correctAnswer": "design",
+      "hint": "Proactive rather than reactive approach"
+    },
+    {
+      "question": "The ________ of a DFA reduces the number of states without changing the accepted language.",
+      "correctAnswer": "minimization",
+      "hint": "Hopcroft's or Moore's algorithm"
+    }
+  ]
+}
