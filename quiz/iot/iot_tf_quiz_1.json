@@ -1,147 +1,147 @@
 {
-  "title": "Internet of Things (IoT) | True/False Quiz",
-  "heading": "IoT Fundamentals: True/False Challenge",
-  "description": "Test your knowledge on IoT architecture, protocols, sensors, security, and applications with True/False questions only.",
+  "title": "Concept of IoT & Architecture | True/False Quiz",
+  "heading": "IoT Architecture & Concepts: True/False Challenge",
+  "description": "Test your knowledge on IoT architecture layers, XaaS model, analytics types, visualization, constraints, and reference architectures with True/False questions only.",
   "questions": [
     {
       "type": "truefalse",
-      "question": "IoT stands for Internet of Things.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "Correct: IoT refers to the network of physical devices embedded with electronics, software, and sensors."
-    },
-    {
-      "type": "truefalse",
-      "question": "IoT devices can communicate without an internet connection.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Many IoT devices communicate locally via Bluetooth, Zigbee, or LoRa without requiring internet connectivity."
-    },
-    {
-      "type": "truefalse",
-      "question": "MQTT is a lightweight messaging protocol commonly used in IoT.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: MQTT (Message Queuing Telemetry Transport) is designed for lightweight machine-to-machine communication."
-    },
-    {
-      "type": "truefalse",
-      "question": "Edge computing processes data in a centralized cloud rather than near IoT devices.",
+      "question": "In an XaaS model, customers make a one-time payment and handle all maintenance.",
       "options": ["True", "False"],
       "answer": 1,
-      "explanation": "False: Edge computing processes data closer to IoT devices, reducing latency and bandwidth usage."
+      "explanation": "False: XaaS (Anything as a Service) follows a subscription/pay-as-you-go model where the provider handles maintenance, not a one-time payment."
     },
     {
       "type": "truefalse",
-      "question": "Zigbee is a low-power, short-range wireless protocol for IoT.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Zigbee is widely used in home automation and industrial IoT for low-data-rate applications."
-    },
-    {
-      "type": "truefalse",
-      "question": "All IoT devices have public IP addresses.",
+      "question": "Using the same dashboard design for executives, operators, and engineers is a best practice in IoT visualization.",
       "options": ["True", "False"],
       "answer": 1,
-      "explanation": "False: Many IoT devices use private IP addresses behind gateways or use IPv6 with limited public exposure."
+      "explanation": "False: Different roles have different needs. Dashboards should be tailored to each user's requirements and level of detail."
     },
     {
       "type": "truefalse",
-      "question": "Sensors collect environmental data and convert it to electrical signals.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Sensors measure physical phenomena like temperature, humidity, or motion and output electrical signals."
-    },
-    {
-      "type": "truefalse",
-      "question": "Raspberry Pi can be used as an IoT gateway.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Raspberry Pi is a popular single-board computer used for IoT gateways and edge processing."
-    },
-    {
-      "type": "truefalse",
-      "question": "CoAP (Constrained Application Protocol) is designed for resource-constrained IoT devices.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: CoAP is a specialized web transfer protocol for constrained nodes and networks."
-    },
-    {
-      "type": "truefalse",
-      "question": "LoRaWAN is designed for short-range, high-bandwidth IoT applications.",
+      "question": "In IoT, 'security by design' means security can be added later before deployment.",
       "options": ["True", "False"],
       "answer": 1,
-      "explanation": "False: LoRaWAN offers long-range communication (kilometers) with low power consumption, not high bandwidth."
+      "explanation": "False: Security by design means security is integrated from the initial design phase, not added as an afterthought before deployment."
     },
     {
       "type": "truefalse",
-      "question": "Digital Twins are virtual representations of physical IoT devices or systems.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Digital twins simulate real-world assets, enabling monitoring, prediction, and optimization."
-    },
-    {
-      "type": "truefalse",
-      "question": "Weak default passwords are a common security vulnerability in IoT devices.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: Many IoT devices ship with default credentials that users fail to change, making them vulnerable."
-    },
-    {
-      "type": "truefalse",
-      "question": "IPv6 is important for IoT because it provides a vastly larger address space than IPv4.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True: IPv6's 128-bit addressing allows trillions of IoT devices to have unique IP addresses."
-    },
-    {
-      "type": "truefalse",
-      "question": "Actuators sense environmental data like temperature and humidity.",
+      "question": "Environmental constraints only affect hardware and not software or firmware in IoT systems.",
       "options": ["True", "False"],
       "answer": 1,
-      "explanation": "False: Actuators cause physical actions (e.g., motors, locks). Sensors collect environmental data."
+      "explanation": "False: Environmental constraints (temperature, humidity, vibration) affect hardware, software, and firmware design, including power management and error handling."
     },
     {
       "type": "truefalse",
-      "question": "MQTT uses a publish-subscribe model rather than a traditional client-server model.",
+      "question": "The perception layer in IoT is responsible for sensing data from the environment.",
       "options": ["True", "False"],
       "answer": 0,
-      "explanation": "True: MQTT brokers manage topics where publishers send messages and subscribers receive them."
+      "explanation": "True: The perception layer (or device layer) includes sensors and actuators that interact directly with the physical environment."
     },
     {
       "type": "truefalse",
-      "question": "Firmware Over-the-Air (FOTA) allows remote updates of IoT device firmware.",
+      "question": "The network layer is responsible for data transmission in IoT systems.",
       "options": ["True", "False"],
       "answer": 0,
-      "explanation": "True: FOTA enables manufacturers to fix bugs or add features without physical access to devices."
+      "explanation": "True: The network layer handles communication protocols, routing, and data transmission between devices and the cloud."
     },
     {
       "type": "truefalse",
-      "question": "All IoT systems require a cloud backend to function.",
-      "options": ["True", "False"],
-      "answer": 1,
-      "explanation": "False: Fog computing and edge-only architectures can operate without cloud, processing data locally."
-    },
-    {
-      "type": "truefalse",
-      "question": "Bluetooth Low Energy (BLE) is designed for continuous high-throughput data streaming in IoT.",
-      "options": ["True", "False"],
-      "answer": 1,
-      "explanation": "False: BLE prioritizes low power consumption and burst transmissions, not continuous high throughput."
-    },
-    {
-      "type": "truefalse",
-      "question": "HTTP is generally more efficient than MQTT for constrained IoT devices.",
-      "options": ["True", "False"],
-      "answer": 1,
-      "explanation": "False: MQTT has lower overhead and is more efficient for low-bandwidth, high-latency networks."
-    },
-    {
-      "type": "truefalse",
-      "question": "The Perception Layer in IoT architecture includes sensors and actuators.",
+      "question": "The processing layer performs data filtering and analytics.",
       "options": ["True", "False"],
       "answer": 0,
-      "explanation": "True: The Perception Layer (or Device Layer) consists of physical devices that interact with the environment."
+      "explanation": "True: The processing layer (or middleware/platform layer) manages data storage, filtering, aggregation, and analytics."
+    },
+    {
+      "type": "truefalse",
+      "question": "The application layer provides services to end-users.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The application layer delivers IoT services and interfaces to end-users across domains like smart homes, healthcare, and industry."
+    },
+    {
+      "type": "truefalse",
+      "question": "IoT gateways perform protocol translation between devices and cloud systems.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Gateways translate between different protocols (e.g., Zigbee to MQTT), aggregate data, and provide local processing."
+    },
+    {
+      "type": "truefalse",
+      "question": "XaaS converts capital expenditure (CapEx) into operational expenditure (OpEx).",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: XaaS shifts costs from upfront CapEx (buying hardware/software) to ongoing OpEx (subscription/pay-as-you-go)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Predictive analytics answers the question 'What should we do?'.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Predictive analytics answers 'What will happen?' (forecasting). Prescriptive analytics answers 'What should we do?' (recommendations)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Prescriptive analytics suggests actions based on predictions.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Prescriptive analytics uses optimization and simulation to recommend specific actions based on predictive insights."
+    },
+    {
+      "type": "truefalse",
+      "question": "Line charts are useful for showing time-based trends in IoT data.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Line charts effectively display continuous data trends over time, such as temperature or sensor readings."
+    },
+    {
+      "type": "truefalse",
+      "question": "Maps are useful for representing location-based IoT data.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Maps visualize geospatial IoT data like fleet tracking, environmental monitoring, and asset localization."
+    },
+    {
+      "type": "truefalse",
+      "question": "The DIKW pyramid includes Data, Information, Knowledge, and Wisdom.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The DIKW hierarchy represents the progression from raw Data to meaningful Information to actionable Knowledge to Wisdom."
+    },
+    {
+      "type": "truefalse",
+      "question": "The 'battery barrier' refers to unlimited power availability in IoT devices.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The battery barrier refers to the limited energy capacity in IoT devices, constraining processing, communication, and lifetime."
+    },
+    {
+      "type": "truefalse",
+      "question": "Cost constraints become more significant in large-scale IoT deployments.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: At scale, per-unit costs (hardware, deployment, maintenance) multiply, making cost optimization critical for feasibility."
+    },
+    {
+      "type": "truefalse",
+      "question": "Industrial Internet Reference Architecture (IIRA) is designed only for smart home devices.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: IIRA is designed for industrial IoT systems (manufacturing, energy, transportation), not smart home consumer devices."
+    },
+    {
+      "type": "truefalse",
+      "question": "Autonomous control systems require human intervention for every decision.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Autonomous control systems make and execute decisions independently without human intervention for routine operations."
+    },
+    {
+      "type": "truefalse",
+      "question": "IoT systems can operate without any network connectivity.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: While some local processing is possible, IoT systems fundamentally rely on network connectivity for data transmission and coordination."
     }
   ]
 }
