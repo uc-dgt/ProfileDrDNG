@@ -1,0 +1,147 @@
+{
+  "title": "Theory of Computation (ToC) | True/False Quiz",
+  "heading": "ToC Fundamentals: True/False Challenge",
+  "description": "Test your knowledge on regular languages, context-free grammars, DFA, NDFA, pumping lemma, and closure properties with True/False questions only.",
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "The closure properties of regular languages include union, concatenation, and complement.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Regular languages are closed under union, concatenation, Kleene star, complement, intersection, and many other operations."
+    },
+    {
+      "type": "truefalse",
+      "question": "Ambiguity in a context-free grammar occurs when a string has more than one leftmost derivation.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: A CFG is ambiguous if there exists at least one string that can be derived by two different leftmost derivations (or parse trees)."
+    },
+    {
+      "type": "truefalse",
+      "question": "The Pumping Lemma for regular languages can be used to prove that a language is regular.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The pumping lemma is used to prove that a language is NOT regular. It cannot prove regularity."
+    },
+    {
+      "type": "truefalse",
+      "question": "Simplification of a context-free grammar can include removing useless symbols and productions.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: CFG simplification involves removing useless symbols (non-generating and unreachable), ε-productions, and unit productions."
+    },
+    {
+      "type": "truefalse",
+      "question": "Every NDFA has an equivalent DFA.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Nondeterministic Finite Automata can be converted to equivalent Deterministic Finite Automata using subset construction."
+    },
+    {
+      "type": "truefalse",
+      "question": "DFA can have ε-transitions.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: DFA does not allow ε-transitions. All transitions in a DFA are on input symbols only."
+    },
+    {
+      "type": "truefalse",
+      "question": "NDFA can have ε-transitions.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: NDFA (or NFA) can have ε-transitions, allowing state changes without consuming input symbols."
+    },
+    {
+      "type": "truefalse",
+      "question": "Regular expressions can represent all context-free languages.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Regular expressions represent only regular languages, which are a proper subset of context-free languages."
+    },
+    {
+      "type": "truefalse",
+      "question": "A deterministic finite automaton can have multiple transitions for the same input symbol.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: DFA has exactly one transition per input symbol from each state. Multiple transitions are not allowed."
+    },
+    {
+      "type": "truefalse",
+      "question": "A parse tree represents the syntactic structure of a string.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: A parse tree (or derivation tree) shows how a string is derived from the start symbol using grammar productions."
+    },
+    {
+      "type": "truefalse",
+      "question": "All regular languages are also context-free languages.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Regular languages form a proper subset of context-free languages. Every regular language is context-free."
+    },
+    {
+      "type": "truefalse",
+      "question": "Context-free languages are closed under intersection.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: CFLs are not closed under intersection. However, they are closed under union, concatenation, and Kleene star."
+    },
+    {
+      "type": "truefalse",
+      "question": "The Kleene Star operation allows zero or more repetitions of a symbol.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Kleene star (*) applied to a language L yields L* = {ε} ∪ L ∪ LL ∪ LLL ∪ ... (zero or more repetitions)."
+    },
+    {
+      "type": "truefalse",
+      "question": "A grammar is ambiguous if it produces no strings.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Ambiguity refers to multiple derivations for some string. A grammar producing no strings is empty, not ambiguous."
+    },
+    {
+      "type": "truefalse",
+      "question": "Minimization of DFA reduces the number of states without changing the language.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: DFA minimization (using Hopcroft's or Moore's algorithm) produces an equivalent DFA with the minimal number of states."
+    },
+    {
+      "type": "truefalse",
+      "question": "The Pumping Lemma for CFL is used to prove that a language is context-free.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Like the regular version, the pumping lemma for CFL proves that a language is NOT context-free, not that it is context-free."
+    },
+    {
+      "type": "truefalse",
+      "question": "A terminal symbol can be replaced by other symbols in a CFG.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Terminal symbols appear in the generated strings and cannot be replaced. Only non-terminals can be replaced using productions."
+    },
+    {
+      "type": "truefalse",
+      "question": "A non-terminal symbol can be replaced using production rules.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Production rules define how non-terminals can be replaced by strings of terminals and/or non-terminals."
+    },
+    {
+      "type": "truefalse",
+      "question": "A Pushdown Automaton is more powerful than a Finite Automaton.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: PDA (with stack) recognizes context-free languages, while FA recognizes regular languages. CFL ⊃ Regular languages."
+    },
+    {
+      "type": "truefalse",
+      "question": "Every context-free grammar is unambiguous.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Many context-free grammars are ambiguous. Some CFLs are inherently ambiguous (every grammar for them is ambiguous)."
+    }
+  ]
+}
