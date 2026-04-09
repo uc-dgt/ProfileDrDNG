@@ -1,27 +1,107 @@
 {
-  "title": "Introduction to Internet of Things (IoT) Quiz",
-  "description": "Basic concepts of IoT including architecture, components, communication models, challenges, and applications.",
-  "heading": "IoT Fundamentals Practice Quiz",
+  "title": "IoT Architecture & Concepts Quiz",
+  "description": "Advanced MCQs covering 5-layer architecture, DIKW model, Big Data Vs, and IoT constraints.",
+  "heading": "Concept of IoT & Architecture Practice",
   "questions": [
-    {"question": "What does IoT stand for?", "options": ["Internet of Technology", "Internet of Things", "Integration of Things", "Interconnection of Technology"], "answer": 1},
-    {"question": "Which layer of the IoT architecture is responsible for collecting data from sensors and actuators?", "options": ["Application Layer", "Network Layer", "Perception/Sensing Layer", "Middleware Layer"], "answer": 2},
-    {"question": "Which of the following is NOT a common communication protocol used in IoT?", "options": ["MQTT", "CoAP", "HTTP", "FTP"], "answer": 3},
-    {"question": "What is the primary role of actuators in an IoT system?", "options": ["Sense environmental changes", "Perform an action or physical task", "Store sensor data", "Display information to users"], "answer": 1},
-    {"question": "Which IoT communication model involves direct device-to-device interaction without a central server?", "options": ["Device-to-Cloud", "Device-to-Gateway", "Device-to-Device", "Back-End Data Sharing"], "answer": 2},
-    {"question": "What does MQTT use as its underlying transport protocol?", "options": ["UDP", "TCP", "HTTP", "SMTP"], "answer": 1},
-    {"question": "Which of the following is a major security concern in IoT?", "options": ["Limited processing power of devices", "Frequent firmware updates", "Large display screens", "High battery life"], "answer": 0},
-    {"question": "What is a 'thing' in the context of IoT?", "options": ["Only a smartphone", "Any physical object with embedded sensors and connectivity", "Only a cloud server", "Any software application"], "answer": 1},
-    {"question": "Which IoT protocol is designed specifically for RESTful interactions on constrained nodes and networks?", "options": ["CoAP (Constrained Application Protocol)", "AMQP", "DDS", "XMPP"], "answer": 0},
-    {"question": "Which of the following is an example of an IoT application in smart homes?", "options": ["Smart thermostat", "Automated vacuum cleaner", "Smart lighting system", "All of the above"], "answer": 3},
-    {"question": "What does a gateway do in IoT architecture?", "options": ["Senses environmental data", "Acts as a bridge between sensors and the cloud/network", "Displays data to the user", "Permanently stores all historical data"], "answer": 1},
-    {"question": "Which characteristic is a major challenge for IoT device design?", "options": ["Unlimited power supply", "High computation capacity", "Low power consumption", "Large physical size"], "answer": 2},
-    {"question": "In the Device-to-Cloud communication model, how do devices send data?", "options": ["Directly to another device", "To a local gateway only", "Directly to a cloud-based service", "Through a mesh network"], "answer": 2},
-    {"question": "What is 'edge computing' in IoT?", "options": ["Computing done only in a central cloud", "Processing data near the source of data generation", "Computing done on a smartphone", "Storing data on a USB drive"], "answer": 1},
-    {"question": "Which wireless technology is most suitable for low-power, long-range IoT applications like smart agriculture?", "options": ["Bluetooth", "Wi-Fi", "LoRaWAN", "Zigbee"], "answer": 2},
-    {"question": "Which of the following best describes RFID in IoT?", "options": ["A protocol for video streaming", "A technology for wireless identification and tracking using tags", "A type of cloud storage", "A programming language for IoT"], "answer": 1},
-    {"question": "What does interoperability mean in the context of IoT?", "options": ["All devices using the same operating system", "Ability of different IoT systems and devices to work together", "Devices not connecting to the internet", "Only one brand of devices in a network"], "answer": 1},
-    {"question": "Which of the following is a key benefit of IoT in industrial settings (IIoT)?", "options": ["Predictive maintenance", "Increased paper-based records", "Manual data entry", "Disconnected machines"], "answer": 0},
-    {"question": "What is the primary function of a sensor in an IoT device?", "options": ["Perform an action", "Convert a physical quantity into an electrical signal", "Provide power to the device", "Display output to the user"], "answer": 1},
-    {"question": "Which layer of the IoT architecture typically handles data storage, processing, and analytics?", "options": ["Perception Layer", "Network Layer", "Middleware/Processing Layer", "Business Layer"], "answer": 2}
+    {
+      "question": "In the 5-layer IoT architecture, which layer handles protocol translation and data filtering?",
+      "options": ["Perception Layer", "Network Layer", "Processing/Edge Layer", "Application Layer"],
+      "answer": 2
+    },
+    {
+      "question": "Which architectural view focuses on logical decomposition of system components?",
+      "options": ["Information View", "Deployment View", "Functional View", "Business View"],
+      "answer": 2
+    },
+    {
+      "question": "In XaaS model, what is the major transformation?",
+      "options": ["One-time payment model", "Shift from CapEx to OpEx", "Ownership transferred to customers", "No service responsibility"],
+      "answer": 1
+    },
+    {
+      "question": "What is the purpose of Industrial Internet Reference Architecture (IIRA)?",
+      "options": ["Consumer IoT design", "Multi-view framework for industrial IoT", "Define single protocol", "Replace all systems with cloud"],
+      "answer": 1
+    },
+    {
+      "question": "Which layer of IoT architecture interacts with physical devices?",
+      "options": ["Application Layer", "Network Layer", "Perception Layer", "Processing Layer"],
+      "answer": 2
+    },
+    {
+      "question": "Which component acts as an intermediary between sensors and cloud?",
+      "options": ["Sensor", "Gateway", "Actuator", "Database"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following is NOT a core IoT layer?",
+      "options": ["Perception", "Transport", "Processing", "Compilation"],
+      "answer": 3
+    },
+    {
+      "question": "Which analytics level answers “What will happen?”",
+      "options": ["Descriptive", "Diagnostic", "Predictive", "Prescriptive"],
+      "answer": 2
+    },
+    {
+      "question": "Which analytics level answers “What should we do?”",
+      "options": ["Predictive", "Prescriptive", "Diagnostic", "Descriptive"],
+      "answer": 1
+    },
+    {
+      "question": "Which visualization is best for time-based data?",
+      "options": ["Map", "Line Chart", "Pie Chart", "Histogram"],
+      "answer": 1
+    },
+    {
+      "question": "Which visualization is best for location-based data?",
+      "options": ["Line Chart", "Bar Graph", "Map", "Table"],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is a key feature of IoT gateways?",
+      "options": ["Only sensing", "Only storage", "Protocol translation", "Manual control"],
+      "answer": 2
+    },
+    {
+      "question": "What does DIKW stand for?",
+      "options": ["Data, Information, Knowledge, Wisdom", "Data, Input, Knowledge, Web", "Device, Internet, Knowledge, Web", "Data, Integration, Knowledge, Work"],
+      "answer": 0
+    },
+    {
+      "question": "Which is NOT one of the 5 V’s of Big Data?",
+      "options": ["Volume", "Velocity", "Validity", "Variety"],
+      "answer": 2
+    },
+    {
+      "question": "Which IoT constraint relates to environmental conditions?",
+      "options": ["Cost constraint", "Environmental constraint", "Network constraint", "Data constraint"],
+      "answer": 1
+    },
+    {
+      "question": "Which constraint increases impact due to large-scale deployment?",
+      "options": ["Environmental", "Cost", "Security", "Latency"],
+      "answer": 1
+    },
+    {
+      "question": "What is the “battery barrier” in IoT?",
+      "options": ["Cost issue", "Power limitation", "Network issue", "Storage problem"],
+      "answer": 1
+    },
+    {
+      "question": "Which principle ensures security is integrated from beginning?",
+      "options": ["Security by design", "Post security", "Runtime security", "Reactive security"],
+      "answer": 0
+    },
+    {
+      "question": "Which IoT layer is responsible for delivering services to users?",
+      "options": ["Perception", "Network", "Application", "Processing"],
+      "answer": 2
+    },
+    {
+      "question": "Which control paradigm involves automatic decision-making?",
+      "options": ["Manual control", "Supervisory control", "Autonomous control", "Remote control"],
+      "answer": 2
+    }
   ]
 }
