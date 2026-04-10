@@ -491,8 +491,7 @@ Dr. Deena Nath Gupta
       <li><a href="index.html#service">SERVICE</a></li>
       <li><a href="index.html#honors">HONORS</a></li>
       <li><a href="index.html#contact">CONTACT</a></li>
-      <li><a href="quiz.html">MCQ/TRUE-FALSE</a></li>
-      <li><a href="fillblank-quiz.html">FILL IN BLANK</a></li>
+      <li><a href="quiz.html">QUIZ</a></li>
 </ul>
 </div>
 </nav>
@@ -684,6 +683,75 @@ $(document).ready(function() {
         progressFill.style.width = percent + '%';
     }
 
+    // Update only the feedback section for a specific question
+    function updateQuestionFeedback(idx) {
+        const questionDiv = document.querySelector(`.question[data-qidx="${idx}"]`);
+        if (!questionDiv) return;
+        
+        const q = quizData.questions[idx];
+        const userVal = userAnswers[idx] !== null ? userAnswers[idx] : '';
+        const locked = questionLocked[idx];
+        const isCorrect = questionStatus[idx];
+        
+        let feedbackHtml = '';
+        if (locked && isCorrect !== null) {
+            if (isCorrect === true) {
+                feedbackHtml = `<div class="feedback correct">✅ Correct! "${escapeHtml(q.correctAnswer)}" is right. ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
+            } else {
+                feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. Your answer: "${escapeHtml(userVal)}". Correct answer: "${escapeHtml(q.correctAnswer)}". ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
+            }
+        } else if (!locked && userVal && userVal.trim() !== '') {
+            feedbackHtml = `<div class="feedback show-feedback" style="background:#fff3cd;color:#856404;border-left-color:var(--warning-orange);">✏️ Click "Check Answer" to verify your answer.</div>`;
+        } else {
+            feedbackHtml = '';
+        }
+        
+        // Update or create feedback element
+        let feedbackDiv = questionDiv.querySelector('.feedback');
+        if (feedbackDiv) {
+            if (feedbackHtml) {
+                feedbackDiv.outerHTML = feedbackHtml;
+            } else if (feedbackHtml === '') {
+                feedbackDiv.remove();
+            }
+        } else if (feedbackHtml) {
+            const caseNote = questionDiv.querySelector('.case-insensitive-note');
+            if (caseNote) {
+                caseNote.insertAdjacentHTML('afterend', feedbackHtml);
+            } else {
+                questionDiv.insertAdjacentHTML('beforeend', feedbackHtml);
+            }
+        }
+        
+        // Update input field value if needed
+        const inputField = document.getElementById(`input_${idx}`);
+        if (inputField && inputField.value !== userVal) {
+            inputField.value = userVal;
+        }
+        
+        // Update check button visibility
+        const checkBtn = questionDiv.querySelector('.check-single-btn');
+        if (checkBtn && locked) {
+            checkBtn.remove();
+        } else if (!checkBtn && !locked) {
+            const checkButtonHtml = `<button type="button" class="check-single-btn" data-idx="${idx}" style="margin-top:8px;background:#e9ecef;font-size:12px;padding:5px 12px;">✓ Check Answer</button>`;
+            const caseNote = questionDiv.querySelector('.case-insensitive-note');
+            if (caseNote) {
+                caseNote.insertAdjacentHTML('afterend', checkButtonHtml);
+            } else {
+                questionDiv.insertAdjacentHTML('beforeend', checkButtonHtml);
+            }
+            // Attach event listener to the new button
+            const newCheckBtn = questionDiv.querySelector('.check-single-btn');
+            if (newCheckBtn) {
+                newCheckBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    checkSingleQuestion(idx);
+                });
+            }
+        }
+    }
+
     function renderQuiz() {
         let html = '';
         for (let i = 0; i < totalQuestions; i++) {
@@ -691,20 +759,6 @@ $(document).ready(function() {
             const questionText = q.question;
             const userVal = userAnswers[i] !== null ? userAnswers[i] : '';
             const locked = questionLocked[i];
-            const isCorrect = questionStatus[i];
-            
-            // Build question display
-            let feedbackHtml = '';
-            if (locked && isCorrect !== null) {
-                if (isCorrect === true) {
-                    feedbackHtml = `<div class="feedback correct">✅ Correct! "${escapeHtml(q.correctAnswer)}" is right. ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
-                } else {
-                    feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. Your answer: "${escapeHtml(userVal)}". Correct answer: "${escapeHtml(q.correctAnswer)}". ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
-                }
-            } else if (!locked && userVal && userVal.trim() !== '') {
-                // Not locked yet but user typed - show pending check
-                feedbackHtml = `<div class="feedback show-feedback" style="background:#fff3cd;color:#856404;border-left-color:var(--warning-orange);">✏️ Click "Check" to verify your answer.</div>`;
-            }
             
             const inputDisabled = locked ? 'disabled' : '';
             const inputClass = locked ? 'blank-input disabled-input' : 'blank-input';
@@ -715,68 +769,69 @@ $(document).ready(function() {
                     <div class="question-text">${escapeHtml(questionText)}</div>
                     <input type="text" id="input_${i}" class="${inputClass}" value="${escapeHtml(userVal)}" placeholder="Type your answer here..." ${inputDisabled}>
                     <div class="case-insensitive-note">✓ Case-insensitive & extra spaces ignored</div>
-                    ${feedbackHtml}
                 </div>
             `;
         }
         
         quizForm.innerHTML = html;
-        updateProgress();
         
-        // Attach input event listeners for non-locked questions
+        // Attach event listeners and add feedback/buttons
         for (let i = 0; i < totalQuestions; i++) {
-            if (questionLocked[i]) continue;
-            
             const inputField = document.getElementById(`input_${i}`);
             if (inputField) {
-                // Remove existing listeners by replacing with new one
-                inputField.removeEventListener('input', handleInputChange);
-                inputField.addEventListener('input', handleInputChange);
-                inputField.removeEventListener('blur', handleBlurCheck);
-                inputField.addEventListener('blur', handleBlurCheck);
-                // Also handle Enter key
-                inputField.removeEventListener('keypress', handleKeyPress);
-                inputField.addEventListener('keypress', handleKeyPress);
-                
-                // Store index for handlers
+                // Store index on input field
                 inputField.dataset.idx = i;
+                
+                // Input event - update userAnswers without re-rendering
+                inputField.addEventListener('input', function(e) {
+                    const idx = parseInt(e.target.dataset.idx);
+                    if (!questionLocked[idx]) {
+                        userAnswers[idx] = e.target.value;
+                        updateQuestionFeedback(idx);
+                        updateProgress();
+                    }
+                });
+                
+                // Keypress for Enter key
+                inputField.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const idx = parseInt(e.target.dataset.idx);
+                        if (!questionLocked[idx]) {
+                            e.preventDefault();
+                            checkSingleQuestion(idx);
+                        }
+                    }
+                });
             }
+            
+            // Add check button for unlocked questions
+            if (!questionLocked[i]) {
+                const checkButtonHtml = `<button type="button" class="check-single-btn" data-idx="${i}" style="margin-top:8px;background:#e9ecef;font-size:12px;padding:5px 12px;">✓ Check Answer</button>`;
+                const questionDiv = document.querySelector(`.question[data-qidx="${i}"]`);
+                if (questionDiv) {
+                    const caseNote = questionDiv.querySelector('.case-insensitive-note');
+                    if (caseNote) {
+                        caseNote.insertAdjacentHTML('afterend', checkButtonHtml);
+                    } else {
+                        questionDiv.insertAdjacentHTML('beforeend', checkButtonHtml);
+                    }
+                    
+                    const checkBtn = questionDiv.querySelector('.check-single-btn');
+                    if (checkBtn) {
+                        checkBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const idx = parseInt(e.target.dataset.idx);
+                            checkSingleQuestion(idx);
+                        });
+                    }
+                }
+            }
+            
+            // Add initial feedback
+            updateQuestionFeedback(i);
         }
-    }
-    
-    function handleInputChange(e) {
-        const idx = parseInt(e.target.dataset.idx);
-        if (isNaN(idx)) return;
-        if (questionLocked[idx]) return;
         
-        userAnswers[idx] = e.target.value;
-        // Update progress only when answer is non-empty? Progress tracks locked answers only.
-        // But we update just to store value.
         updateProgress();
-        // Re-render to show pending feedback
-        renderQuiz();
-    }
-    
-    function handleBlurCheck(e) {
-        const idx = parseInt(e.target.dataset.idx);
-        if (isNaN(idx)) return;
-        if (questionLocked[idx]) return;
-        const currentAnswer = userAnswers[idx];
-        if (currentAnswer && currentAnswer.trim() !== '') {
-            // Auto-check on blur? Better to have explicit check but we'll add check button per question? 
-            // For simplicity: we provide individual check, but user can also check via global submit.
-            // However for better UX, we keep manual check but not auto-check on blur to avoid frustration.
-        }
-    }
-    
-    function handleKeyPress(e) {
-        if (e.key === 'Enter') {
-            const idx = parseInt(e.target.dataset.idx);
-            if (!isNaN(idx) && !questionLocked[idx]) {
-                e.preventDefault();
-                checkSingleQuestion(idx);
-            }
-        }
     }
     
     function checkSingleQuestion(idx) {
@@ -790,7 +845,20 @@ $(document).ready(function() {
         const isAnsCorrect = checkAnswer(userAns, correctAns);
         questionStatus[idx] = isAnsCorrect;
         questionLocked[idx] = true;
-        renderQuiz();
+        
+        // Disable input field
+        const inputField = document.getElementById(`input_${idx}`);
+        if (inputField) {
+            inputField.disabled = true;
+            inputField.classList.add('disabled-input');
+        }
+        
+        // Remove check button
+        const checkBtn = document.querySelector(`.check-single-btn[data-idx="${idx}"]`);
+        if (checkBtn) checkBtn.remove();
+        
+        // Update feedback
+        updateQuestionFeedback(idx);
         updateProgress();
     }
     
@@ -805,18 +873,33 @@ $(document).ready(function() {
                     const isCorrect = checkAnswer(userAns, correctAns);
                     questionStatus[i] = isCorrect;
                     questionLocked[i] = true;
+                    
+                    // Disable input field
+                    const inputField = document.getElementById(`input_${i}`);
+                    if (inputField) {
+                        inputField.disabled = true;
+                        inputField.classList.add('disabled-input');
+                    }
+                    
+                    // Remove check button
+                    const checkBtn = document.querySelector(`.check-single-btn[data-idx="${i}"]`);
+                    if (checkBtn) checkBtn.remove();
+                    
+                    // Update feedback
+                    updateQuestionFeedback(i);
                 } else {
                     anyUnchecked = true;
                 }
             }
         }
         
+        updateProgress();
+        
         if (anyUnchecked) {
-            // Re-render to show newly locked questions
-            renderQuiz();
-            // Then show modal but with warning
+            alert('Some questions are unanswered. Please answer all questions before submitting.');
+            return;
         }
-        renderQuiz();
+        
         submitQuiz();
     }
     
@@ -882,105 +965,13 @@ $(document).ready(function() {
         
         renderQuiz();
         
-        // Add global check & submit functionality
-        // Replace submit button to check all first then submit
+        // Replace submit button to avoid duplicate event listeners
         const newSubmitBtn = document.getElementById('submitQuiz');
         const oldClone = newSubmitBtn.cloneNode(true);
         newSubmitBtn.parentNode.replaceChild(oldClone, newSubmitBtn);
         const freshSubmitBtn = document.getElementById('submitQuiz');
         freshSubmitBtn.addEventListener('click', checkAllUnlockedAndSubmit);
-        
-        // Add individual check buttons? For better UX, add per-question check button
-        // But we can also embed check button per question via render modification. Add inline button for clarity.
-        // Enhance render to include a small check button for each unlocked question.
-        // Modify renderQuiz to add "Check Answer" button.
     }
-    
-    // Override render to include check button per question
-    const originalRender = renderQuiz;
-    renderQuiz = function() {
-        let html = '';
-        for (let i = 0; i < totalQuestions; i++) {
-            const q = quizData.questions[i];
-            const questionText = q.question;
-            const userVal = userAnswers[i] !== null ? userAnswers[i] : '';
-            const locked = questionLocked[i];
-            const isCorrect = questionStatus[i];
-            
-            let feedbackHtml = '';
-            if (locked && isCorrect !== null) {
-                if (isCorrect === true) {
-                    feedbackHtml = `<div class="feedback correct">✅ Correct! "${escapeHtml(q.correctAnswer)}" is right. ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
-                } else {
-                    feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. Your answer: "${escapeHtml(userVal)}". Correct: "${escapeHtml(q.correctAnswer)}". ${q.hint ? `<br><small>📘 Hint: ${escapeHtml(q.hint)}</small>` : ''}</div>`;
-                }
-            } else if (!locked && userVal && userVal.trim() !== '') {
-                feedbackHtml = `<div class="feedback show-feedback" style="background:#fff3cd;color:#856404;border-left-color:var(--warning-orange);">✏️ Click "Check Answer" to verify.</div>`;
-            }
-            
-            const inputDisabled = locked ? 'disabled' : '';
-            const inputClass = locked ? 'blank-input disabled-input' : 'blank-input';
-            const checkButtonHtml = (!locked) ? `<button type="button" class="check-single-btn" data-idx="${i}" style="margin-top:8px;background:#e9ecef;font-size:12px;padding:5px 12px;">✓ Check Answer</button>` : '';
-            
-            html += `
-                <div class="question" data-qidx="${i}">
-                    <h3>Question ${i+1} <span class="badge-fib">Fill in Blank</span></h3>
-                    <div class="question-text">${escapeHtml(questionText)}</div>
-                    <input type="text" id="input_${i}" class="${inputClass}" value="${escapeHtml(userVal)}" placeholder="Type your answer here..." ${inputDisabled}>
-                    <div class="case-insensitive-note">✓ Case-insensitive & extra spaces ignored</div>
-                    ${checkButtonHtml}
-                    ${feedbackHtml}
-                </div>
-            `;
-        }
-        
-        quizForm.innerHTML = html;
-        updateProgress();
-        
-        // Attach event listeners
-        for (let i = 0; i < totalQuestions; i++) {
-            if (questionLocked[i]) continue;
-            
-            const inputField = document.getElementById(`input_${i}`);
-            if (inputField) {
-                inputField.addEventListener('input', (e) => {
-                    if (!questionLocked[i]) {
-                        userAnswers[i] = e.target.value;
-                        renderQuiz();
-                    }
-                });
-                inputField.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter' && !questionLocked[i]) {
-                        e.preventDefault();
-                        checkSingleQuestion(i);
-                    }
-                });
-            }
-            
-            const checkBtn = document.querySelector(`.check-single-btn[data-idx="${i}"]`);
-            if (checkBtn) {
-                checkBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    checkSingleQuestion(i);
-                });
-            }
-        }
-    };
-    
-    window.checkSingleQuestion = function(idx) {
-        if (questionLocked[idx]) return;
-        const userAns = userAnswers[idx];
-        if (!userAns || userAns.trim() === '') {
-            alert('Please enter an answer before checking.');
-            return;
-        }
-        const correctAns = quizData.questions[idx].correctAnswer;
-        const isAnsCorrect = checkAnswer(userAns, correctAns);
-        questionStatus[idx] = isAnsCorrect;
-        questionLocked[idx] = true;
-        renderQuiz();
-        updateProgress();
-    };
     
     // Event listeners for modal
     closeModalBtn.addEventListener('click', closeModal);
