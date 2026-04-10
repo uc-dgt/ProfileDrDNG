@@ -1,107 +1,107 @@
 {
-  "title": "Fill in the Blank | IoT & Theory of Computation",
-  "heading": "IoT & ToC: Fill in the Blank Challenge",
-  "description": "Complete each sentence by typing the correct word or phrase. Answers are case-insensitive and spaces are ignored.",
-  "questions": [
-    {
-      "question": "The ________ layer in IoT is responsible for sensing data from the environment.",
-      "correctAnswer": "perception",
-      "hint": "Also called the device layer or physical layer"
-    },
-    {
-      "question": "MQTT is a lightweight ________ protocol commonly used in IoT for machine-to-machine communication.",
-      "correctAnswer": "messaging",
-      "hint": "Publish-subscribe model, often compared to HTTP"
-    },
-    {
-      "question": "In the DIKW pyramid, the 'K' stands for ________.",
-      "correctAnswer": "knowledge",
-      "hint": "Comes after Information and before Wisdom"
-    },
-    {
-      "question": "A ________ automaton is more powerful than a finite automaton because it uses a stack for memory.",
-      "correctAnswer": "pushdown",
-      "hint": "Abbreviated as PDA"
-    },
-    {
-      "question": "The Pumping Lemma is used to prove that a language is ________ regular.",
-      "correctAnswer": "not",
-      "hint": "It disproves regularity, it does not prove it"
-    },
-    {
-      "question": "A DFA cannot have ________-transitions, whereas an NFA can.",
-      "correctAnswer": "epsilon",
-      "hint": "Greek letter ε, also called null transitions"
-    },
-    {
-      "question": "XaaS converts capital expenditure (CapEx) into ________ expenditure (OpEx).",
-      "correctAnswer": "operational",
-      "hint": "Opposite of capital, refers to ongoing costs"
-    },
-    {
-      "question": "________ analytics answers the question 'What will happen?' by forecasting future events.",
-      "correctAnswer": "predictive",
-      "hint": "Uses historical data and machine learning"
-    },
-    {
-      "question": "IoT ________ perform protocol translation, data aggregation, and local processing between devices and cloud systems.",
-      "correctAnswer": "gateways",
-      "hint": "Acts as a bridge between edge devices and the cloud"
-    },
-    {
-      "question": "The ________ barrier refers to the limited power availability in battery-operated IoT devices.",
-      "correctAnswer": "battery",
-      "hint": "Major constraint for long-term deployment"
-    },
-    {
-      "question": "A context-free grammar is ________ if a string has more than one leftmost derivation.",
-      "correctAnswer": "ambiguous",
-      "hint": "Leads to multiple parse trees"
-    },
-    {
-      "question": "The ________ layer in IoT architecture handles data filtering, storage, and analytics.",
-      "correctAnswer": "processing",
-      "hint": "Also called middleware or platform layer"
-    },
-    {
-      "question": "Regular languages are closed under union, concatenation, and ________ star.",
-      "correctAnswer": "kleene",
-      "hint": "Denoted by * (asterisk) operation"
-    },
-    {
-      "question": "A ________ is a virtual representation of a physical IoT device or system.",
-      "correctAnswer": "digital twin",
-      "hint": "Used for simulation and monitoring"
-    },
-    {
-      "question": "The ________ lemma for regular languages cannot prove that a language is regular; it only proves non-regularity.",
-      "correctAnswer": "pumping",
-      "hint": "Named after the pumping property"
-    },
-    {
-      "question": "In IoT, ________ computing processes data closer to devices rather than in a centralized cloud.",
-      "correctAnswer": "edge",
-      "hint": "Reduces latency and bandwidth usage"
-    },
-    {
-      "question": "A ________ symbol in a context-free grammar appears in the final strings and cannot be replaced.",
-      "correctAnswer": "terminal",
-      "hint": "Opposite of non-terminal"
-    },
-    {
-      "question": "LoRaWAN is designed for long-________, low-power IoT applications.",
-      "correctAnswer": "range",
-      "hint": "Can reach several kilometers"
-    },
-    {
-      "question": "Security by ________ means security is integrated from the initial design phase, not added later.",
-      "correctAnswer": "design",
-      "hint": "Proactive rather than reactive approach"
-    },
-    {
-      "question": "The ________ of a DFA reduces the number of states without changing the accepted language.",
-      "correctAnswer": "minimization",
-      "hint": "Hopcroft's or Moore's algorithm"
-    }
-  ]
+    "title": "Concept of IoT & Architecture | Fill in the Blanks Quiz",
+    "heading": "Concept of IoT & Architecture - Fill in the Blanks",
+    "description": "Test your knowledge of Internet of Things (IoT) concepts, architecture layers, design constraints, and analytics maturity levels.",
+    "questions": [
+        {
+            "question": "In IoT architecture, __________ serve as intelligent intermediaries that perform protocol translation, local data filtering, and temporary storage, while __________ are the physical components responsible for sensing environmental conditions and executing commands.",
+            "correctAnswer": "Gateways, Sensors/Actuators",
+            "hint": "First blank: bridges between devices and cloud; Second blank: devices that detect and act."
+        },
+        {
+            "question": "Among IoT design constraints, __________ constraints relate to environmental conditions like temperature and moisture, while __________ constraints relate to cost at large scale.",
+            "correctAnswer": "Environmental, Cost",
+            "hint": "First blank: weather, humidity, physical conditions; Second blank: affordability for mass deployment."
+        },
+        {
+            "question": "In IoT analytics, the __________ level answers 'What will happen?' while the __________ level answers 'What should we do?'.",
+            "correctAnswer": "Predictive, Prescriptive",
+            "hint": "First blank: forecasting future events; Second blank: recommending actions."
+        },
+        {
+            "question": "In IoT data visualization, __________ visualizations show trends over time, while __________ visualizations display location-based data.",
+            "correctAnswer": "Line, Map",
+            "hint": "First blank: time-series charts; Second blank: geographical heatmaps or pinpoints."
+        },
+        {
+            "question": "The layer responsible for sensing data in IoT architecture is the __________ layer.",
+            "correctAnswer": "Perception",
+            "hint": "Also called the device or physical layer."
+        },
+        {
+            "question": "The __________ layer is responsible for transmitting data between devices and cloud.",
+            "correctAnswer": "Network",
+            "hint": "Handles connectivity using protocols like Wi-Fi, LoRa, or 5G."
+        },
+        {
+            "question": "The __________ layer performs data processing and filtering in IoT systems.",
+            "correctAnswer": "Processing",
+            "hint": "Also known as the Edge or Fog layer."
+        },
+        {
+            "question": "The IoT layer that delivers services to end-users is the __________ layer.",
+            "correctAnswer": "Application",
+            "hint": "Where dashboards, alerts, and user interfaces reside."
+        },
+        {
+            "question": "In IoT, a __________ acts as a bridge between devices and cloud systems.",
+            "correctAnswer": "Gateway",
+            "hint": "Performs protocol translation and local preprocessing."
+        },
+        {
+            "question": "The business model where services are provided on subscription basis is called __________.",
+            "correctAnswer": "XaaS",
+            "hint": "Anything as a Service (includes SaaS, PaaS, IaaS)."
+        },
+        {
+            "question": "In IoT, CapEx stands for __________ expenditure.",
+            "correctAnswer": "Capital",
+            "hint": "One-time investment in physical assets."
+        },
+        {
+            "question": "In IoT, OpEx stands for __________ expenditure.",
+            "correctAnswer": "Operational",
+            "hint": "Recurring costs like maintenance, cloud fees."
+        },
+        {
+            "question": "The architecture that provides a multi-view framework for industrial IoT is called __________.",
+            "correctAnswer": "IIRA",
+            "hint": "Industrial Internet Reference Architecture."
+        },
+        {
+            "question": "The four levels of analytics maturity include descriptive, diagnostic, predictive, and __________.",
+            "correctAnswer": "Prescriptive",
+            "hint": "The highest level that recommends actions."
+        },
+        {
+            "question": "The 'battery barrier' refers to limitations in __________ supply in IoT devices.",
+            "correctAnswer": "Power",
+            "hint": "Energy constraints in remote or battery-operated sensors."
+        },
+        {
+            "question": "The principle of integrating security from the beginning is called __________.",
+            "correctAnswer": "Security by design",
+            "hint": "Proactive rather than reactive security approach."
+        },
+        {
+            "question": "The DIKW pyramid consists of Data, Information, Knowledge, and __________.",
+            "correctAnswer": "Wisdom",
+            "hint": "The highest level representing informed decision-making."
+        },
+        {
+            "question": "The five V's of Big Data include Volume, Velocity, Variety, Veracity, and __________.",
+            "correctAnswer": "Value",
+            "hint": "The ultimate benefit derived from data."
+        },
+        {
+            "question": "Devices that perform actions based on commands are called __________.",
+            "correctAnswer": "Actuators",
+            "hint": "They convert electrical signals into physical actions (e.g., motors, relays)."
+        },
+        {
+            "question": "A system that automatically takes decisions without human intervention is called __________ control.",
+            "correctAnswer": "Autonomous",
+            "hint": "Self-governing systems like self-driving cars or automated factories."
+        }
+    ]
 }
