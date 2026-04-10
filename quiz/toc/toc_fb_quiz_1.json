@@ -1,0 +1,107 @@
+{
+    "title": "Theory of Computation | Fill in the Blanks Quiz",
+    "heading": "Theory of Computation (ToC) - Fill in the Blanks",
+    "description": "Test your knowledge of Theory of Computation with these fill-in-the-blank questions.",
+    "questions": [
+        {
+            "question": "A sequence of symbols taken from an alphabet is called a _____________.",
+            "correctAnswer": "String",
+            "hint": "It is a finite sequence of symbols."
+        },
+        {
+            "question": "A _____________ shows the hierarchical structure of a string according to a context-free grammar.",
+            "correctAnswer": "Parse Tree",
+            "hint": "Also known as a derivation tree."
+        },
+        {
+            "question": "A formal language is defined as a set of _____________ over a given alphabet.",
+            "correctAnswer": "Strings",
+            "hint": "These are formed by concatenating symbols from the alphabet."
+        },
+        {
+            "question": "In a context-free grammar, a _____________ is a symbol that can be replaced by strings of terminals and/or non-terminals.",
+            "correctAnswer": "Non-terminal",
+            "hint": "These are usually represented by uppercase letters."
+        },
+        {
+            "question": "A finite automaton that has exactly one transition for each symbol is called a _____________.",
+            "correctAnswer": "DFA",
+            "hint": "Deterministic Finite Automaton."
+        },
+        {
+            "question": "A finite automaton that can have multiple transitions for the same input is called a _____________.",
+            "correctAnswer": "NFA",
+            "hint": "Non-deterministic Finite Automaton (also NDFA)."
+        },
+        {
+            "question": "The operation used to represent zero or more repetitions of a symbol is called _____________.",
+            "correctAnswer": "Kleene Star",
+            "hint": "Represented by the * symbol."
+        },
+        {
+            "question": "The theorem that establishes equivalence between regular expressions and finite automata is called _____________.",
+            "correctAnswer": "Kleene's Theorem",
+            "hint": "Named after the same mathematician as the star operation."
+        },
+        {
+            "question": "The process of reducing the number of states in a DFA is called _____________.",
+            "correctAnswer": "Minimization",
+            "hint": "It involves merging equivalent states."
+        },
+        {
+            "question": "A grammar is said to be _____________ if a string has more than one parse tree.",
+            "correctAnswer": "Ambiguous",
+            "hint": "This is often undesirable for programming languages."
+        },
+        {
+            "question": "The Pumping Lemma for regular languages is mainly used to prove that a language is _____________.",
+            "correctAnswer": "Not regular",
+            "hint": "It is a proof by contradiction technique."
+        },
+        {
+            "question": "The Pumping Lemma for context-free languages is used to show that a language is not _____________.",
+            "correctAnswer": "Context-free",
+            "hint": "It is more complex than the version for regular languages."
+        },
+        {
+            "question": "The set of all possible strings over an alphabet is denoted by _____________.",
+            "correctAnswer": "Σ*",
+            "hint": "Sigma Star (includes the empty string)."
+        },
+        {
+            "question": "Symbols that appear in the final strings of a language are called _____________.",
+            "correctAnswer": "Terminals",
+            "hint": "These cannot be replaced further in a grammar."
+        },
+        {
+            "question": "A _____________ is a 5-tuple used to define a finite automaton.",
+            "correctAnswer": "Finite Automaton",
+            "hint": "Its components include states, alphabet, transitions, start state, and final states."
+        },
+        {
+            "question": "The closure property that allows combining two languages is called _____________.",
+            "correctAnswer": "Union",
+            "hint": "Other properties include concatenation and Kleene star."
+        },
+        {
+            "question": "Removing useless and unreachable symbols is part of _____________ of a CFG.",
+            "correctAnswer": "Simplification",
+            "hint": "It helps in converting the grammar to normal forms."
+        },
+        {
+            "question": "A tree representing derivation of a string is called a _____________.",
+            "correctAnswer": "Derivation Tree",
+            "hint": "Also known as a parse tree."
+        },
+        {
+            "question": "A grammar in which every production is of the form A → BC or A → a is called _____________.",
+            "correctAnswer": "Chomsky Normal Form",
+            "hint": "Abbreviated as CNF."
+        },
+        {
+            "question": "The automaton that uses a stack as memory is called a _____________.",
+            "correctAnswer": "Pushdown Automaton",
+            "hint": "Abbreviated as PDA."
+        }
+    ]
+}
