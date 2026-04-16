@@ -179,9 +179,6 @@ body {
     background: white;
     padding: 20px 0;
     border-bottom: 1px solid var(--border-soft);
-    position: sticky;
-    top: 70px;
-    z-index: 99;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -438,36 +435,68 @@ body {
 
 .share-wrap {
     margin: 16px 0 26px;
-    padding: 16px;
-    border: 1px solid var(--border-soft);
-    border-radius: 12px;
-    background: #f8fbff;
+    padding: 18px;
+    border: 1px solid #d8e6f2;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f8fbff 0%, #eef7ff 100%);
+    box-shadow: 0 8px 20px rgba(9, 43, 79, 0.08);
 }
 
-.share-wrap h2 {
-    font-size: 18px;
-    color: var(--primary-dark);
-    margin-bottom: 10px;
-}
-
-.share-buttons {
+.share-wrap .share-buttons {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.share-btn {
-    text-decoration: none;
-    padding: 9px 14px;
-    border-radius: 8px;
-    color: #fff;
+.share-label {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--text-secondary, #555);
+    white-space: nowrap;
 }
 
-.share-btn.share-x { background: #111111; }
-.share-btn.share-linkedin { background: #0a66c2; }
-.share-btn.share-email { background: #2f6f3e; }
+.share-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 12px rgba(8, 25, 50, 0.18);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.share-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    opacity: 0.96;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(8, 25, 50, 0.28);
+    filter: saturate(1.06);
+}
+
+.share-btn:focus-visible {
+    outline: 2px solid rgba(13, 71, 161, 0.35);
+    outline-offset: 2px;
+}
+
+.share-btn.share-x { background: linear-gradient(135deg, #0f1118 0%, #1d2632 100%); }
+.share-btn.share-linkedin { background: linear-gradient(135deg, #0a66c2 0%, #227fda 100%); }
+.share-btn.share-email { background: linear-gradient(135deg, #25693a 0%, #3b8752 100%); }
 
 .modal-overlay {
     position: fixed;
@@ -583,9 +612,8 @@ body {
         width: 100%;
     }
 
-    .share-btn {
-        flex: 1 1 100%;
-        text-align: center;
+    .share-label {
+        margin-bottom: 2px;
     }
 }
 </style>
@@ -687,11 +715,11 @@ body {
 <section class="section">
     <div class="wrap">
         <div class="share-wrap" aria-label="Share this page">
-            <h2>Share this page</h2>
             <div class="share-buttons">
-                <a id="shareX" class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer">Share on X</a>
-                <a id="shareLinkedIn" class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
-                <a id="shareEmail" class="share-btn share-email" href="#">Share by Email</a>
+                <span class="share-label">Share this page :</span>
+                <a id="shareX" class="share-btn share-x" href="#" target="_blank" rel="noopener noreferrer"><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16"></path><path d="M20 4L4 20"></path></svg><span>Share on X</span></a>
+                <a id="shareLinkedIn" class="share-btn share-linkedin" href="#" target="_blank" rel="noopener noreferrer"><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="4" height="12"></rect><circle cx="5" cy="5" r="2"></circle><path d="M11 21v-7a4 4 0 0 1 8 0v7"></path></svg><span>Share on LinkedIn</span></a>
+                <a id="shareEmail" class="share-btn share-email" href="#"><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 7l10 7 10-7"></path></svg><span>Share by Email</span></a>
             </div>
         </div>
         <div class="quiz-grid" id="quizGrid"></div>

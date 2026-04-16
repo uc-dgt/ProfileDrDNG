@@ -614,26 +614,53 @@
     .share-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .share-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary, #555);
+      white-space: nowrap;
     }
     .share-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.58rem 0.95rem;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
+      gap: 7px;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 500;
       color: #ffffff;
-      transition: opacity 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 4px 12px rgba(8, 25, 50, 0.18);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+    }
+    .share-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      opacity: 0.96;
     }
     .share-btn:hover {
-      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(8, 25, 50, 0.28);
+      filter: saturate(1.05);
       color: #ffffff;
     }
-    .share-x { background: #111111; }
-    .share-linkedin { background: #0a66c2; }
-    .share-email { background: #2f6f3e; }
+    .share-btn:focus-visible {
+      outline: 2px solid rgba(13, 71, 161, 0.35);
+      outline-offset: 2px;
+    }
+    .share-x { background: linear-gradient(135deg, #0f1118 0%, #1d2632 100%); }
+    .share-linkedin { background: linear-gradient(135deg, #0a66c2 0%, #227fda 100%); }
+    .share-email { background: linear-gradient(135deg, #25693a 0%, #3b8752 100%); }
 
     /* ─── Animations ─────────────────────────────────────── */
     @keyframes fadeUp {
