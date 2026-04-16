@@ -210,6 +210,38 @@ font-size:18px;
 padding:20px;
 }
 
+.quiz-loader{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:36px 12px;
+color:var(--primary-mid);
+}
+
+.quiz-loader.hidden{
+display:none;
+}
+
+.quiz-loader-spinner{
+width:34px;
+height:34px;
+border:3px solid #dbe6f4;
+border-top-color:var(--primary-accent);
+border-radius:50%;
+animation:quiz-spin 0.8s linear infinite;
+}
+
+.quiz-loader-text{
+font-size:14px;
+font-weight:600;
+}
+
+@keyframes quiz-spin{
+to{transform:rotate(360deg);}
+}
+
 .question{
 margin-bottom:25px;
 padding-bottom:20px;
@@ -702,6 +734,10 @@ Dr. Deena Nath Gupta
 <div class="quiz-card">
 <div class="quiz-header" id="quizHeading">Interactive Quiz</div>
 <div class="quiz-body">
+<div id="quizLoader" class="quiz-loader hidden" role="status" aria-live="polite" aria-label="Loading quiz">
+<div class="quiz-loader-spinner" aria-hidden="true"></div>
+<div class="quiz-loader-text">Loading quiz data...</div>
+</div>
 <div class="progress-stats">
 <span id="answeredCount">0</span> / <span id="totalQuestions">20</span> answered
 <span id="lockedIndicator">⚡ Answers lock after selection</span>
@@ -780,6 +816,20 @@ function getQuizPathFromUrl() {
     return normalizeQuizPath(quizPath);
 }
 
+function showQuizLoader() {
+    const loader = document.getElementById('quizLoader');
+    const form = document.getElementById('quizForm');
+    if (loader) loader.classList.remove('hidden');
+    if (form) form.style.display = 'none';
+}
+
+function hideQuizLoader() {
+    const loader = document.getElementById('quizLoader');
+    const form = document.getElementById('quizForm');
+    if (loader) loader.classList.add('hidden');
+    if (form) form.style.display = '';
+}
+
 $(document).ready(function() {
     
     function getQuizJsonUrl() {
@@ -841,12 +891,8 @@ $(document).ready(function() {
     
     // STEP 1: Show fallback metadata immediately (generic, no delay)
     updateFallbackMetadata();
-    
-    // Show loading indicator
-    const quizForm = document.getElementById('quizForm');
-    if (quizForm) {
-        quizForm.innerHTML = '<div style="text-align:center;padding:40px;">Loading quiz data...</div>';
-    }
+
+    showQuizLoader();
     
     // STEP 2: Load JSON and override with actual data
     $.getJSON(jsonUrl, function(data) {
@@ -859,6 +905,8 @@ $(document).ready(function() {
         initializeQuiz();
     }).fail(function(jqxhr, textStatus, error) {
         console.error('Error loading quiz:', error);
+        hideQuizLoader();
+        const quizForm = document.getElementById('quizForm');
         
         // Fallback metadata already showing, just show error in quiz area
         if (quizForm) {
@@ -874,6 +922,7 @@ function initializeQuiz() {
     // Check if quizData exists
     if (!window.quizData || !window.quizData.questions) {
         console.error('Quiz data not loaded');
+        hideQuizLoader();
         return;
     }
     
@@ -1084,6 +1133,7 @@ function initializeQuiz() {
 
     // Initialize quiz
     renderQuiz();
+    hideQuizLoader();
 
     // Set heading from data or use default
     if (window.quizData.heading) {
