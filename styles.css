@@ -658,9 +658,11 @@
       outline: 2px solid rgba(13, 71, 161, 0.35);
       outline-offset: 2px;
     }
-    .share-x { background: linear-gradient(135deg, #0f1118 0%, #1d2632 100%); }
-    .share-linkedin { background: linear-gradient(135deg, #0a66c2 0%, #227fda 100%); }
-    .share-email { background: linear-gradient(135deg, #25693a 0%, #3b8752 100%); }
+    .share-x { background: linear-gradient(135deg, #000000 0%, #1c1c1c 100%); }
+    .share-linkedin { background: linear-gradient(135deg, #004182 0%, #0a66c2 100%); }
+    .share-email { background: linear-gradient(135deg, #c5221f 0%, #ea4335 100%); }
+    .share-whatsapp { background: linear-gradient(135deg, #128c7e 0%, #25d366 100%); }
+    .share-telegram { background: linear-gradient(135deg, #0088cc 0%, #229ed9 100%); }
 
     /* ─── Animations ─────────────────────────────────────── */
     @keyframes fadeUp {
