@@ -1,10 +1,10 @@
 {
-  "title": "UPPSC LT Grade Computer Science Exam Quiz",
-  "description": "Comprehensive practice questions derived from the UPPSC LT Computer Science paper including C, OOPs, DBMS, and OS.",
-  "heading": "Computer Science Practice Questions",
+  "title": "UPPSC LT Grade Computer Science Full Paper Quiz",
+  "description": "The complete set of 120 Computer Science questions from the UPPSC LT Grade exam, covering Programming, Data Structures, OS, DBMS, and Hardware.",
+  "heading": "Complete Part - II: Computer Science",
   "questions": [
     {
-      "question": "What will be the output of the following 'C' code on a 64-bit computer? #include <stdio.h> Union sti {int x; char y;}; int main () {Union sti s; Printf(\"%d\", sizeof (s)); return 0; }",
+      "question": "What will be the output of the following 'C' code on a 64-bit computer? #include &lt;stdio.h&gt; Union sti {int x; char y;}; int main () {Union sti s; Printf(\"%d\", sizeof (s)); return 0; }",
       "options": ["8", "9", "5", "4"],
       "answer": 3
     },
@@ -59,7 +59,7 @@
       "answer": 3
     },
     {
-      "question": "What will be the output of the following 'C' code? for (i=1;i<5;i++) if (i!=3) printf(\"%d\", i);",
+      "question": "What will be the output of the following 'C' code? for (i=1;i&lt;5;i++) if (i!=3) printf(\"%d\", i);",
       "options": ["12345", "1245", "0000", "Error"],
       "answer": 1
     },
@@ -67,6 +67,11 @@
       "question": "What is the worst case time complexity of inserting 'n' element into an empty linked list if the linked list need to be maintained in sorted order?",
       "options": ["O(n log n)", "O(1)", "theta(n^2)", "O(n)"],
       "answer": 2
+    },
+    {
+      "question": "Match the following: I. The ER model, II. Relationship model, III. DDL, IV. DML. (A. Alter, B. Update, C. Rectangle, D. Record)",
+      "options": ["A-III, B-IV, C-I, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-II, D-I"],
+      "answer": 0
     },
     {
       "question": "When a collection of various computers appears as a single coherent system to its clients, what is this called?",
@@ -94,7 +99,7 @@
       "answer": 2
     },
     {
-      "question": "What is the full form of PNG in Computer Graphics?",
+      "question": "What is the full form of PING/PNG in Computer Graphics?",
       "options": ["Printable New Graphic", "Port New Graphics", "Portable Network Graphics", "Printable New Graphical"],
       "answer": 2
     },
@@ -102,6 +107,11 @@
       "question": "What is the time complexity of the following C function? int rec(int n) { if (n==1) return 1; else return (rec(n-1)+rec(n-1)); }",
       "options": ["O(n)", "O(n^2)", "O(2^n)", "O(n log n)"],
       "answer": 2
+    },
+    {
+      "question": "Match: A. Disk scheduling, B. Batch processing, C. Time sharing, D. Interrupt processing. (1. Round Robin, 2. SCAN, 3. LIFO, 4. FIFO)",
+      "options": ["A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2", "A-4, B-2, C-3, D-1", "A-4, B-3, C-2, D-1"],
+      "answer": 0
     },
     {
       "question": "The number of flip-flops needed to construct a binary modulo N counter is:",
@@ -120,7 +130,7 @@
     },
     {
       "question": "Rapid prototyping proves the quality of a design by:",
-      "options": ["Having a problem simulate a real system", "Having a system analyst present design overview", "Having a data flow diagram", "Both (a) and (b)"],
+      "options": ["having a problem simulate a real system", "having a system analyst present overview to users", "having a data flow diagram", "both (a) and (b)"],
       "answer": 3
     },
     {
@@ -145,7 +155,12 @@
     },
     {
       "question": "Aspect ratio is generally defined as the ratio of the:",
-      "options": ["Vertical to horizontal points", "Horizontal to vertical points", "Vertical to (horizontal + vertical) points", "Either (a) or (b) depending upon convention"],
+      "options": ["Vertical to horizontal points", "Horizontal to vertical points", "Vertical to (horizontal + vertical) points", "Either (a) or (b) depending upon the convention"],
+      "answer": 1
+    },
+    {
+      "question": "The range of short int data type in 'C' is:",
+      "options": ["-65535 to +65535", "-32768 to +32767", "0 to 65535", "-32768 to 0"],
       "answer": 1
     },
     {
@@ -159,13 +174,48 @@
       "answer": 2
     },
     {
+      "question": "When performing binary multiplication of two four-bit numbers, what is size of ROM needed?",
+      "options": ["256 x 8 bits", "64 x 32 bits", "256 x 16 bits", "128 x 16 bits"],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following is NOT a step of requirement engineering?",
+      "options": ["Requirement elicitation", "Requirement design", "Requirement documentation", "Requirement analysis"],
+      "answer": 1
+    },
+    {
       "question": "What protects the intellectual property implemented by inventors?",
       "options": ["Trademark", "Registered design", "Copyright", "Patents"],
       "answer": 3
     },
     {
+      "question": "4 way set associative cache of 64 KB is used with 32 bits address. Subdivided into TAG, INDEX and BLOCK OFFSET. No. of bits in TAG is:",
+      "options": ["21", "19", "18", "20"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following is NOT a Web Browser?",
+      "options": ["Netscape", "JavaScript", "Internet Explorer", "Opera"],
+      "answer": 1
+    },
+    {
       "question": "Which of the following traversal techniques lists the nodes of a binary search tree in ascending order?",
       "options": ["Post-order", "Pre-order", "In-order", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "When a subroutine is called, the address of the instruction following the CALL instruction is stored in/on the:",
+      "options": ["Stack Pointer", "Program Counter", "Stack", "Accumulator"],
+      "answer": 2
+    },
+    {
+      "question": "Curves in computer graphics is primarily used for which of the following functions?",
+      "options": ["zooming out", "zooming in", "drawing different objects onto screen", "copying"],
+      "answer": 2
+    },
+    {
+      "question": "The value obtained in the function is given back to main by using which keyword?",
+      "options": ["Volatile", "Static", "Return", "New"],
       "answer": 2
     },
     {
@@ -174,13 +224,63 @@
       "answer": 1
     },
     {
-      "question": "In the TCP/IP protocol suite, what is the main function of the transport layer?",
-      "options": ["Node-to-Node delivery", "Synchronization", "Updating routing tables", "Process-to-process delivery"],
+      "question": "For a relational schema R(A,B,C,D,E,F) with FDs A-&gt;B, C-&gt;DF, AC-&gt;E, D-&gt;F, determine the key:",
+      "options": ["AB", "ACB", "ACD", "AC"],
       "answer": 3
     },
     {
-      "question": "The operand itself is contained in an instruction of:",
+      "question": "We rotate a point P(2,5) by 60 degrees about pivot (1,2). New point P' is:",
+      "options": ["(-4, 1)", "(-1, 4)", "(1, 4)", "(1, -4)"],
+      "answer": 1
+    },
+    {
+      "question": "Which is correct for f(x,y,z) = &Sigma;(0, 2, 4, 5, 6)?",
+      "options": ["f=x'y+z'", "f=x'y+z", "f=xy'+z'", "f=xy'+z"],
+      "answer": 2
+    },
+    {
+      "question": "In the TCP/IP protocol suite, what is the main function of the transport layer?",
+      "options": ["Node-to-Node delivery", "Synchronization", "Routing table maintenance", "Process-to-process delivery"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following is the hacking approach where fake websites/pages are designed?",
+      "options": ["Website-Duplication", "Spamming", "Pharming", "Mimicking"],
+      "answer": 2
+    },
+    {
+      "question": "The operand itself is contained in an instruction of which addressing mode?",
       "options": ["Immediate Addressing Mode", "Indirect Addressing Mode", "Register Addressing Mode", "Direct Addressing Mode"],
+      "answer": 0
+    },
+    {
+      "question": "What should be the value of Ambient Reflection Coefficient for a black hole in Universe?",
+      "options": ["0", "&lt;1 but &ne;0", "&gt;1", "1"],
+      "answer": 0
+    },
+    {
+      "question": "If avg access time is 20 ns, main memory is 110 ns and cache is 10 ns, hit ratio is:",
+      "options": ["100%", "80%", "95%", "90%"],
+      "answer": 3
+    },
+    {
+      "question": "The primary tool used in structured design is a:",
+      "options": ["Data flow diagram", "Structure chart", "Program flow chart", "Module"],
+      "answer": 1
+    },
+    {
+      "question": "Network protocol that enables dynamic allocation of IP addresses to hosts:",
+      "options": ["VLAN", "EAPS", "DHCP", "IEEE 802.1X"],
+      "answer": 2
+    },
+    {
+      "question": "Which of the following logic families use bipolar transistors?",
+      "options": ["TTL", "NMOS", "CMOS", "GaAS"],
+      "answer": 0
+    },
+    {
+      "question": "In Java, the 'System' class belongs to which package?",
+      "options": ["Java.Lang", "Java.util", "Java.sql", "Java.io"],
       "answer": 0
     },
     {
@@ -189,29 +289,319 @@
       "answer": 1
     },
     {
-      "question": "Bridges work at which of the following OSI/ISO reference model's layers?",
+      "question": "In C language, FILE is of which data type?",
+      "options": ["int", "char*", "struct", "none of the above"],
+      "answer": 2
+    },
+    {
+      "question": "MAC address is represented in which format?",
+      "options": ["Decimal", "Octal", "Hexadecimal", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Time complexity for the recursive relation T(n)=2T(&radic;n)+1 is:",
+      "options": ["O(logn)", "O(nlogn)", "O(n)", "O(n^2)"],
+      "answer": 0
+    },
+    {
+      "question": "How many address lines are needed for a 2048 x 4 memory chip?",
+      "options": ["10", "8", "12", "11"],
+      "answer": 3
+    },
+    {
+      "question": "Dirty bit is used to show the:",
+      "options": ["low frequency page", "corrupted page", "page modified after being loaded into cache", "wrong page"],
+      "answer": 2
+    },
+    {
+      "question": "Bridges work at which OSI layer?",
       "options": ["Data link layer", "Session layer", "Application layer", "Network layer"],
       "answer": 0
     },
     {
-      "question": "In operating system, Banker's algorithm is used to:",
-      "options": ["Deadlock recovery", "Prevent deadlock", "Deadlock removal", "None of the above"],
+      "question": "If an inverter is wired between J and K input of a J-K flip-flop, it becomes:",
+      "options": ["R-S Flip-Flop", "T Flip-Flop", "D-Latch", "D Flip-Flop"],
+      "answer": 3
+    },
+    {
+      "question": "An overlay is:",
+      "options": ["Part of OS", "Single contiguous memory for large programs via swapping", "Overloading system with files", "Specific memory location"],
       "answer": 1
     },
     {
-      "question": "In UNIX which system call creates the new process?",
-      "options": ["new", "create", "fork", "None of the above"],
+      "question": "A fundamental requirement of the RSA public-key encryption scheme is the ability to generate:",
+      "options": ["random numbers", "complex numbers", "prime numbers", "pseudo random numbers"],
       "answer": 2
     },
     {
-      "question": "The number of processes that are completed per unit time is known as:",
+      "question": "Which statement is true when an interrupt occurs?",
+      "options": ["CPU jumps to new process immediately", "CPU completes current instruction", "CPU completes all instructions in current process", "None of these"],
+      "answer": 1
+    },
+    {
+      "question": "The 4-bit code of the bottom-region in Cohen-Sutherland algorithm is:",
+      "options": ["0000", "0110", "0101", "0010"],
+      "answer": 3
+    },
+    {
+      "question": "For a function of 'n' variable, boundary value analysis yields:",
+      "options": ["4n+3 cases", "n+4 cases", "2n+4 cases", "4n+1 cases"],
+      "answer": 3
+    },
+    {
+      "question": "Postfix notation 6324+-* has value:",
+      "options": ["-18", "-5", "22", "80"],
+      "answer": 1
+    },
+    {
+      "question": "Which keyword is used for storage class?",
+      "options": ["printf", "external", "scanf", "auto"],
+      "answer": 3
+    },
+    {
+      "question": "Error detection at the data link layer is achieved by:",
+      "options": ["Hamming codes", "Bit stuffing", "Cyclic redundancy code", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Which statement is true about schedules?",
+      "options": ["Every conflict serializable is view serializable", "Every view serializable is conflict serializable", "Both (a) and (b)", "Schedule can only be one or the other"],
+      "answer": 0
+    },
+    {
+      "question": "Contents of stack after PUSH(A), PUSH(B), PUSH(C), POP, PUSH(D), POP, POP, PUSH(E), PUSH(F), POP:",
+      "options": ["ABE", "A", "ABCE", "AE"],
+      "answer": 3
+    },
+    {
+      "question": "Worst case delay in 4-bit ripple (R) and synchronous (S) counter (10ns delay each):",
+      "options": ["R=10, S=40", "R=10, S=30", "R=30, S=10", "R=40, S=10"],
+      "answer": 2
+    },
+    {
+      "question": "How many chars/sec (7 bits + 1 parity) over 2400 bps line asynchronous (1 start, 1 stop)?",
+      "options": ["300", "250", "275", "240"],
+      "answer": 3
+    },
+    {
+      "question": "Default access specifier for member function or data members in C++ is:",
+      "options": ["Private", "Protected", "Depends on compiler", "Public"],
+      "answer": 0
+    },
+    {
+      "question": "Number of edges in a regular graph of degree 'd' and 'n' vertices is:",
+      "options": ["max of n,d", "nd", "nd/2", "n+d"],
+      "answer": 2
+    },
+    {
+      "question": "BCNF can be achieved from 3NF by removing:",
+      "options": ["repeating groups", "transitive dependencies", "overlapping dependencies", "partial dependencies"],
+      "answer": 2
+    },
+    {
+      "question": "Which is NOT an area of risk in cloud computing security?",
+      "options": ["Data location/segregation", "Regulatory compliance", "Cloud architecture", "Elevated user access"],
+      "answer": 2
+    },
+    {
+      "question": "Signal used to interrupt processor for error recovery action:",
+      "options": ["Strobe", "Polling", "Time-out", "Handshaking"],
+      "answer": 2
+    },
+    {
+      "question": "Complexity of Binary Search Algorithm is:",
+      "options": ["O(n)", "O(log_e n)", "O(n^2)", "O(log_2 n)"],
+      "answer": 3
+    },
+    {
+      "question": "Match: A. x XOR y, B. x XNOR y, C. x+1, D. x.1. (1. 1, 2. x'y'+xy, 3. x'y+xy', 4. x)",
+      "options": ["A-1, B-2, C-3, D-4", "A-4, B-3, C-2, D-1", "A-3, B-4, C-1, D-2", "A-3, B-2, C-1, D-4"],
+      "answer": 3
+    },
+    {
+      "question": "An outline of a process that develops successful information systems:",
+      "options": ["SDLC", "Software development", "CASE tool", "System analysis"],
+      "answer": 0
+    },
+    {
+      "question": "Testing type evaluating functionality from behavioral viewpoint:",
+      "options": ["White box", "Black box", "Blue box", "Grey box"],
+      "answer": 1
+    },
+    {
+      "question": "Elimination of part of a scene outside a window or viewport is called:",
+      "options": ["editing", "cutting", "clipping", "plucking"],
+      "answer": 2
+    },
+    {
+      "question": "Which is true about Java string objects?",
+      "options": ["Copied by == operator", "Primitive data type", "Should be manually destructed", "Contents cannot be changed once created"],
+      "answer": 3
+    },
+    {
+      "question": "Banker's algorithm is used for:",
+      "options": ["deadlock recovery", "prevent deadlock", "deadlock removal", "none of the above"],
+      "answer": 1
+    },
+    {
+      "question": "Match: A. Secondary index, B. Non-procedural query, C. Closure, D. Natural Join. (I. FD, II. B-tree, III. Domain calculus, IV. Relational algebraic)",
+      "options": ["A-II, B-III, C-I, D-IV", "A-III, B-I, C-II, D-IV", "A-II, B-I, C-III, D-IV", "A-III, B-II, C-IV, D-I"],
+      "answer": 0
+    },
+    {
+      "question": "In internetworking with 5 routers and 6 networks using link state routing, how many routing tables are there?",
+      "options": ["1", "11", "5", "6"],
+      "answer": 2
+    },
+    {
+      "question": "Term used for certified 802.11b product:",
+      "options": ["WAP", "WPA", "Wi-Fi devices", "WEP"],
+      "answer": 2
+    },
+    {
+      "question": "Decoder with m-input and n-output for 1 KB byte-addressable RAM, minimum m+n is:",
+      "options": ["10", "1034", "1014", "1024"],
+      "answer": 1
+    },
+    {
+      "question": "Bits in network ID and host ID of Class C network:",
+      "options": ["8 and 24", "24 and 8", "24 and 16", "16 and 16"],
+      "answer": 1
+    },
+    {
+      "question": "Leaf nodes in a 3-ary tree where every internal node has 3 children and there are 6 internal nodes:",
+      "options": ["10", "17", "13", "23"],
+      "answer": 2
+    },
+    {
+      "question": "What is abstraction in OOP?",
+      "options": ["Hiding implementation", "Hiding important data", "Hiding implementation and showing only features", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Stack is useful for implementing:",
+      "options": ["Quick sort", "Recursion", "Breadth first search", "Radix sort"],
+      "answer": 1
+    },
+    {
+      "question": "Horizontal fragment of relation r is given by:",
+      "options": ["pi_Ri(r)", "sigma_Ri(r)", "pi_rho_i(r)", "sigma_rho_i(r)"],
+      "answer": 3
+    },
+    {
+      "question": "Functional and detailed specification of all system elements are output of which SDLC phase?",
+      "options": ["Physical design", "Analysis", "Project initiation", "Logical design"],
+      "answer": 3
+    },
+    {
+      "question": "Octal equivalent of binary 1011101011:",
+      "options": ["7353", "4651", "1353", "none of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Cyber security protects:",
+      "options": ["Internet connected systems", "Criminals", "Hackers", "None of these"],
+      "answer": 0
+    },
+    {
+      "question": "Alpha and beta testing are forms of:",
+      "options": ["Acceptance testing", "System testing", "Unit testing", "Integration testing"],
+      "answer": 0
+    },
+    {
+      "question": "Depth of a complete binary tree is given by:",
+      "options": ["n.log2(n)", "log2(n)", "floor(log2(n))", "n.log2(n)+1"],
+      "answer": 2
+    },
+    {
+      "question": "Product of 8-bit 2's complement numbers A=1111 1010 and B=0000 1010:",
+      "options": ["1001 1100", "1101 0101", "1010 0101", "1100 0100"],
+      "answer": 3
+    },
+    {
+      "question": "In UNIX, system call that creates new process:",
+      "options": ["new", "create", "fork", "none of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Minimum cost spanning tree for graph provided in Question 135:",
+      "options": ["18", "20", "22", "24"],
+      "answer": 0
+    },
+    {
+      "question": "For X={1,3,5}, Y={7,9}, R={(1,7),(1,9),(3,9),(5,9)}, complement of R is:",
+      "options": ["{(7,1),(9,1),(9,3),(9,5)}", "{(3,7),(5,7)}", "{(3,9),(3,5)}", "{(7,3),(7,5)}"],
+      "answer": 1
+    },
+    {
+      "question": "Max subnets and max hosts per subnet for Class B with 6-bit subnet number:",
+      "options": ["62 subnets, 262142 hosts", "62 subnets, 1022 hosts", "64 subnets, 1024 hosts", "64 subnets, 262142 hosts"],
+      "answer": 1
+    },
+    {
+      "question": "Points needed for DDA algorithm line from (2,3) to (6,15):",
+      "options": ["13", "7", "6", "8"],
+      "answer": 0
+    },
+    {
+      "question": "Chips of 128x8 RAM required to make 2048 byte memory:",
+      "options": ["7", "1024", "16", "10"],
+      "answer": 2
+    },
+    {
+      "question": "Decimal conversion of binary (1010.011)2:",
+      "options": ["11.375", "10.395", "10.375", "11.395"],
+      "answer": 2
+    },
+    {
+      "question": "Which operator overloads using friend function?",
+      "options": ["*", "-&gt;", "=", "()"],
+      "answer": 0
+    },
+    {
+      "question": "Las Vegas Algorithm is used as:",
+      "options": ["Randomized Algorithm", "Spanning Tree Algorithm", "B-Tree Algorithm", "Non-Randomized Algorithm"],
+      "answer": 0
+    },
+    {
+      "question": "Length of longest common subsequence between X=&lt;0,1,2,1,3,0,1&gt; and Y=&lt;1,3,2,0,1,0&gt;:",
+      "options": ["4", "3", "5", "2"],
+      "answer": 0
+    },
+    {
+      "question": "IDEA cryptographic algorithm rounds and key size:",
+      "options": ["16, 64", "16, 32", "8, 128", "32, 128"],
+      "answer": 2
+    },
+    {
+      "question": "Most important feature of spiral model:",
+      "options": ["Information management", "Risk management", "Performance management", "Task management"],
+      "answer": 1
+    },
+    {
+      "question": "Maximum number of children of a B-tree of order m:",
+      "options": ["m/2", "m", "log2 m", "m-1"],
+      "answer": 1
+    },
+    {
+      "question": "Processes completed per unit time is known as:",
       "options": ["Turn around time", "Throughput", "Response time", "Waiting time"],
       "answer": 1
     },
     {
-      "question": "Which of the following multiplexer has 4 bit data select input?",
+      "question": "Which multiplexer has 4 bit data select input?",
       "options": ["4:1", "2:1", "8:1", "16:1"],
       "answer": 3
+    },
+    {
+      "question": "Nyquist theorem to calculate data rate:",
+      "options": ["2H log2 V", "H log2(1+S/N)", "2H log2(1+S/N)", "H log2 V"],
+      "answer": 0
+    },
+    {
+      "question": "Cyclomatic complexity of the flow graph in Question 150:",
+      "options": ["3", "5", "6", "4"],
+      "answer": 2
     }
   ]
 }
