@@ -524,7 +524,8 @@
       "answer": 2
     },
     {
-      "question": "Minimum cost spanning tree for graph provided in Question 135:",
+      "question": "Minimum cost spanning tree for graph provided in below figure:",
+      "image": "q_115.jpeg",
       "options": ["18", "20", "22", "24"],
       "answer": 0
     },
@@ -599,7 +600,8 @@
       "answer": 0
     },
     {
-      "question": "Cyclomatic complexity of the flow graph in Question 150:",
+      "question": "Cyclomatic complexity of the flow graph in below figure:",
+      "image": "q_129_1.jpeg",
       "options": ["3", "5", "6", "4"],
       "answer": 2
     }

@@ -229,6 +229,22 @@ font-weight:600;
 color:var(--primary-dark);
 }
 
+.question-image-wrap{
+margin:10px 0 14px;
+padding:10px;
+border:1px solid var(--border-soft);
+border-radius:8px;
+background:#f8fbff;
+}
+
+.question-image{
+display:block;
+max-width:100%;
+height:auto;
+border-radius:6px;
+margin:0 auto;
+}
+
 .question h3 code,
 .option label code{
 background:#eef2f7;
@@ -888,6 +904,29 @@ function initializeQuiz() {
         });
     }
 
+    function getQuestionImageUrl(imageName) {
+        if (!imageName) return '';
+
+        const imageStr = String(imageName).trim();
+        if (!imageStr) return '';
+
+        if (/^https?:\/\//i.test(imageStr)) {
+            return imageStr;
+        }
+
+        const quizPath = getQuizPathFromUrl();
+        const baseUrl = 'https://raw.githubusercontent.com/uc-dgt/ProfileDrDNG/refs/heads/main/quiz';
+        const normalizedImage = imageStr.replace(/^\/+/, '');
+        const parts = quizPath.split('/');
+        const quizFileName = parts.pop() || '';
+        const quizDir = parts.join('/');
+        const imageFolder = `${quizFileName}_img`;
+
+        return quizDir
+            ? `${baseUrl}/${quizDir}/${imageFolder}/${normalizedImage}`
+            : `${baseUrl}/${imageFolder}/${normalizedImage}`;
+    }
+
     // Update progress stats
     function updateProgress() {
         const answered = userSelections.filter(s => s !== -1).length;
@@ -904,6 +943,7 @@ function initializeQuiz() {
             const selected = userSelections[i];
             const locked = questionLocked[i];
             const status = questionStatus[i];
+            const imageUrl = getQuestionImageUrl(q.image);
             
             // Feedback HTML
             let feedbackHtml = '';
@@ -931,10 +971,15 @@ function initializeQuiz() {
                     </div>
                 `;
             }
+
+            const imageHtml = imageUrl
+                ? `<div class="question-image-wrap"><img class="question-image" src="${imageUrl}" alt="Question ${i+1} image" loading="lazy" onerror="this.parentElement.style.display='none';"></div>`
+                : '';
             
             html += `
                 <div class="question">
                         <h3>${i+1}. ${q.question}</h3>
+                    ${imageHtml}
                     ${optionsHtml}
                     ${feedbackHtml}
                 </div>
