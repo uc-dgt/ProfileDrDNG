@@ -223,6 +223,13 @@
       flex-shrink: 0;
       letter-spacing: -0.02em;
     }
+    .hero-monogram img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
     .hero-sup {
       font-size: 0.72rem;
       font-weight: 700;
