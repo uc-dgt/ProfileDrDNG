@@ -5,6 +5,7 @@
   "questions": [
     {
       "question": "What will be the output of the following &#39;C&#39; code on a 64-bit computer?<br><br><code>#include &lt;stdio.h&gt;<br>Union sti { int x; char y; };<br>int main() {<br>&nbsp;&nbsp;Union sti s;<br>&nbsp;&nbsp;Printf(&quot;%d&quot;, sizeof(s));<br>&nbsp;&nbsp;return 0;<br>}</code>",
+      "image": "q_115.jpeg",
       "options": ["8", "9", "5", "4"],
       "answer": 3
     },
