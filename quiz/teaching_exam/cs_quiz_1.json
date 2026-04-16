@@ -4,7 +4,7 @@
   "heading": "Complete Part - II: Computer Science",
   "questions": [
     {
-      "question": "What will be the output of the following 'C' code on a 64-bit computer? #include &lt;stdio.h&gt; Union sti {int x; char y;}; int main () {Union sti s; Printf(\"%d\", sizeof (s)); return 0; }",
+      "question": "What will be the output of the following &#39;C&#39; code on a 64-bit computer?<br><br><code>#include &lt;stdio.h&gt;<br>Union sti { int x; char y; };<br>int main() {<br>&nbsp;&nbsp;Union sti s;<br>&nbsp;&nbsp;Printf(&quot;%d&quot;, sizeof(s));<br>&nbsp;&nbsp;return 0;<br>}</code>",
       "options": ["8", "9", "5", "4"],
       "answer": 3
     },
@@ -59,7 +59,7 @@
       "answer": 3
     },
     {
-      "question": "What will be the output of the following 'C' code? for (i=1;i&lt;5;i++) if (i!=3) printf(\"%d\", i);",
+      "question": "What will be the output of the following &#39;C&#39; code?<br><br><code>for (i=1; i&lt;5; i++)<br>&nbsp;&nbsp;if (i != 3)<br>&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%d&quot;, i);</code>",
       "options": ["12345", "1245", "0000", "Error"],
       "answer": 1
     },
@@ -104,7 +104,7 @@
       "answer": 2
     },
     {
-      "question": "What is the time complexity of the following C function? int rec(int n) { if (n==1) return 1; else return (rec(n-1)+rec(n-1)); }",
+      "question": "What is the time complexity of the following C function?<br><br><code>int rec(int n) {<br>&nbsp;&nbsp;if (n==1) return 1;<br>&nbsp;&nbsp;else return (rec(n-1) + rec(n-1));<br>}</code>",
       "options": ["O(n)", "O(n^2)", "O(2^n)", "O(n log n)"],
       "answer": 2
     },

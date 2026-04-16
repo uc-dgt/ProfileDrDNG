@@ -229,6 +229,35 @@ font-weight:600;
 color:var(--primary-dark);
 }
 
+.question h3 code,
+.option label code{
+background:#eef2f7;
+padding:1px 5px;
+border-radius:4px;
+font-family:'Courier New',Courier,monospace;
+font-size:13.5px;
+color:#1a3a6e;
+}
+
+.question pre{
+background:#f4f6fa;
+border:1px solid var(--border-soft);
+border-radius:7px;
+padding:12px 14px;
+margin:8px 0 4px;
+overflow-x:auto;
+}
+
+.question pre code{
+background:none;
+padding:0;
+font-family:'Courier New',Courier,monospace;
+font-size:13px;
+line-height:1.6;
+color:#1a3a6e;
+white-space:pre;
+}
+
 .option{
 display:block;
 background:#f7fafc;
@@ -881,10 +910,10 @@ function initializeQuiz() {
             if (locked && status !== null) {
                 const correctAns = q.options[q.answer];
                 if (status === true) {
-                    feedbackHtml = `<div class="feedback correct">✅ Correct! "${escapeHtml(correctAns)}" is right.</div>`;
+                        feedbackHtml = `<div class="feedback correct">✅ Correct! "${correctAns}" is right.</div>`;
                 } else {
                     const userChoice = selected !== -1 ? q.options[selected] : "No answer";
-                    feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. You chose: "${escapeHtml(userChoice)}". Correct: "${escapeHtml(correctAns)}".</div>`;
+                        feedbackHtml = `<div class="feedback incorrect">❌ Incorrect. You chose: "${userChoice}". Correct: "${correctAns}".</div>`;
                 }
             }
             
@@ -898,14 +927,14 @@ function initializeQuiz() {
                 optionsHtml += `
                     <div class="${optionClass}" data-qidx="${i}" data-optidx="${optIdx}">
                         <input type="radio" name="q${i}" id="q${i}_opt${optIdx}" value="${optIdx}" ${isChecked ? 'checked' : ''} ${isDisabled ? 'disabled' : ''}>
-                        <label for="q${i}_opt${optIdx}">${escapeHtml(q.options[optIdx])}</label>
+                            <label for="q${i}_opt${optIdx}">${q.options[optIdx]}</label>
                     </div>
                 `;
             }
             
             html += `
                 <div class="question">
-                    <h3>${i+1}. ${escapeHtml(q.question)}</h3>
+                        <h3>${i+1}. ${q.question}</h3>
                     ${optionsHtml}
                     ${feedbackHtml}
                 </div>
