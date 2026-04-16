@@ -1,1 +1,217 @@
-.
+{
+  "title": "UPPSC LT Grade Computer Science Exam Quiz",
+  "description": "Comprehensive practice questions derived from the UPPSC LT Computer Science paper including C, OOPs, DBMS, and OS.",
+  "heading": "Computer Science Practice Questions",
+  "questions": [
+    {
+      "question": "What will be the output of the following 'C' code on a 64-bit computer? #include <stdio.h> Union sti {int x; char y;}; int main () {Union sti s; Printf(\"%d\", sizeof (s)); return 0; }",
+      "options": ["8", "9", "5", "4"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following HTML element do NOT have a closing tag?",
+      "options": ["Link element", "Table element", "Frame element", "Image element"],
+      "answer": 3
+    },
+    {
+      "question": "If the multiplier Q is 1101 (-3 in decimal) and 4 bit registers are in use, then in Booth's technique for multiplication the number of addition and subtractions required are",
+      "options": ["0 addition and 2 subtractions", "1 addition and 2 subtractions", "2 additions and 1 subtraction", "1 addition and 1 subtraction"],
+      "answer": 3
+    },
+    {
+      "question": "Consider the following statements with reference to Batch Processing Systems: 1. They are non-interactive system. 2. Multiple jobs are submitted and executed sequentially.",
+      "options": ["Only 1", "Only 2", "Neither 1 nor 2", "Both 1 and 2"],
+      "answer": 3
+    },
+    {
+      "question": "Assertion (A): Object Oriented Programming follows bottom-up approach. Reason (R): Most of the design work is done at the beginning of software development of object oriented methodology.",
+      "options": ["Both (A) and (R) are true but (R) is not the correct explanation of (A)", "(A) is true but (R) is false", "(A) is false but (R) is true", "Both (A) and (R) are true and (R) is the correct explanation of (A)"],
+      "answer": 0
+    },
+    {
+      "question": "What will be the ranking of coupling between modules from strongest to weakest? (I. Content, II. Common, III. Control, IV. Stamp, V. Data)",
+      "options": ["I-II-III-IV-V", "I-III-V-II-IV", "IV-II-V-III-1", "V-IV-III-II-I"],
+      "answer": 0
+    },
+    {
+      "question": "In IPv4 which uses a 32 bit address format, what is total number of address space available?",
+      "options": ["2^16", "2^23", "2^10", "2^32"],
+      "answer": 3
+    },
+    {
+      "question": "Which function is used to represent memory and set all allocated bytes to zero?",
+      "options": ["malloc()", "realloc()", "free()", "calloc()"],
+      "answer": 3
+    },
+    {
+      "question": "In multilevel inheritance, which is the most significant feature of OOP?",
+      "options": ["Flexibility", "Code readability", "Code reusability", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "Which HTML tag do we use to display text along with a scrolling effect?",
+      "options": ["div", "marquee", "select", "scroll"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following scheduling algorithm gives a minimum average waiting time?",
+      "options": ["RR", "FCFS", "Priority", "SJF"],
+      "answer": 3
+    },
+    {
+      "question": "What will be the output of the following 'C' code? for (i=1;i<5;i++) if (i!=3) printf(\"%d\", i);",
+      "options": ["12345", "1245", "0000", "Error"],
+      "answer": 1
+    },
+    {
+      "question": "What is the worst case time complexity of inserting 'n' element into an empty linked list if the linked list need to be maintained in sorted order?",
+      "options": ["O(n log n)", "O(1)", "theta(n^2)", "O(n)"],
+      "answer": 2
+    },
+    {
+      "question": "When a collection of various computers appears as a single coherent system to its clients, what is this called?",
+      "options": ["Networking system", "Computer network", "Distributed system", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "For designing a normal RDBMS which of the following normal form is considered adequate?",
+      "options": ["3NF", "2NF", "5NF", "4NF"],
+      "answer": 0
+    },
+    {
+      "question": "Consider the following statements with reference to JavaScript: 1. It can bring dynamic features to HTML page. 2. It is used for form validation in web page.",
+      "options": ["Only 1", "Only 2", "Neither 1 nor 2", "Both 1 and 2"],
+      "answer": 3
+    },
+    {
+      "question": "Simplification of AB + A'C + BC is:",
+      "options": ["AB + AC", "C", "AB + A'C", "A'C + BC"],
+      "answer": 2
+    },
+    {
+      "question": "It provides secure, remote logon and other secure client/server facilities:",
+      "options": ["SLP", "IPSec", "SSH", "HTTPS"],
+      "answer": 2
+    },
+    {
+      "question": "What is the full form of PNG in Computer Graphics?",
+      "options": ["Printable New Graphic", "Port New Graphics", "Portable Network Graphics", "Printable New Graphical"],
+      "answer": 2
+    },
+    {
+      "question": "What is the time complexity of the following C function? int rec(int n) { if (n==1) return 1; else return (rec(n-1)+rec(n-1)); }",
+      "options": ["O(n)", "O(n^2)", "O(2^n)", "O(n log n)"],
+      "answer": 2
+    },
+    {
+      "question": "The number of flip-flops needed to construct a binary modulo N counter is:",
+      "options": ["N", "2^N", "N^2", "log2 N"],
+      "answer": 3
+    },
+    {
+      "question": "Which of these is a technique that is used to verify message integrity?",
+      "options": ["Message digest", "Decryption algorithm", "Digital signature", "Protocol"],
+      "answer": 0
+    },
+    {
+      "question": "The action in Java class are called:",
+      "options": ["procedures", "methods", "objects", "functions"],
+      "answer": 1
+    },
+    {
+      "question": "Rapid prototyping proves the quality of a design by:",
+      "options": ["Having a problem simulate a real system", "Having a system analyst present design overview", "Having a data flow diagram", "Both (a) and (b)"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following is NOT a function of network layer?",
+      "options": ["Congestion control", "Error control", "Routing", "None of the above"],
+      "answer": 1
+    },
+    {
+      "question": "If negative numbers are represented in 2's complement form, then what is the range of numbers that can be stored in 8 bits?",
+      "options": ["-127 to +127", "-128 to +128", "-127 to +128", "-128 to +127"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following scheduling policies cause starvation?",
+      "options": ["FIFO and SJF", "Priority and RR", "RR and FIFO", "SJF and Priority"],
+      "answer": 3
+    },
+    {
+      "question": "Which key is used to represent relation between two tables?",
+      "options": ["Candidate key", "Primary key", "Super key", "Foreign key"],
+      "answer": 3
+    },
+    {
+      "question": "Aspect ratio is generally defined as the ratio of the:",
+      "options": ["Vertical to horizontal points", "Horizontal to vertical points", "Vertical to (horizontal + vertical) points", "Either (a) or (b) depending upon convention"],
+      "answer": 1
+    },
+    {
+      "question": "Integrity constraints ensure that changes made to the database by authorized users do not result in:",
+      "options": ["Loss of functional dependencies", "Loss of tables", "Loss of data consistency", "Loss of keys"],
+      "answer": 2
+    },
+    {
+      "question": "Which type of IP address class is used for multicast address?",
+      "options": ["Class A", "Class C", "Class D", "Class B"],
+      "answer": 2
+    },
+    {
+      "question": "What protects the intellectual property implemented by inventors?",
+      "options": ["Trademark", "Registered design", "Copyright", "Patents"],
+      "answer": 3
+    },
+    {
+      "question": "Which of the following traversal techniques lists the nodes of a binary search tree in ascending order?",
+      "options": ["Post-order", "Pre-order", "In-order", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "The page replacement policy that sometimes leads to more page faults when the size of memory is increased is:",
+      "options": ["LRU", "FIFO", "No such policy exists", "None of the above"],
+      "answer": 1
+    },
+    {
+      "question": "In the TCP/IP protocol suite, what is the main function of the transport layer?",
+      "options": ["Node-to-Node delivery", "Synchronization", "Updating routing tables", "Process-to-process delivery"],
+      "answer": 3
+    },
+    {
+      "question": "The operand itself is contained in an instruction of:",
+      "options": ["Immediate Addressing Mode", "Indirect Addressing Mode", "Register Addressing Mode", "Direct Addressing Mode"],
+      "answer": 0
+    },
+    {
+      "question": "Which data structure is used for converting infix notation to postfix notation?",
+      "options": ["Tree", "Stack", "Queue", "Branch"],
+      "answer": 1
+    },
+    {
+      "question": "Bridges work at which of the following OSI/ISO reference model's layers?",
+      "options": ["Data link layer", "Session layer", "Application layer", "Network layer"],
+      "answer": 0
+    },
+    {
+      "question": "In operating system, Banker's algorithm is used to:",
+      "options": ["Deadlock recovery", "Prevent deadlock", "Deadlock removal", "None of the above"],
+      "answer": 1
+    },
+    {
+      "question": "In UNIX which system call creates the new process?",
+      "options": ["new", "create", "fork", "None of the above"],
+      "answer": 2
+    },
+    {
+      "question": "The number of processes that are completed per unit time is known as:",
+      "options": ["Turn around time", "Throughput", "Response time", "Waiting time"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following multiplexer has 4 bit data select input?",
+      "options": ["4:1", "2:1", "8:1", "16:1"],
+      "answer": 3
+    }
+  ]
+}
