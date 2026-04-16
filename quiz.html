@@ -239,6 +239,7 @@ background:#f8fbff;
 
 .question-image{
 display:block;
+width:220px;
 max-width:100%;
 height:auto;
 border-radius:6px;
@@ -757,28 +758,29 @@ let quizHeadingName = "";
     }
 })();
 
+function normalizeQuizPath(quizPath) {
+    return quizPath
+        .trim()
+        .replace(/\\/g, '/')
+        .replace(/^\/+/, '')
+        .split('/')
+        .map(part => part.replace(/-/g, '_'))
+        .join('/');
+}
+
+// Get the 'q' parameter from URL
+function getQuizPathFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let quizPath = urlParams.get('q');
+
+    if (!quizPath || quizPath.trim() === '') {
+        quizPath = 'toc/toc_quiz';
+    }
+
+    return normalizeQuizPath(quizPath);
+}
+
 $(document).ready(function() {
-    function normalizeQuizPath(quizPath) {
-        return quizPath
-            .trim()
-            .replace(/\\/g, '/')
-            .replace(/^\/+/, '')
-            .split('/')
-            .map(part => part.replace(/-/g, '_'))
-            .join('/');
-    }
-
-    // Get the 'q' parameter from URL
-    function getQuizPathFromUrl() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let quizPath = urlParams.get('q');
-        
-        if (!quizPath || quizPath.trim() === '') {
-            quizPath = 'toc/toc_quiz';
-        }
-
-        return normalizeQuizPath(quizPath);
-    }
     
     function getQuizJsonUrl() {
         const baseUrl = 'https://raw.githubusercontent.com/uc-dgt/ProfileDrDNG/refs/heads/main/quiz';
