@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DKLQ8GG6H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DKLQ8GG6H');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Student quiz hub by Dr. Deena Nath Gupta, Associate Professor at MUIT Noida and PhD from Jamia Millia Islamia, featuring Theory of Computation and IoT practice quizzes.">
 <meta name="keywords" content="quiz for students, theory of computation quiz, iot quiz, mcq quiz, true false quiz, fill in the blanks quiz, computer science practice test">
@@ -703,6 +712,7 @@ body {
                 <button class="filter-btn active" data-filter="all" type="button">All Quizzes</button>
                 <button class="filter-btn" data-filter="toc" type="button">Theory of Computation</button>
                 <button class="filter-btn" data-filter="iot" type="button">IoT & Architecture</button>
+                <button class="filter-btn" data-filter="teaching_exam" type="button">Teaching Exam</button>
                 <button class="filter-btn" data-filter="fillblank" type="button">Fill in Blanks</button>
                 <button class="filter-btn" data-filter="mcq" type="button">MCQ / True-False</button>
             </div>
@@ -835,6 +845,22 @@ const quizzes = [
         tags: ["XaaS", "Visualization", "Architecture"],
         quizPath: "iot/iot-tf-quiz-1",
         quizPage: "tfquiz.html"
+    },
+    {
+        id: 7,
+        title: "UPPSC LT Grade Computer Science Full Paper Quiz",
+        description: "Complete set of 120 Computer Science questions from the UPPSC LT Grade exam covering Programming, Data Structures, OS, DBMS, Networking, and Hardware.",
+        subject: "teaching_exam",
+        subjectName: "Teaching Exam",
+        type: "mcq",
+        typeName: "MCQ",
+        icon: "CS",
+        color: "#6a4c93",
+        questionsCount: 120,
+        difficulty: "Advanced",
+        tags: ["UPPSC", "Computer Science", "Full Paper"],
+        quizPath: "teaching-exam/cs-quiz-1",
+        quizPage: "quiz.html"
     }
 ];
 
@@ -919,6 +945,8 @@ function filterQuizzes() {
         } else if (currentFilter === "toc" && quiz.subject === "toc") {
             matchesFilter = true;
         } else if (currentFilter === "iot" && quiz.subject === "iot") {
+            matchesFilter = true;
+        } else if (currentFilter === "teaching_exam" && quiz.subject === "teaching_exam") {
             matchesFilter = true;
         } else if (currentFilter === "fillblank" && quiz.type === "fillblank") {
             matchesFilter = true;
