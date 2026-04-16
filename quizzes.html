@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quiz Hub - Subject wise and type wise quizzes for Theory of Computation, IoT, and more">
-<meta name="keywords" content="quizzes, fill in blanks, MCQ, theory of computation, IoT, practice quiz">
+<meta name="description" content="Quiz Hub - Subject wise and type wise quizzes for Theory of Computation and IoT.">
+<meta name="keywords" content="quizzes, fill in blanks, MCQ, true false, theory of computation, IoT, practice quiz">
 <meta name="author" content="Dr. Deena Nath Gupta">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0b2b3b">
-<link rel="canonical" href="https://www.deenanathgupta.in/quiz-hub.html">
+<link rel="canonical" href="https://www.deenanathgupta.in/quizzes.html">
 <link rel="icon" type="image/x-icon" href="https://www.deenanathgupta.in/favicon.ico">
-
 <title>Quiz Hub | Dr. Deena Nath Gupta</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
 :root {
-    --primary-dark: #0b2b3b;
-    --primary-mid: #1f4e6e;
-    --primary-accent: #1f6392;
-    --light-bg: #f4f7fb;
-    --border-soft: #d8e3ef;
-    --success-green: #2b9348;
-    --error-red: #d9534f;
-    --warning-orange: #f0ad4e;
+    --primary-dark: #0d47a1;
+    --primary-light: #1565c0;
+    --primary-mid: #0a3a82;
+    --primary-accent: #00897b;
+    --light-bg: #f7fafc;
+    --border-soft: #e2e8f0;
+    --navy: #0d47a1;
+    --ink: #1a1a2e;
+    --ink-muted: #4a5568;
+    --gold: #d4a852;
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --transition: all 0.3s ease;
+    --transition: all 0.25s ease;
 }
 
 * {
@@ -39,7 +37,7 @@
 body {
     font-family: 'Source Sans 3', sans-serif;
     background: var(--light-bg);
-    color: #1a2c3e;
+    color: var(--ink);
     font-size: 15.5px;
     line-height: 1.6;
 }
@@ -50,14 +48,15 @@ body {
     padding: 0 20px;
 }
 
-/* NAVBAR */
 .nav {
-    background: var(--primary-dark);
+    background: rgba(247,250,252,0.96);
     padding: 14px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid var(--border-soft);
+    backdrop-filter: blur(14px);
 }
 
 .nav-inner {
@@ -72,16 +71,11 @@ body {
 }
 
 .nav-brand {
-    color: white;
+    color: var(--navy);
     font-family: 'Lora', serif;
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.nav-brand:hover {
-    opacity: 0.9;
 }
 
 .nav-links {
@@ -92,24 +86,38 @@ body {
 }
 
 .nav-links a {
-    color: #d7e6f2;
+    color: var(--ink-muted);
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
-    transition: color 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
 }
 
-.nav-links a:hover {
-    color: white;
-    text-decoration: underline;
+.nav-links a:hover,
+.nav-links a.nav-active {
+    color: var(--navy);
+    border-bottom-color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* HERO SECTION */
 .hero {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-dark) 50%, var(--primary-accent) 100%);
     color: white;
-    padding: 50px 0;
+    padding: 60px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.05) 0%, transparent 65%);
+    pointer-events: none;
 }
 
 .hero h1 {
@@ -122,7 +130,7 @@ body {
 .hero p {
     font-size: 18px;
     opacity: 0.9;
-    max-width: 600px;
+    max-width: 680px;
     margin: 0 auto;
 }
 
@@ -150,7 +158,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* FILTER SECTION */
 .filter-section {
     background: white;
     padding: 20px 0;
@@ -182,18 +189,22 @@ body {
     border-radius: 30px;
     font-weight: 500;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.25s ease;
     font-size: 14px;
+    border: 1px solid transparent;
 }
 
 .filter-btn:hover {
     background: #e0e4e8;
     transform: translateY(-1px);
+    border-color: var(--primary-dark);
 }
 
 .filter-btn.active {
-    background: var(--primary-accent);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-accent) 100%);
     color: white;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+    border-color: transparent;
 }
 
 .search-box {
@@ -210,15 +221,10 @@ body {
     background: transparent;
     padding: 8px 0;
     font-size: 14px;
-    width: 200px;
+    width: 220px;
     outline: none;
 }
 
-.search-box span {
-    color: #999;
-}
-
-/* QUIZ GRID */
 .section {
     padding: 40px 0;
 }
@@ -233,29 +239,46 @@ body {
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     border: 1px solid var(--border-soft);
+    position: relative;
+}
+
+.quiz-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-accent) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.quiz-card:hover::before {
+    transform: scaleX(1);
 }
 
 .quiz-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(13, 71, 161, 0.15);
 }
 
 .quiz-card-header {
-    background: linear-gradient(135deg, var(--primary-mid), var(--primary-dark));
     color: white;
-    padding: 20px;
+    padding: 24px 20px;
     position: relative;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-accent) 100%);
 }
 
 .quiz-badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(4px);
     padding: 4px 12px;
     border-radius: 20px;
@@ -281,7 +304,7 @@ body {
 
 .quiz-desc {
     font-size: 13px;
-    opacity: 0.85;
+    opacity: 0.88;
     line-height: 1.4;
 }
 
@@ -304,10 +327,6 @@ body {
     color: #666;
 }
 
-.meta-icon {
-    font-size: 16px;
-}
-
 .quiz-tags {
     display: flex;
     gap: 8px;
@@ -328,25 +347,53 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     padding-top: 15px;
     border-top: 1px solid var(--border-soft);
 }
 
-.start-btn {
-    background: var(--primary-accent);
+.start-btn,
+.modal-btn {
+    background: linear-gradient(135deg, var(--primary-accent) 0%, #00897b 100%);
     color: white;
     border: none;
-    padding: 8px 20px;
+    padding: 11px 24px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 13px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 137, 123, 0.25);
+    position: relative;
+    overflow: hidden;
 }
 
-.start-btn:hover {
-    background: var(--primary-mid);
-    transform: scale(1.02);
+.start-btn::before,
+.modal-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+}
+
+.start-btn:hover::before,
+.modal-btn:hover::before {
+    left: 100%;
+}
+
+.start-btn:hover,
+.modal-btn:hover {
+    background: linear-gradient(135deg, #00897b 0%, #00695c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 137, 123, 0.35);
+}
+
+.modal-btn.secondary {
+    background: #e9ecef;
+    color: var(--primary-dark);
 }
 
 .quiz-stats {
@@ -354,17 +401,12 @@ body {
     color: #888;
 }
 
-/* EMPTY STATE */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
     background: white;
     border-radius: 16px;
-}
-
-.empty-state-icon {
-    font-size: 64px;
-    margin-bottom: 16px;
+    border: 1px solid var(--border-soft);
 }
 
 .empty-state h3 {
@@ -374,36 +416,12 @@ body {
 }
 
 .empty-state p {
-    color: #888;
+    color: #777;
 }
 
-/* FOOTER */
-.footer {
-    background: var(--primary-dark);
-    color: #cbdbe0;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 50px;
-    font-size: 13px;
-}
-
-.footer a {
-    color: #cbdbe0;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-/* MODAL */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
     z-index: 1000;
@@ -412,7 +430,7 @@ body {
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .modal-overlay.active {
@@ -426,8 +444,8 @@ body {
     width: 90%;
     border-radius: 20px;
     overflow: hidden;
-    transform: scale(0.9);
-    transition: transform 0.2s ease;
+    transform: scale(0.96);
+    transition: var(--transition);
 }
 
 .modal-overlay.active .modal-container {
@@ -470,90 +488,73 @@ body {
     gap: 12px;
 }
 
-.modal-btn {
-    background: var(--primary-accent);
+.footer {
+    background: var(--primary-dark);
+    color: #cbdbe0;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+.footer a {
+    color: #cbdbe0;
+    text-decoration: none;
+}
+
+.footer a:hover {
     color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
+    text-decoration: underline;
 }
 
-.modal-btn.secondary {
-    background: #e9ecef;
-    color: var(--primary-dark);
-}
-
-.modal-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 32px;
     }
-    
+
     .quiz-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .filter-inner {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .filter-tabs {
         justify-content: center;
     }
-    
+
     .search-box {
         justify-content: center;
     }
-    
+
     .search-box input {
         width: 100%;
     }
 }
-
-@media (max-width: 480px) {
-    .hero-stats {
-        gap: 20px;
-    }
-    
-    .stat-number {
-        font-size: 24px;
-    }
-}
 </style>
-
+<link rel="stylesheet" href="nav-mobile.css">
 </head>
 <body>
-
-<!-- MODAL -->
 <div id="quizModal" class="modal-overlay">
     <div class="modal-container">
-        <div class="modal-header">📋 Start Quiz</div>
+        <div class="modal-header">Start Quiz</div>
         <div class="modal-body">
-            <div class="modal-icon" id="modalIcon">📝</div>
+            <div class="modal-icon" id="modalIcon">DN</div>
             <h3 id="modalTitle">Quiz Title</h3>
             <p id="modalDesc">Quiz description goes here.</p>
         </div>
         <div class="modal-footer">
-            <button class="modal-btn secondary" id="cancelModalBtn">Cancel</button>
-            <button class="modal-btn" id="startQuizBtn">Start Quiz →</button>
+            <button class="modal-btn secondary" id="cancelModalBtn" type="button">Cancel</button>
+            <button class="modal-btn" id="startQuizBtn" type="button">Start Quiz</button>
         </div>
     </div>
 </div>
 
-<!-- NAVBAR -->
 <nav class="nav">
     <div class="nav-inner">
-        <a href="https://www.deenanathgupta.in" class="nav-brand" target="_blank" rel="noopener noreferrer">
-            Dr. Deena Nath Gupta
-        </a>
+        <a href="https://www.deenanathgupta.in" class="nav-brand" target="_blank" rel="noopener noreferrer">Dr. Deena Nath Gupta</a>
         <ul class="nav-links">
             <li><a href="index.html#about">ABOUT</a></li>
             <li><a href="index.html#impact">IMPACT</a></li>
@@ -561,16 +562,38 @@ body {
             <li><a href="index.html#service">SERVICE</a></li>
             <li><a href="index.html#honors">HONORS</a></li>
             <li><a href="index.html#contact">CONTACT</a></li>
-            <li><a href="quizzes.html" style="color:white;font-weight:600;">QUIZ FOR STUDENTS</a></li>
+            <li><a href="quizzes.html" class="nav-active">QUIZ FOR STUDENTS</a></li>
         </ul>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navSidebar">
+          <span></span><span></span><span></span>
+        </button>
     </div>
 </nav>
 
-<!-- HERO -->
+<!-- Off-canvas sidebar -->
+<div class="nav-sidebar" id="navSidebar" role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden="true">
+  <div class="nav-sidebar-header">
+    <span class="nav-sidebar-title">Navigation</span>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close navigation menu">&#10005;</button>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="index.html#impact">IMPACT</a></li>
+      <li><a href="index.html#publications">PUBLICATIONS</a></li>
+      <li><a href="index.html#service">SERVICE</a></li>
+      <li><a href="index.html#honors">HONORS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="quizzes.html">QUIZ FOR STUDENTS</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
 <header class="hero">
     <div class="wrap">
-        <h1>📚 Quiz Hub</h1>
-        <p>Explore subject-wise and type-wise quizzes to test your knowledge</p>
+        <h1>Quiz Hub</h1>
+        <p>Explore the available Theory of Computation and IoT quizzes. Each card points to a matching local JSON file in the quiz folder.</p>
         <div class="hero-stats">
             <div class="stat-item">
                 <div class="stat-number" id="totalQuizzesCount">0</div>
@@ -588,193 +611,151 @@ body {
     </div>
 </header>
 
-<!-- FILTER SECTION -->
 <div class="filter-section">
     <div class="wrap">
         <div class="filter-inner">
-            <div class="filter-tabs" id="filterTabs">
-                <button class="filter-btn active" data-filter="all">🎯 All Quizzes</button>
-                <button class="filter-btn" data-filter="toc">📐 Theory of Computation</button>
-                <button class="filter-btn" data-filter="iot">🌐 IoT & Architecture</button>
-                <button class="filter-btn" data-filter="fillblank">✏️ Fill in Blanks</button>
-                <button class="filter-btn" data-filter="mcq">🔘 MCQ/True-False</button>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all" type="button">All Quizzes</button>
+                <button class="filter-btn" data-filter="toc" type="button">Theory of Computation</button>
+                <button class="filter-btn" data-filter="iot" type="button">IoT & Architecture</button>
+                <button class="filter-btn" data-filter="fillblank" type="button">Fill in Blanks</button>
+                <button class="filter-btn" data-filter="mcq" type="button">MCQ / True-False</button>
             </div>
             <div class="search-box">
-                <span>🔍</span>
+                <span>Search</span>
                 <input type="text" id="searchInput" placeholder="Search quizzes...">
             </div>
         </div>
     </div>
 </div>
 
-<!-- QUIZ GRID SECTION -->
 <section class="section">
     <div class="wrap">
-        <div class="quiz-grid" id="quizGrid">
-            <!-- Quizzes will be dynamically loaded here -->
-        </div>
+        <div class="quiz-grid" id="quizGrid"></div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="wrap">
-        <div>
-            <strong>Dr. Deena Nath Gupta</strong> · Associate Professor
-        </div>
-        <div>
-            Maharishi University of Information Technology, Noida
-        </div>
-        <div style="margin-top:8px;font-size:12px;opacity:.6;">
-            © 2026 Dr. Deena Nath Gupta | <a href="https://www.deenanathgupta.in" target="_blank" rel="noopener noreferrer">deenanathgupta.in</a>
-        </div>
+        <div><strong>Dr. Deena Nath Gupta</strong> - Associate Professor</div>
+        <div>Maharishi University of Information Technology, Noida</div>
+        <div style="margin-top:8px;font-size:12px;opacity:.6;">&copy; 2026 Dr. Deena Nath Gupta | <a href="https://www.deenanathgupta.in" target="_blank" rel="noopener noreferrer">deenanathgupta.in</a></div>
     </div>
 </footer>
 
 <script>
-// Quiz Database - Subject wise and type wise quizzes
 const quizzes = [
     {
         id: 1,
-        title: "Theory of Computation Fundamentals",
-        description: "Test your knowledge of automata theory, grammars, and computational complexity.",
+        title: "Theory of Computation (ToC) - Fill in the Blanks",
+        description: "Test your knowledge of Theory of Computation with fill-in-the-blank questions on automata, grammars, and pumping lemma.",
         subject: "toc",
         subjectName: "Theory of Computation",
         type: "fillblank",
         typeName: "Fill in the Blanks",
-        icon: "📐",
+        icon: "TOC",
         color: "#1f6392",
         questionsCount: 20,
         difficulty: "Intermediate",
         tags: ["Automata", "Grammars", "Pumping Lemma"],
-        quizFile: "toc-quiz.json",
-        quizPage: "fillblank-quiz.html"
+        quizPath: "toc/toc-fb-quiz-1",
+        quizPage: "fbquiz.html"
     },
     {
         id: 2,
-        title: "IoT & Architecture Concepts",
-        description: "Explore IoT layers, design constraints, analytics maturity, and key architectural principles.",
+        title: "Concept of IoT & Architecture - Fill in the Blanks",
+        description: "Test your knowledge of IoT concepts, architecture layers, design constraints, and analytics maturity levels.",
         subject: "iot",
         subjectName: "IoT & Architecture",
         type: "fillblank",
         typeName: "Fill in the Blanks",
-        icon: "🌐",
+        icon: "IOT",
         color: "#2b9348",
         questionsCount: 20,
         difficulty: "Intermediate",
         tags: ["Perception Layer", "Gateways", "XaaS", "IIRA"],
-        quizFile: "iot-quiz.json",
-        quizPage: "fillblank-quiz.html"
+        quizPath: "iot/iot-fb-quiz-1",
+        quizPage: "fbquiz.html"
     },
     {
         id: 3,
-        title: "Regular Expressions & Finite Automata",
-        description: "Practice questions on regular expressions, DFA, NFA, and their equivalences.",
+        title: "TOC Practice Quiz",
+        description: "Practice multiple-choice questions on DFA, NFA, regular languages, CFG, and pumping lemma.",
         subject: "toc",
         subjectName: "Theory of Computation",
         type: "mcq",
         typeName: "MCQ",
-        icon: "🔘",
+        icon: "MCQ",
         color: "#f0ad4e",
-        questionsCount: 15,
-        difficulty: "Beginner",
-        tags: ["Regex", "DFA", "NFA"],
-        quizFile: "regex-mcq.json",
+        questionsCount: 20,
+        difficulty: "Intermediate",
+        tags: ["DFA", "NFA", "CFG"],
+        quizPath: "toc/toc-quiz",
         quizPage: "quiz.html"
     },
     {
         id: 4,
-        title: "Context Free Grammars & PDA",
-        description: "Test your understanding of CFG, pushdown automata, and parsing techniques.",
-        subject: "toc",
-        subjectName: "Theory of Computation",
+        title: "Concept of IoT & Architecture Practice",
+        description: "Advanced MCQs covering 5-layer architecture, DIKW model, Big Data Vs, and IoT constraints.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
         type: "mcq",
         typeName: "MCQ",
-        icon: "🔘",
+        icon: "MCQ",
         color: "#f0ad4e",
-        questionsCount: 12,
-        difficulty: "Advanced",
-        tags: ["CFG", "PDA", "Parse Tree"],
-        quizFile: "cfg-pda-mcq.json",
+        questionsCount: 20,
+        difficulty: "Intermediate",
+        tags: ["DIKW", "Gateways", "Analytics"],
+        quizPath: "iot/iot-quiz-1",
         quizPage: "quiz.html"
     },
     {
         id: 5,
-        title: "IoT Protocols & Communication",
-        description: "Questions on MQTT, CoAP, HTTP, and other IoT communication protocols.",
-        subject: "iot",
-        subjectName: "IoT & Architecture",
-        type: "mcq",
-        typeName: "MCQ",
-        icon: "🔘",
-        color: "#f0ad4e",
-        questionsCount: 15,
-        difficulty: "Intermediate",
-        tags: ["MQTT", "CoAP", "Protocols"],
-        quizFile: "iot-protocols-mcq.json",
-        quizPage: "quiz.html"
-    },
-    {
-        id: 6,
-        title: "Big Data & Analytics in IoT",
-        description: "Questions on DIKW pyramid, 5 V's of Big Data, and analytics levels.",
-        subject: "iot",
-        subjectName: "IoT & Architecture",
-        type: "fillblank",
-        typeName: "Fill in the Blanks",
-        icon: "📊",
-        color: "#2b9348",
-        questionsCount: 10,
-        difficulty: "Beginner",
-        tags: ["DIKW", "5V's", "Analytics"],
-        quizFile: "iot-analytics.json",
-        quizPage: "fillblank-quiz.html"
-    },
-    {
-        id: 7,
-        title: "Turing Machines & Computability",
-        description: "Advanced concepts on Turing machines, decidability, and complexity classes.",
+        title: "ToC Fundamentals: True/False Challenge",
+        description: "Test your knowledge on regular languages, context-free grammars, DFA, NDFA, pumping lemma, and closure properties with true-false questions.",
         subject: "toc",
         subjectName: "Theory of Computation",
         type: "truefalse",
-        typeName: "True/False",
-        icon: "✓✗",
+        typeName: "True-False",
+        icon: "TF",
         color: "#d9534f",
-        questionsCount: 10,
+        questionsCount: 20,
         difficulty: "Advanced",
-        tags: ["Turing Machine", "Decidability", "Complexity"],
-        quizFile: "turing-tf.json",
-        quizPage: "quiz.html"
+        tags: ["Regular Languages", "Pumping Lemma", "CFG"],
+        quizPath: "toc/toc-tf-quiz-1",
+        quizPage: "tfquiz.html"
     },
     {
-        id: 8,
-        title: "IoT Security & Privacy",
-        description: "Test your knowledge on IoT security challenges, encryption, and best practices.",
+        id: 6,
+        title: "IoT Architecture & Concepts: True-False Challenge",
+        description: "Test your knowledge on IoT architecture layers, XaaS model, analytics types, visualization, constraints, and reference architectures with true-false questions.",
         subject: "iot",
         subjectName: "IoT & Architecture",
         type: "truefalse",
-        typeName: "True/False",
-        icon: "✓✗",
+        typeName: "True-False",
+        icon: "TF",
         color: "#d9534f",
-        questionsCount: 12,
+        questionsCount: 20,
         difficulty: "Intermediate",
-        tags: ["Security", "Privacy", "Encryption"],
-        quizFile: "iot-security-tf.json",
-        quizPage: "quiz.html"
+        tags: ["XaaS", "Visualization", "Architecture"],
+        quizPath: "iot/iot-tf-quiz-1",
+        quizPage: "tfquiz.html"
     }
 ];
 
 let currentFilter = "all";
 let currentSearch = "";
 
-// Helper functions
 function getUniqueSubjects() {
-    const subjects = new Set(quizzes.map(q => q.subjectName));
-    return subjects.size;
+    return new Set(quizzes.map(function(quiz) {
+        return quiz.subject;
+    })).size;
 }
 
 function getTotalQuestions() {
-    return quizzes.reduce((sum, q) => sum + q.questionsCount, 0);
+    return quizzes.reduce(function(sum, quiz) {
+        return sum + quiz.questionsCount;
+    }, 0);
 }
 
 function updateStats() {
@@ -783,131 +764,138 @@ function updateStats() {
     document.getElementById("subjectsCount").textContent = getUniqueSubjects();
 }
 
+function escapeHtml(value) {
+    if (!value) {
+        return "";
+    }
+
+    return value.replace(/[&<>]/g, function(character) {
+        if (character === "&") return "&amp;";
+        if (character === "<") return "&lt;";
+        if (character === ">") return "&gt;";
+        return character;
+    });
+}
+
+function getTypeLabel(type) {
+    if (type === "fillblank") return "Fill in the Blanks";
+    if (type === "truefalse") return "True-False";
+    return "MCQ";
+}
+
+function getDifficultyColor(difficulty) {
+    if (difficulty === "Beginner") return "#2b9348";
+    if (difficulty === "Advanced") return "#d9534f";
+    return "#f0ad4e";
+}
+
 function filterQuizzes() {
-    return quizzes.filter(quiz => {
-        // Filter by subject/type
+    return quizzes.filter(function(quiz) {
         let matchesFilter = false;
+
         if (currentFilter === "all") {
-            matchesFilter = true;
-        } else if (currentFilter === "fillblank" && quiz.type === "fillblank") {
-            matchesFilter = true;
-        } else if (currentFilter === "mcq" && quiz.type === "mcq") {
             matchesFilter = true;
         } else if (currentFilter === "toc" && quiz.subject === "toc") {
             matchesFilter = true;
         } else if (currentFilter === "iot" && quiz.subject === "iot") {
             matchesFilter = true;
+        } else if (currentFilter === "fillblank" && quiz.type === "fillblank") {
+            matchesFilter = true;
+        } else if (currentFilter === "mcq" && (quiz.type === "mcq" || quiz.type === "truefalse")) {
+            matchesFilter = true;
         }
-        
-        if (!matchesFilter) return false;
-        
-        // Filter by search
-        if (currentSearch) {
-            const searchLower = currentSearch.toLowerCase();
-            return quiz.title.toLowerCase().includes(searchLower) ||
-                   quiz.description.toLowerCase().includes(searchLower) ||
-                   quiz.subjectName.toLowerCase().includes(searchLower) ||
-                   quiz.tags.some(tag => tag.toLowerCase().includes(searchLower));
+
+        if (!matchesFilter) {
+            return false;
         }
-        
-        return true;
+
+        if (!currentSearch) {
+            return true;
+        }
+
+        const searchValue = currentSearch.toLowerCase();
+        return quiz.title.toLowerCase().includes(searchValue) ||
+            quiz.description.toLowerCase().includes(searchValue) ||
+            quiz.subjectName.toLowerCase().includes(searchValue) ||
+            quiz.typeName.toLowerCase().includes(searchValue) ||
+            quiz.tags.some(function(tag) {
+                return tag.toLowerCase().includes(searchValue);
+            });
     });
 }
 
-function getTypeIcon(type) {
-    switch(type) {
-        case "fillblank": return "✏️";
-        case "mcq": return "🔘";
-        case "truefalse": return "✓✗";
-        default: return "📝";
-    }
-}
-
-function getDifficultyColor(difficulty) {
-    switch(difficulty) {
-        case "Beginner": return "#2b9348";
-        case "Intermediate": return "#f0ad4e";
-        case "Advanced": return "#d9534f";
-        default: return "#1f6392";
-    }
-}
-
 function renderQuizzes() {
-    const filtered = filterQuizzes();
     const grid = document.getElementById("quizGrid");
-    
-    if (filtered.length === 0) {
-        grid.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-state-icon">🔍</div>
-                <h3>No quizzes found</h3>
-                <p>Try adjusting your search or filter criteria</p>
-            </div>
-        `;
+    const filtered = filterQuizzes();
+
+    if (!filtered.length) {
+        grid.innerHTML = '<div class="empty-state"><h3>No quizzes found</h3><p>Try a different search term or filter.</p></div>';
         return;
     }
-    
-    grid.innerHTML = filtered.map(quiz => `
-        <div class="quiz-card" data-id="${quiz.id}">
-            <div class="quiz-card-header" style="background: linear-gradient(135deg, ${quiz.color}, var(--primary-dark));">
-                <div class="quiz-badge">${quiz.typeName}</div>
-                <div class="quiz-subject">${quiz.subjectName}</div>
-                <div class="quiz-title">${quiz.icon} ${escapeHtml(quiz.title)}</div>
-                <div class="quiz-desc">${escapeHtml(quiz.description.substring(0, 80))}${quiz.description.length > 80 ? '...' : ''}</div>
-            </div>
-            <div class="quiz-card-body">
-                <div class="quiz-meta">
-                    <div class="meta-item">
-                        <span class="meta-icon">📋</span>
-                        <span>${quiz.questionsCount} questions</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-icon">⭐</span>
-                        <span style="color: ${getDifficultyColor(quiz.difficulty)}">${quiz.difficulty}</span>
-                    </div>
+
+    grid.innerHTML = filtered.map(function(quiz) {
+        return `
+            <div class="quiz-card" data-id="${quiz.id}">
+                <div class="quiz-card-header" style="background: linear-gradient(135deg, ${quiz.color}, var(--primary-dark));">
+                    <div class="quiz-badge">${escapeHtml(quiz.typeName)}</div>
+                    <div class="quiz-subject">${escapeHtml(quiz.subjectName)}</div>
+                    <div class="quiz-title">${escapeHtml(quiz.icon)} ${escapeHtml(quiz.title)}</div>
+                    <div class="quiz-desc">${escapeHtml(quiz.description)}</div>
                 </div>
-                <div class="quiz-tags">
-                    ${quiz.tags.map(tag => `<span class="tag">#${escapeHtml(tag)}</span>`).join('')}
-                </div>
-                <div class="quiz-footer">
-                    <span class="quiz-stats">${getTypeIcon(quiz.type)} ${quiz.typeName}</span>
-                    <button class="start-btn" data-id="${quiz.id}">Start Quiz →</button>
+                <div class="quiz-card-body">
+                    <div class="quiz-meta">
+                        <div class="meta-item"><span>Questions:</span><strong>${quiz.questionsCount}</strong></div>
+                        <div class="meta-item"><span>Level:</span><strong style="color:${getDifficultyColor(quiz.difficulty)};">${escapeHtml(quiz.difficulty)}</strong></div>
+                    </div>
+                    <div class="quiz-tags">
+                        ${quiz.tags.map(function(tag) {
+                            return `<span class="tag">#${escapeHtml(tag)}</span>`;
+                        }).join("")}
+                    </div>
+                    <div class="quiz-footer">
+                        <span class="quiz-stats">${escapeHtml(getTypeLabel(quiz.type))}</span>
+                        <button class="start-btn" data-id="${quiz.id}" type="button">Start Quiz</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `).join('');
-    
-    // Attach click handlers to start buttons
-    document.querySelectorAll('.start-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const id = parseInt(btn.dataset.id);
-            const quiz = quizzes.find(q => q.id === id);
+        `;
+    }).join("");
+
+    document.querySelectorAll(".quiz-card").forEach(function(card) {
+        card.addEventListener("click", function(event) {
+            if (event.target.classList.contains("start-btn")) {
+                return;
+            }
+
+            const quizId = parseInt(card.dataset.id, 10);
+            const quiz = quizzes.find(function(item) {
+                return item.id === quizId;
+            });
             if (quiz) {
                 openQuizModal(quiz);
             }
         });
     });
-    
-    // Attach click handlers to cards
-    document.querySelectorAll('.quiz-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (!e.target.classList.contains('start-btn')) {
-                const id = parseInt(card.dataset.id);
-                const quiz = quizzes.find(q => q.id === id);
-                if (quiz) {
-                    openQuizModal(quiz);
-                }
+
+    document.querySelectorAll(".start-btn").forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            event.stopPropagation();
+            const quizId = parseInt(button.dataset.id, 10);
+            const quiz = quizzes.find(function(item) {
+                return item.id === quizId;
+            });
+            if (quiz) {
+                openQuizModal(quiz);
             }
         });
     });
 }
 
 function openQuizModal(quiz) {
-    document.getElementById("modalIcon").textContent = quiz.icon;
+    document.getElementById("modalIcon").textContent = "DN";
     document.getElementById("modalTitle").textContent = quiz.title;
-    document.getElementById("modalDesc").innerHTML = `${quiz.description}<br><br><strong>📊 ${quiz.questionsCount} questions</strong> • ${quiz.typeName} • ${quiz.difficulty} level`;
-    document.getElementById("startQuizBtn").dataset.quizId = quiz.id;
+    document.getElementById("modalDesc").innerHTML = `${escapeHtml(quiz.description)}<br><br><strong>${quiz.questionsCount} questions</strong> | ${escapeHtml(quiz.typeName)} | ${escapeHtml(quiz.difficulty)}`;
+    document.getElementById("startQuizBtn").dataset.href = `${quiz.quizPage}?q=${quiz.quizPath}`;
     document.getElementById("quizModal").classList.add("active");
 }
 
@@ -915,55 +903,38 @@ function closeModal() {
     document.getElementById("quizModal").classList.remove("active");
 }
 
-function startQuiz() {
-    const quizId = parseInt(document.getElementById("startQuizBtn").dataset.quizId);
-    const quiz = quizzes.find(q => q.id === quizId);
-    if (quiz) {
-        if (quiz.quizPage === "fillblank-quiz.html") {
-            window.location.href = `${quiz.quizPage}?q=${quiz.quizFile.replace('.json', '')}`;
-        } else {
-            window.location.href = `${quiz.quizPage}?q=${quiz.quizFile.replace('.json', '')}`;
-        }
-    }
-}
-
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/[&<>]/g, function(m) {
-        if (m === '&') return '&amp;';
-        if (m === '<') return '&lt;';
-        if (m === '>') return '&gt;';
-        return m;
-    });
-}
-
-// Event Listeners
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
+document.querySelectorAll(".filter-btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        document.querySelectorAll(".filter-btn").forEach(function(item) {
+            item.classList.remove("active");
+        });
+        button.classList.add("active");
+        currentFilter = button.dataset.filter;
         renderQuizzes();
     });
 });
 
-document.getElementById('searchInput').addEventListener('input', (e) => {
-    currentSearch = e.target.value;
+document.getElementById("searchInput").addEventListener("input", function(event) {
+    currentSearch = event.target.value.trim();
     renderQuizzes();
 });
 
-document.getElementById('cancelModalBtn').addEventListener('click', closeModal);
-document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
-document.getElementById('quizModal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('quizModal')) {
+document.getElementById("cancelModalBtn").addEventListener("click", closeModal);
+document.getElementById("quizModal").addEventListener("click", function(event) {
+    if (event.target.id === "quizModal") {
         closeModal();
     }
 });
+document.getElementById("startQuizBtn").addEventListener("click", function() {
+    const href = document.getElementById("startQuizBtn").dataset.href;
+    if (href) {
+        window.location.href = href;
+    }
+});
 
-// Initialize
 updateStats();
 renderQuizzes();
 </script>
-
+<script src="nav-mobile.js"></script>
 </body>
 </html>

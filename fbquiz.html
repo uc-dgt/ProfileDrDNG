@@ -9,7 +9,7 @@
 <meta name="author" content="Dr. Deena Nath Gupta">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0b2b3b">
-<link rel="canonical" href="https://www.deenanathgupta.in/fillblank-quiz.html">
+<link rel="canonical" href="https://www.deenanathgupta.in/fbquiz.html">
 <link rel="icon" type="image/x-icon" href="https://www.deenanathgupta.in/favicon.ico">
 
 <title>Fill in the Blank Quiz | Dr. Deena Nath Gupta</title>
@@ -19,13 +19,18 @@
 <style>
 
 :root{
---primary-dark:#0b2b3b;
---primary-mid:#1f4e6e;
---primary-accent:#1f6392;
---light-bg:#f4f7fb;
---border-soft:#d8e3ef;
---success-green:#2b9348;
---error-red:#d9534f;
+--primary-dark:#0d47a1;
+--primary-light:#1565c0;
+--primary-mid:#0a3a82;
+--primary-accent:#00897b;
+--light-bg:#f7fafc;
+--border-soft:#e2e8f0;
+--navy:#0d47a1;
+--ink:#1a1a2e;
+--ink-muted:#4a5568;
+--gold:#d4a852;
+--success-green:#2e7d32;
+--error-red:#dc3545;
 --warning-orange:#f0ad4e;
 }
 
@@ -38,7 +43,7 @@ box-sizing:border-box;
 body{
 font-family:'Source Sans 3',sans-serif;
 background:var(--light-bg);
-color:#1a2c3e;
+color:var(--ink);
 font-size:15.5px;
 line-height:1.6;
 }
@@ -51,12 +56,14 @@ padding:0 20px;
 
 /* NAVBAR */
 .nav{
-background:var(--primary-dark);
+background:rgba(247,250,252,0.96);
 padding:14px 0;
 position:sticky;
 top:0;
 z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+border-bottom:1px solid var(--border-soft);
+backdrop-filter:blur(14px);
 }
 
 .nav-inner{
@@ -71,7 +78,7 @@ gap:12px;
 }
 
 .nav-brand{
-color:white;
+color:var(--navy);
 font-family:'Lora',serif;
 font-size:20px;
 font-weight:700;
@@ -80,7 +87,7 @@ transition:opacity 0.2s;
 }
 
 .nav-brand:hover{
-opacity:0.9;
+opacity:0.8;
 }
 
 .nav-links{
@@ -91,16 +98,19 @@ flex-wrap:wrap;
 }
 
 .nav-links a{
-color:#d7e6f2;
+color:var(--ink-muted);
 text-decoration:none;
 font-weight:500;
 font-size:14px;
-transition:color 0.2s;
+transition:color 0.2s, border-bottom 0.2s;
+border-bottom:2px solid transparent;
+padding-bottom:2px;
 }
 
 .nav-links a:hover{
-color:white;
-text-decoration:underline;
+color:var(--navy);
+border-bottom-color:var(--gold);
+text-decoration:none;
 }
 
 /* HERO */
@@ -258,31 +268,52 @@ flex-wrap:wrap;
 button{
 background:white;
 border:1px solid var(--border-soft);
-padding:10px 20px;
+padding:11px 24px;
 font-weight:600;
 border-radius:8px;
 cursor:pointer;
 color:var(--primary-mid);
 font-family:inherit;
 font-size:14px;
-transition:all 0.2s;
+transition:all 0.25s ease;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+button::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.15);
+transition:left 0.3s ease;
+}
+
+button:hover::before{
+left:100%;
 }
 
 button:hover{
 background:#eef4fa;
 transform:translateY(-1px);
+box-shadow:0 4px 12px rgba(13,71,161,0.15);
 }
 
 .submit-btn{
-background:var(--primary-accent);
+background:linear-gradient(135deg, var(--primary-accent) 0%, #00695c 100%);
 color:white;
 border:none;
 flex:1;
+box-shadow:0 4px 12px rgba(0,137,123,0.25);
 }
 
 .submit-btn:hover{
-background:var(--primary-mid);
+background:linear-gradient(135deg, #00695c 0%, #004d40 100%);
 transform:translateY(-1px);
+box-shadow:0 6px 16px rgba(0,137,123,0.35);
 }
 
 .reset-btn{
@@ -458,6 +489,7 @@ margin-top:6px;
 font-style:italic;
 }
 </style>
+<link rel="stylesheet" href="nav-mobile.css">
 
 </head>
 
@@ -493,10 +525,31 @@ Dr. Deena Nath Gupta
       <li><a href="index.html#contact">CONTACT</a></li>
       <li><a href="quizzes.html">QUIZ FOR STUDENTS</a></li>
 </ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navSidebar">
+  <span></span><span></span><span></span>
+</button>
 </div>
 </nav>
 
-<!-- HERO -->
+<!-- Off-canvas sidebar -->
+<div class="nav-sidebar" id="navSidebar" role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden="true">
+  <div class="nav-sidebar-header">
+    <span class="nav-sidebar-title">Navigation</span>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close navigation menu">&#10005;</button>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="index.html#impact">IMPACT</a></li>
+      <li><a href="index.html#publications">PUBLICATIONS</a></li>
+      <li><a href="index.html#service">SERVICE</a></li>
+      <li><a href="index.html#honors">HONORS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="quizzes.html">QUIZ FOR STUDENTS</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 <header class="hero">
 <div class="wrap">
 <div class="hero-grid">
@@ -554,6 +607,16 @@ Maharishi University of Information Technology, Noida
    --------------------------- */
 
 $(document).ready(function() {
+    function normalizeQuizPath(quizPath) {
+        return quizPath
+            .trim()
+            .replace(/\\/g, '/')
+            .replace(/^\/+/, '')
+            .split('/')
+            .map(part => part.replace(/-/g, '_'))
+            .join('/');
+    }
+
     // Demo quiz data for Fill in the Blank (IoT & ToC concepts)
     const demoQuizData = {
         title: "Fill in the Blank | IoT & Theory of Computation",
@@ -595,9 +658,8 @@ $(document).ready(function() {
         let quizPath = urlParams.get('q');
         
         if (quizPath && quizPath.trim() !== '') {
-            if (!quizPath.startsWith('/')) quizPath = '/' + quizPath;
             const baseUrl = 'https://raw.githubusercontent.com/uc-dgt/ProfileDrDNG/refs/heads/main/quiz';
-            const jsonUrl = baseUrl + quizPath + '.json';
+            const jsonUrl = `${baseUrl}/${normalizeQuizPath(quizPath)}.json`;
             
             $.getJSON(jsonUrl, function(data) {
                 if (data && data.questions && data.questions.length > 0) {
@@ -983,6 +1045,7 @@ $(document).ready(function() {
     loadQuizData();
 });
 </script>
+<script src="nav-mobile.js"></script>
 
 </body>
 </html>

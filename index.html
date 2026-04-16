@@ -48,6 +48,7 @@
     }
   </script>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav-mobile.css">
 </head>
 <body>
 
@@ -64,8 +65,31 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="quizzes.html">Quiz for Students</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navSidebar">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Off-canvas sidebar -->
+<div class="nav-sidebar" id="navSidebar" role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden="true">
+  <div class="nav-sidebar-header">
+    <span class="nav-sidebar-title">Navigation</span>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close navigation menu">&#10005;</button>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#honors">Honors</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="quizzes.html">Quiz for Students</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
 <!-- ─── HERO ──────────────────────────────────────────────── -->
 <header class="hero">
@@ -817,5 +841,6 @@
 
 <!-- ─── JS ────────────────────────────────────────────────── -->
 <script src="script.js"></script>
+<script src="nav-mobile.js"></script>
 </body>
 </html>
