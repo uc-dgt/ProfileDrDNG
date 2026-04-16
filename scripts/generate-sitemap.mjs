@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const SITE_URL = "https://www.deenanathgupta.in";
+const SITE_URL = "https://deenanathgupta.in";
 const ROOT = process.cwd();
 const QUIZ_ROOT = path.join(ROOT, "quiz");
 const EXCLUDED_STATIC_PAGES = new Set(["quiz.html", "tfquiz.html", "fbquiz.html"]);

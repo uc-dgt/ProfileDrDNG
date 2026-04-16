@@ -1,0 +1,7 @@
+# Enforce HTTPS and non-www canonical domain
+RewriteEngine On
+
+# Redirect HTTP requests and any www host to https://deenanathgupta.in
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.deenanathgupta\.in$ [NC]
+RewriteRule ^ https://deenanathgupta.in%{REQUEST_URI} [R=301,L]

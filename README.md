@@ -3,8 +3,8 @@ Portfolio of Dr. Deena Nath Gupta
 
 ## Sitemap
 
-- Primary sitemap: https://www.deenanathgupta.in/sitemap.xml
-- Robots file includes sitemap reference: https://www.deenanathgupta.in/robots.txt
+- Primary sitemap: https://deenanathgupta.in/sitemap.xml
+- Robots file includes sitemap reference: https://deenanathgupta.in/robots.txt
 - Regenerate sitemap locally with:
 
 ```bash

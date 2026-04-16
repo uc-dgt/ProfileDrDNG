@@ -606,6 +606,35 @@
       font-size: 0.7rem;
     }
 
+    /* ─── Share Section ─────────────────────────────────── */
+    .share-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.58rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: opacity 0.2s ease;
+    }
+    .share-btn:hover {
+      opacity: 0.88;
+      color: #ffffff;
+    }
+    .share-x { background: #111111; }
+    .share-linkedin { background: #0a66c2; }
+    .share-email { background: #2f6f3e; }
+
     /* ─── Animations ─────────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(14px); }
@@ -677,4 +706,5 @@
       .timeline .tl-item { grid-template-columns: 1fr; gap: 0.35rem; }
       .tl-year { text-align: left; padding-top: 0; }
       .scroll-box { max-height: none; overflow: visible; padding-right: 0; }
+      .share-btn { flex: 1 1 100%; }
     }
