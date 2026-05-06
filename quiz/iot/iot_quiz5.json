@@ -1,7 +1,7 @@
 {
-  "title": "SERVICE LAYER PROTOCOLS & SECURITY in IoT",
+  "title": "SERVICE LAYER PROTOCOLS & SECURITY",
   "description": "MCQs covering IoT service layer standards (oneM2M, ETSI M2M, OMA, BBF), security features in IEEE 802.15.4, 6LoWPAN, RPL, and application layer protocols.",
-  "heading": "Service Layer Protocols & Security Practice",
+  "heading": "Service Layer Protocols & Security in IoT Practice",
   "questions": [
     {
       "question": "What is the primary goal of oneM2M?",
