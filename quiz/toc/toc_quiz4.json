@@ -1,0 +1,57 @@
+{
+  "title": "Complexity Theory & Computability in ToC Quiz",
+  "description": "MCQs covering complexity classes, computability, time complexity, and P, NP, Co-NP concepts.",
+  "heading": "Complexity Classes in ToC - Practice Questions",
+  "questions": [
+    {
+      "question": "What does the class P represent?",
+      "options": ["Problems solvable in exponential time", "Problems solvable in polynomial time", "Problems not solvable", "Problems requiring non-determinism"],
+      "answer": 1
+    },
+    {
+      "question": "Which class contains decision problems whose solutions can be verified in polynomial time?",
+      "options": ["P", "NP", "Co-NP", "PSPACE"],
+      "answer": 1
+    },
+    {
+      "question": "What is meant by Co-NP class?",
+      "options": ["Complement of NP problems", "Subset of NP", "Problems solvable in constant time", "Problems not verifiable"],
+      "answer": 0
+    },
+    {
+      "question": "Which of the following is an example of an NP problem?",
+      "options": ["Sorting numbers", "Finding shortest path in graph", "Boolean satisfiability (SAT)", "Addition of integers"],
+      "answer": 2
+    },
+    {
+      "question": "What is time complexity?",
+      "options": ["Memory required by an algorithm", "Number of steps an algorithm takes with respect to input size", "Number of variables used", "Compilation time"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following problems is undecidable?",
+      "options": ["Sorting problem", "Halting problem", "Searching problem", "Shortest path problem"],
+      "answer": 1
+    },
+    {
+      "question": "What does computability theory primarily deal with?",
+      "options": ["Efficient algorithms", "Feasibility of problems", "Whether a problem can be solved at all", "Hardware implementation"],
+      "answer": 2
+    },
+    {
+      "question": "Which relationship is widely believed but not yet proven?",
+      "options": ["P = NP", "P ≠ NP", "NP = Co-NP", "P ⊆ NP"],
+      "answer": 1
+    },
+    {
+      "question": "Which complexity class includes all problems in P?",
+      "options": ["NP", "Co-NP", "EXPTIME", "All of the above"],
+      "answer": 3
+    },
+    {
+      "question": "Which term describes problems that are hard to solve but easy to verify?",
+      "options": ["P problems", "NP problems", "Co-NP problems", "Undecidable problems"],
+      "answer": 1
+    }
+  ]
+}
