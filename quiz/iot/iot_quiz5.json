@@ -1,0 +1,57 @@
+{
+  "title": "SERVICE LAYER PROTOCOLS & SECURITY in IoT",
+  "description": "MCQs covering IoT service layer standards (oneM2M, ETSI M2M, OMA, BBF), security features in IEEE 802.15.4, 6LoWPAN, RPL, and application layer protocols.",
+  "heading": "Service Layer Protocols & Security Practice",
+  "questions": [
+    {
+      "question": "What is the primary goal of oneM2M?",
+      "options": ["Provide physical layer communication", "Standardize IoT service layer architecture", "Replace TCP/IP", "Manage hardware devices directly"],
+      "answer": 1
+    },
+    {
+      "question": "ETSI M2M mainly focuses on:",
+      "options": ["Transport protocols", "Application UI design", "Machine-to-machine service architecture", "Wireless signal processing"],
+      "answer": 2
+    },
+    {
+      "question": "Which organization develops standards for mobile service enablers like device management?",
+      "options": ["BBF", "OMA", "IEEE", "IETF"],
+      "answer": 1
+    },
+    {
+      "question": "BBF (Broadband Forum) primarily works on:",
+      "options": ["IoT sensors", "Broadband network standards", "Encryption algorithms", "Mobile applications"],
+      "answer": 1
+    },
+    {
+      "question": "In IEEE 802.15.4, what is the purpose of MAC layer security?",
+      "options": ["Routing packets", "Ensuring confidentiality and integrity", "Assigning IP addresses", "Increasing bandwidth"],
+      "answer": 1
+    },
+    {
+      "question": "Which of the following security features is supported by 6LoWPAN?",
+      "options": ["End-to-end encryption", "Header compression only", "Relies on lower-layer security (e.g., IEEE 802.15.4)", "No security support"],
+      "answer": 2
+    },
+    {
+      "question": "RPL (Routing Protocol for Low-Power and Lossy Networks) includes security features to:",
+      "options": ["Increase speed", "Prevent routing attacks", "Reduce memory usage", "Improve UI"],
+      "answer": 1
+    },
+    {
+      "question": "Which type of attack is specifically addressed by secure RPL mechanisms?",
+      "options": ["Phishing", "Sybil attack", "SQL injection", "Buffer overflow"],
+      "answer": 1
+    },
+    {
+      "question": "The Application Layer in IoT is responsible for:",
+      "options": ["Signal modulation", "Data routing", "Providing end-user services and interfaces", "Packet fragmentation"],
+      "answer": 2
+    },
+    {
+      "question": "Which protocol operates at the Application Layer in IoT?",
+      "options": ["TCP", "UDP", "MQTT", "IP"],
+      "answer": 2
+    }
+  ]
+}
