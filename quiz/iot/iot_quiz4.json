@@ -1,7 +1,7 @@
 {
   "title": "TRANSPORT & SESSION LAYER PROTOCOLS",
   "description": "MCQs covering transport protocols (TCP, UDP, SCTP, MPTCP, DCCP) and session/application layer protocols (TLS, DTLS, HTTP, CoAP, MQTT, XMPP) for IoT and web communication.",
-  "heading": "Transport & Session Layer Protocols Practice",
+  "heading": "Transport & Session Layer Protocols in IoT Practice",
   "questions": [
     {
       "question": "Which transport protocol provides reliable, connection-oriented communication?",
