@@ -1,0 +1,57 @@
+{
+  "title": "Advanced Complexity Theory Quiz",
+  "description": "MCQs covering Cook’s Theorem, space complexity classes, Savitch’s theorem, and L, NL, Co-NL.",
+  "heading": "Cook’s Theorem in ToC - Practice Questions",
+  "questions": [
+    {
+      "question": "Cook’s Theorem proves that which problem is NP-Complete?",
+      "options": ["Traveling Salesman Problem", "Boolean Satisfiability (SAT)", "Graph Coloring", "Knapsack Problem"],
+      "answer": 1
+    },
+    {
+      "question": "What is the significance of Cook’s Theorem?",
+      "options": ["It proves P = NP", "It introduces NP class", "It shows SAT is NP-Complete", "It solves halting problem"],
+      "answer": 2
+    },
+    {
+      "question": "What does SPACE(f(n)) represent?",
+      "options": ["Time taken by algorithm", "Memory used by algorithm", "Number of steps", "Input size"],
+      "answer": 1
+    },
+    {
+      "question": "Which class represents problems solvable using polynomial space?",
+      "options": ["P", "NP", "PSPACE", "EXPTIME"],
+      "answer": 2
+    },
+    {
+      "question": "Which relationship is true?",
+      "options": ["P ⊆ PSPACE", "PSPACE ⊆ P", "NP ⊆ L", "L ⊆ NP"],
+      "answer": 0
+    },
+    {
+      "question": "Savitch’s Theorem relates which two complexity classes?",
+      "options": ["P and NP", "L and NL", "NSPACE and SPACE", "NP and Co-NP"],
+      "answer": 2
+    },
+    {
+      "question": "Savitch’s Theorem states that NSPACE(f(n)) is contained in:",
+      "options": ["SPACE(f(n))", "SPACE(f(n)^2)", "TIME(f(n))", "NP"],
+      "answer": 1
+    },
+    {
+      "question": "What does L represent in complexity theory?",
+      "options": ["Linear time", "Logarithmic space", "Large problems", "Limited computation"],
+      "answer": 1
+    },
+    {
+      "question": "Which class contains decision problems solvable in nondeterministic logarithmic space?",
+      "options": ["L", "NL", "Co-NL", "PSPACE"],
+      "answer": 1
+    },
+    {
+      "question": "What is a key property of NL and Co-NL?",
+      "options": ["They are different classes", "They are equal", "NL is subset of Co-NL only", "Co-NL is empty"],
+      "answer": 1
+    }
+  ]
+}
