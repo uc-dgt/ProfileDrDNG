@@ -1,0 +1,57 @@
+{
+  "title": "TRANSPORT & SESSION LAYER PROTOCOLS",
+  "description": "MCQs covering transport protocols (TCP, UDP, SCTP, MPTCP, DCCP) and session/application layer protocols (TLS, DTLS, HTTP, CoAP, MQTT, XMPP) for IoT and web communication.",
+  "heading": "Transport & Session Layer Protocols in IoT Practice",
+  "questions": [
+    {
+      "question": "Which transport protocol provides reliable, connection-oriented communication?",
+      "options": ["UDP", "TCP", "DCCP", "CoAP"],
+      "answer": 1
+    },
+    {
+      "question": "What is the main advantage of UDP over TCP?",
+      "options": ["Reliability", "Congestion control", "Low latency", "Error correction"],
+      "answer": 2
+    },
+    {
+      "question": "What does MPTCP (Multipath TCP) allow?",
+      "options": ["Encryption of packets", "Use of multiple network paths simultaneously", "Faster DNS resolution", "Packet compression"],
+      "answer": 1
+    },
+    {
+      "question": "Which protocol is designed for message-oriented, reliable communication with multi-streaming support?",
+      "options": ["UDP", "SCTP", "DCCP", "MQTT"],
+      "answer": 1
+    },
+    {
+      "question": "What is the primary purpose of TLS?",
+      "options": ["Routing packets", "Providing encryption and secure communication", "Assigning IP addresses", "Compressing data"],
+      "answer": 1
+    },
+    {
+      "question": "DTLS is mainly used to secure which type of protocol?",
+      "options": ["TCP-based protocols", "UDP-based protocols", "HTTP only", "FTP only"],
+      "answer": 1
+    },
+    {
+      "question": "Which application/session layer protocol is widely used for web communication?",
+      "options": ["MQTT", "HTTP", "CoAP", "AMQP"],
+      "answer": 1
+    },
+    {
+      "question": "Which protocol is specifically designed for constrained devices in IoT environments?",
+      "options": ["HTTP", "XMPP", "CoAP", "SCTP"],
+      "answer": 2
+    },
+    {
+      "question": "Which protocol uses a publish/subscribe messaging model and is lightweight for IoT?",
+      "options": ["AMQP", "MQTT", "HTTP", "DCCP"],
+      "answer": 1
+    },
+    {
+      "question": "Which protocol is commonly used for real-time messaging and presence information?",
+      "options": ["XMPP", "TCP", "UDP", "TLS"],
+      "answer": 0
+    }
+  ]
+}
