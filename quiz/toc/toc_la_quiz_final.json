@@ -85,6 +85,114 @@
       "question": "Explain Pushdown Automata (PDA) and show equivalence between PDA and CFG.",
       "sampleAnswer": "**Pushdown Automaton (PDA):**\n\n**Definition:** A PDA is a 7-tuple M = (Q, Σ, Γ, δ, q0, Z₀, F) where:\n- Q: Finite set of states\n- Σ: Input alphabet\n- Γ: Stack alphabet\n- δ: Q × Σε × Γε → P(Q × Γ*) (transition function)\n- q0 ∈ Q: Start state\n- Z₀ ∈ Γ: Initial stack symbol\n- F ⊆ Q: Accepting states\n\n**PDA Configuration:** (q, w, γ) where:\n- q ∈ Q: Current state\n- w ∈ Σ*: Remaining input\n- γ ∈ Γ*: Stack content (leftmost = top)\n\n**Move:** (q, aw, Zγ) ⊢ (p, w, βγ) if (p, β) ∈ δ(q, a, Z) for a ∈ Σε\n\n**Acceptance Modes:**\n1. **Final state acceptance:** PDA accepts if after processing entire input, it is in an accepting state (stack can be anything)\n2. **Empty stack acceptance:** PDA accepts if stack becomes empty (state can be anything)\n3. Both modes are equivalent (can convert between them)\n\n**Example PDA for {aⁿbⁿ | n ≥ 0}:**\nQ = {q0, q1, q2}\nΣ = {a, b}\nΓ = {Z₀, A}\nδ:\n(q0, a, Z₀) → (q0, AZ₀)  (push A for first a)\n(q0, a, A) → (q0, AA)   (push A for each a)\n(q0, b, A) → (q1, ε)    (pop A for first b)\n(q1, b, A) → (q1, ε)    (pop A for remaining b's)\n(q1, ε, Z₀) → (q2, ε)   (accept when stack empty)\nF = {q2}\n\n**Equivalence of PDA and CFG:**\n\n**Theorem:** A language L is context-free if and only if there exists a PDA that accepts L.\n\n**Part 1: CFG → PDA**\n\nGiven CFG G = (V, Σ, R, S), construct PDA M with a single state that accepts by empty stack.\n\nConstruction:\n- Q = {q}\n- Stack alphabet Γ = V ∪ Σ\n- Initial stack symbol: S\n- Transitions:\n  1. For each production A → α in R: δ(q, ε, A) contains (q, α)\n  2. For each terminal a ∈ Σ: δ(q, a, a) = (q, ε)\n\n**Intuition:** PDA simulates leftmost derivation:\n- Nonterminals on top: replace using production (ε transition)\n- Terminals on top: match with input and pop\n\n**Example CFG:** S → aSb | ε\nPDA:\nδ(q, ε, S) → (q, aSb) and (q, ε)\nδ(q, a, a) → (q, ε)\nδ(q, b, b) → (q, ε)\nInitial: (q, input, S)\n\n**Proof sketch:** For any derivation S ⇒* w, PDA can simulate it step by step, matching terminals with input.\n\n**Part 2: PDA → CFG**\n\nGiven PDA M = (Q, Σ, Γ, δ, q0, Z₀, F) that accepts by final state, construct CFG G.\n\n**Idea:** Nonterminals represent computations from one state to another while popping a stack symbol.\n\n**Construction:**\n- Nonterminal [p, X, q] meaning: starting in state p with X on top, we end in state q after popping X\n- Start symbol S → [q0, Z₀, q] for all q ∈ F\n\n**Productions:**\n\nFor each transition (r, γ) ∈ δ(p, a, X) where a ∈ Σε:\n- Case 1: γ = ε (pop X)\n  Add: [p, X, r] → a\n- Case 2: γ = Y₁Y₂...Yₖ (k ≥ 1, push sequence)\n  For all sequences of states r₁, r₂, ..., rₖ ∈ Q:\n  Add: [p, X, rₖ] → a [r, Y₁, r₁] [r₁, Y₂, r₂] ... [rₖ₋₁, Yₖ, rₖ]\n\n**Meaning:**\n- From p, reading a (or ε), pop X, push Y₁...Yₖ, go to r\n- Then pop Y₁...Yₖ in order through intermediate states\n\n**Example PDA (aⁿbⁿ) to CFG:**\nPDA has states: q0, q1, q2\nTransitions:\n1. δ(q0, a, Z₀) = (q0, AZ₀)\n2. δ(q0, a, A) = (q0, AA)\n3. δ(q0, b, A) = (q1, ε)\n4. δ(q1, b, A) = (q1, ε)\n5. δ(q1, ε, Z₀) = (q2, ε)\n\nNonterminals: [q0, Z₀, q2], [q0, A, q0], [q0, A, q1], [q1, A, q1], etc.\n\nProductions from transition 1 (γ = AZ₀):\n[q0, Z₀, q2] → a [q0, A, r₁] [r₁, Z₀, q2] for all r₁\nThis yields S → a A q₀ Z₀ q₂ (simplifies to S → aSb)\n\n**Equivalence Diagram:**\n\n```\nCFG ───(Part 1)───→ PDA\n  ↑                    │\n  │                    │\n  └───(Part 2)────────┘\n```\n\n**Importance:**\n- Foundation for parser generators (YACC, Bison)\n- Language design and implementation\n- Formal verification of programming language syntax\n- Natural language processing models",
       "marks": 10
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Define Turing Machine and explain its formal definition with a neat diagram.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Explain the Church-Turing thesis and its significance in computability theory.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Describe different variants of Turing machines and prove their equivalence.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Explain recursive and recursively enumerable languages with examples.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Define the halting problem and prove that it is undecidable.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 3,
+      "topic": "TURING MACHINES & COMPUTABILITY",
+      "question": "Explain undecidable problems with suitable examples in computation theory.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Explain the concept of complexity classes and their importance in computation.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Define computability and intractability with suitable examples.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Explain time complexity analysis and its role in algorithm efficiency.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Define classes P, NP, and Co-NP with examples and relationships.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Discuss NP-complete problems and their significance in computational complexity.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 4,
+      "topic": "COMPLEXITY THEORY - PART 1",
+      "question": "Explain the relationship between decision problems and complexity classes.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "State and explain Cook's Theorem and its importance in NP-completeness.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "Explain PSPACE and SPACE complexity classes with examples.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "State and prove Savitch's Theorem and discuss its implications.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "Explain the complexity classes L, NL, and Co-NL with examples.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "Discuss space complexity and its comparison with time complexity.",
+      "sampleAnswer": "Answers will be uploaded later."
+    },
+    {
+      "unit": 5,
+      "topic": "COMPLEXITY THEORY - PART 2",
+      "question": "Explain reductions and their role in proving NP-completeness (Cook's theorem context).",
+      "sampleAnswer": "Answers will be uploaded later."
     }
   ]
 }

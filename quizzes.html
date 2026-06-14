@@ -953,6 +953,74 @@ const quizzes = [
         featured: true
     },
     {
+        id: 16,
+        title: "IoT Long Answer Practice",
+        description: "Detailed 10-mark answers for all five IoT units covering XaaS, architecture, protocols, security, and smart applications.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "longanswer",
+        typeName: "Long Answer",
+        icon: "LA",
+        color: "#6c4a00",
+        questionsCount: 25,
+        difficulty: "Advanced",
+        tags: ["Long Answers", "10 Marks", "IoT"],
+        quizPath: "iot/iot_la_quiz_final",
+        quizPage: "saquiz.html",
+        featured: true
+    },
+    {
+        id: 17,
+        title: "IoT Short Answer Practice",
+        description: "30 short answer questions covering all five IoT units for quick revision and exam preparation.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "sa",
+        typeName: "Short Answer",
+        icon: "SA",
+        color: "#8a5a00",
+        questionsCount: 30,
+        difficulty: "Intermediate",
+        tags: ["Short Answers", "IoT", "All Units"],
+        quizPath: "iot/iot_sa_quiz_final",
+        quizPage: "saquiz.html",
+        featured: true
+    },
+    {
+        id: 18,
+        title: "IoT Transport & Session Layer Protocols",
+        description: "MCQs on TCP, UDP, SCTP, MPTCP, DCCP, TLS, DTLS, HTTP, CoAP, MQTT, and XMPP protocols.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "mcq",
+        typeName: "MCQ",
+        icon: "MCQ",
+        color: "#f0ad4e",
+        questionsCount: 10,
+        difficulty: "Intermediate",
+        tags: ["Transport Layer", "MQTT", "CoAP"],
+        quizPath: "iot/iot_quiz4",
+        quizPage: "quiz.html",
+        featured: true
+    },
+    {
+        id: 19,
+        title: "IoT Service Layer Protocols & Security",
+        description: "MCQs on oneM2M, ETSI M2M, OMA, BBF standards and security in IEEE 802.15.4, 6LoWPAN, and RPL.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "mcq",
+        typeName: "MCQ",
+        icon: "MCQ",
+        color: "#f0ad4e",
+        questionsCount: 10,
+        difficulty: "Intermediate",
+        tags: ["Service Layer", "Security", "oneM2M"],
+        quizPath: "iot/iot_quiz5",
+        quizPage: "quiz.html",
+        featured: true
+    },
+    {
         id: 1,
         title: "Theory of Computation (ToC) - Fill in the Blanks",
         description: "Test your knowledge of Theory of Computation with fill-in-the-blank questions on automata, grammars, and pumping lemma.",
@@ -1154,7 +1222,7 @@ function filterQuizzes() {
             matchesFilter = true;
         } else if (currentFilter === "fillblank" && quiz.type === "fillblank") {
             matchesFilter = true;
-        } else if (currentFilter === "sa" && quiz.type === "sa") {
+        } else if (currentFilter === "sa" && (quiz.type === "sa" || quiz.type === "longanswer")) {
             matchesFilter = true;
         } else if (currentFilter === "mcq" && (quiz.type === "mcq" || quiz.type === "truefalse")) {
             matchesFilter = true;
@@ -1251,18 +1319,23 @@ function bindQuizCardActions(container) {
 function renderFeaturedQuizzes() {
     const grid = document.getElementById("featuredQuizGrid");
     const count = document.getElementById("featuredQuizzesCount");
-    const featured = getFeaturedQuizzes();
+    const section = document.getElementById("featuredQuizzesSection");
+
+    // Apply the same subject/type/search filter as the main grid, but only over featured quizzes
+    const featured = filterQuizzes().filter(function(quiz) {
+        return quiz.featured;
+    });
 
     if (count) {
         count.textContent = `${featured.length} featured`;
     }
 
-    if (!grid) {
-        return;
+    // Hide the whole section when nothing matches
+    if (section) {
+        section.style.display = featured.length ? '' : 'none';
     }
 
-    if (!featured.length) {
-        grid.innerHTML = '<div class="empty-state"><h3>No featured quizzes yet</h3><p>New quizzes will appear here first.</p></div>';
+    if (!grid) {
         return;
     }
 
@@ -1308,12 +1381,14 @@ document.querySelectorAll(".filter-btn").forEach(function(button) {
         });
         button.classList.add("active");
         currentFilter = button.dataset.filter;
+        renderFeaturedQuizzes();
         renderQuizzes();
     });
 });
 
 document.getElementById("searchInput").addEventListener("input", function(event) {
     currentSearch = event.target.value.trim();
+    renderFeaturedQuizzes();
     renderQuizzes();
 });
 

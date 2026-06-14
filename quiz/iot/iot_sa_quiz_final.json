@@ -1,0 +1,187 @@
+{
+  "title": "Short Answer Questions | IoT (Unit Wise)",
+  "heading": "Short Answer Practice - IoT (All Units)",
+  "description": "30 short answer questions covering Unit 1 to Unit 5 of IoT. Perfect for quick revision and exam preparation.",
+  "questions": [
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "Name any one short-range communication technology used in IoT.",
+      "sampleAnswer": "Bluetooth / Zigbee / NFC / BLE"
+    },
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "Expand IPv6.",
+      "sampleAnswer": "Internet Protocol Version 6"
+    },
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "What is IoT?",
+      "sampleAnswer": "IoT is a network of interconnected physical devices that collect and exchange data over the internet."
+    },
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "What is M2M communication?",
+      "sampleAnswer": "Machine-to-Machine communication refers to direct communication between devices without human intervention."
+    },
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "What is XaaS in IoT?",
+      "sampleAnswer": "Everything as a Service model where computing resources are delivered over the internet."
+    },
+    {
+      "unit": 1,
+      "topic": "OVERVIEW",
+      "question": "What is IoT analytics used for?",
+      "sampleAnswer": "To analyze sensor data and extract meaningful insights for decision-making."
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What are the main views in IoT reference architecture?",
+      "sampleAnswer": "Functional, Information, Deployment, Operational views"
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What is Functional View in IoT architecture?",
+      "sampleAnswer": "It defines system functions and their relationships."
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What is Deployment View?",
+      "sampleAnswer": "It describes physical distribution of IoT components."
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What is Operational View?",
+      "sampleAnswer": "It describes runtime behavior of IoT systems."
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What is Data Visualization in IoT?",
+      "sampleAnswer": "Representation of data in graphical form for analysis."
+    },
+    {
+      "unit": 2,
+      "topic": "REFERENCE ARCHITECTURE",
+      "question": "What is a Reference Model in IoT?",
+      "sampleAnswer": "A conceptual framework defining structure and behavior of IoT systems."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is 6LoWPAN?",
+      "sampleAnswer": "IPv6 over Low Power Wireless Personal Area Networks."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is Zigbee used for?",
+      "sampleAnswer": "Low-power short-range wireless communication."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is IPv6?",
+      "sampleAnswer": "A 128-bit Internet Protocol version used for large address space."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is BLE?",
+      "sampleAnswer": "Bluetooth Low Energy used for low-power wireless communication."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is RPL?",
+      "sampleAnswer": "Routing Protocol for Low-Power and Lossy Networks."
+    },
+    {
+      "unit": 3,
+      "topic": "DATA LINK & NETWORK LAYER",
+      "question": "What is MAC layer?",
+      "sampleAnswer": "Layer responsible for controlling access to the communication medium."
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "Which protocol is used for lightweight publish-subscribe messaging in IoT?",
+      "sampleAnswer": "MQTT"
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "What is the purpose of CoAP protocol?",
+      "sampleAnswer": "To enable communication for constrained IoT devices."
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "What is TCP?",
+      "sampleAnswer": "A reliable, connection-oriented transport protocol."
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "What is UDP?",
+      "sampleAnswer": "A lightweight, connectionless transport protocol."
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "What is TLS?",
+      "sampleAnswer": "Transport Layer Security used for encryption and secure communication."
+    },
+    {
+      "unit": 4,
+      "topic": "TRANSPORT & SESSION LAYER",
+      "question": "What is DTLS?",
+      "sampleAnswer": "Datagram TLS used to secure UDP communication."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is 6LoWPAN?",
+      "sampleAnswer": "Adaptation layer enabling IPv6 over low-power networks."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is the purpose of data analytics in IoT?",
+      "sampleAnswer": "To extract insights and support decision-making."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is oneM2M?",
+      "sampleAnswer": "A global standard for IoT service layer interoperability."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is ETSI M2M?",
+      "sampleAnswer": "A standard for machine-to-machine communication architecture."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is MAC security in IEEE 802.15.4?",
+      "sampleAnswer": "It ensures confidentiality and integrity of data at link layer."
+    },
+    {
+      "unit": 5,
+      "topic": "SERVICE LAYER & SECURITY",
+      "question": "What is the application layer in IoT?",
+      "sampleAnswer": "The layer that provides services and interfaces to end users."
+    }
+  ]
+}
