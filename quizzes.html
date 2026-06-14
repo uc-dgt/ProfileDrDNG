@@ -263,6 +263,84 @@ body {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+.featured-section {
+    padding-top: 34px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.section-kicker {
+    color: var(--primary-accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.section-summary {
+    color: var(--ink-muted);
+    max-width: 760px;
+}
+
+.featured-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(13, 71, 161, 0.08);
+    color: var(--primary-dark);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.quiz-card.featured-card {
+    position: relative;
+    border: 1px solid rgba(13, 71, 161, 0.14);
+    box-shadow: 0 10px 24px rgba(13, 71, 161, 0.08);
+}
+
+.quiz-card.featured-card .quiz-card-header {
+    min-height: 210px;
+}
+
+.featured-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     border: 1px solid var(--border-soft);
     position: relative;
@@ -687,7 +765,7 @@ body {
 <header class="hero">
     <div class="wrap">
         <h1>Quiz For Students</h1>
-        <p>Explore the available Theory of Computation and IoT quizzes. Each card points to a matching local JSON file in the quiz folder.</p>
+        <p>Explore the latest Theory of Computation, IoT, and Short Answer quizzes. New final sets are surfaced first so the newest practice material is easy to find.</p>
         <div class="hero-stats">
             <div class="stat-item">
                 <div class="stat-number" id="totalQuizzesCount">0</div>
@@ -714,6 +792,7 @@ body {
                 <button class="filter-btn" data-filter="iot" type="button">IoT & Architecture</button>
                 <button class="filter-btn" data-filter="teaching_exam" type="button">Teaching Exam</button>
                 <button class="filter-btn" data-filter="fillblank" type="button">Fill in Blanks</button>
+                <button class="filter-btn" data-filter="sa" type="button">Short Answer</button>
                 <button class="filter-btn" data-filter="mcq" type="button">MCQ / True-False</button>
             </div>
             <div class="search-box">
@@ -723,6 +802,20 @@ body {
         </div>
     </div>
 </div>
+
+<section class="section featured-section" id="featuredQuizzesSection">
+    <div class="wrap">
+        <div class="section-heading">
+            <div>
+                <div class="section-kicker">Latest additions</div>
+                <h2 class="section-title">New quizzes at the top</h2>
+                <p class="section-summary">Short Answer practice and the final versions of TOC and IoT quizzes are grouped here so the newest material is always the first thing you see.</p>
+            </div>
+            <div class="featured-pill" id="featuredQuizzesCount">0 featured</div>
+        </div>
+        <div class="featured-grid" id="featuredQuizGrid"></div>
+    </div>
+</section>
 
 <section class="section">
     <div class="wrap">
@@ -750,6 +843,142 @@ body {
 
 <script>
 const quizzes = [
+    {
+        id: 8,
+        title: "Theory of Computation Long Answer Practice",
+        description: "Detailed 10-mark answers for automata theory, computability, and complexity theory.",
+        subject: "toc",
+        subjectName: "Theory of Computation",
+        type: "longanswer",
+        typeName: "Long Answer",
+        icon: "LA",
+        color: "#6c4a00",
+        questionsCount: 10,
+        difficulty: "Advanced",
+        tags: ["Long Answers", "10 Marks", "Theory of Computation"],
+        quizPath: "toc/toc_la_quiz_final",
+        quizPage: "saquiz.html",
+        featured: true
+    },
+    {
+        id: 9,
+        title: "Theory of Computation Short Answer Practice",
+        description: "Practice written answers on automata, grammars, Turing machines, and complexity classes.",
+        subject: "toc",
+        subjectName: "Theory of Computation",
+        type: "sa",
+        typeName: "Short Answer",
+        icon: "SA",
+        color: "#8a5a00",
+        questionsCount: 8,
+        difficulty: "Intermediate",
+        tags: ["Short Answers", "Theory of Computation"],
+        quizPath: "toc/toc_sa_quiz_final",
+        quizPage: "saquiz.html",
+        featured: true
+    },
+    {
+        id: 10,
+        title: "Theory of Computation Final Fill in the Blanks",
+        description: "Fresh fill-in-the-blank practice for TOC covering finite automata, grammars, Turing machines, and complexity theory.",
+        subject: "toc",
+        subjectName: "Theory of Computation",
+        type: "fillblank",
+        typeName: "Fill in the Blanks",
+        icon: "TOC",
+        color: "#1f6392",
+        questionsCount: 25,
+        difficulty: "Intermediate",
+        tags: ["Final", "Automata", "Grammars"],
+        quizPath: "toc/toc_fb_quiz_final",
+        quizPage: "fbquiz.html",
+        featured: true
+    },
+    {
+        id: 11,
+        title: "Theory of Computation Final Practice Quiz",
+        description: "Updated MCQ practice on DFA, NFA, CFGs, Turing machines, and complexity classes.",
+        subject: "toc",
+        subjectName: "Theory of Computation",
+        type: "mcq",
+        typeName: "MCQ",
+        icon: "MCQ",
+        color: "#f0ad4e",
+        questionsCount: 50,
+        difficulty: "Intermediate",
+        tags: ["Final", "DFA", "CFG"],
+        quizPath: "toc/toc_quiz_final",
+        quizPage: "quiz.html",
+        featured: true
+    },
+    {
+        id: 12,
+        title: "Theory of Computation Final True/False Challenge",
+        description: "Quick true/false revision on regular languages, grammars, Turing machines, and complexity theory.",
+        subject: "toc",
+        subjectName: "Theory of Computation",
+        type: "truefalse",
+        typeName: "True-False",
+        icon: "TF",
+        color: "#d9534f",
+        questionsCount: 25,
+        difficulty: "Advanced",
+        tags: ["Final", "Regular Languages", "Turing Machines"],
+        quizPath: "toc/toc_tf_quiz_final",
+        quizPage: "tfquiz.html",
+        featured: true
+    },
+    {
+        id: 13,
+        title: "IoT Final Fill in the Blanks",
+        description: "Updated fill-in-the-blank practice for IoT architecture, protocols, and standards.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "fillblank",
+        typeName: "Fill in the Blanks",
+        icon: "IOT",
+        color: "#2b9348",
+        questionsCount: 25,
+        difficulty: "Intermediate",
+        tags: ["Final", "IoT Architecture", "Protocols"],
+        quizPath: "iot/iot_fb_quiz_final",
+        quizPage: "fbquiz.html",
+        featured: true
+    },
+    {
+        id: 14,
+        title: "IoT Final Practice Quiz",
+        description: "Fresh MCQ practice on gateways, reference models, networking layers, and security.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "mcq",
+        typeName: "MCQ",
+        icon: "MCQ",
+        color: "#f0ad4e",
+        questionsCount: 50,
+        difficulty: "Intermediate",
+        tags: ["Final", "IoT", "Reference Model"],
+        quizPath: "iot/iot_quiz_final",
+        quizPage: "quiz.html",
+        featured: true
+    },
+    {
+        id: 15,
+        title: "IoT Final True/False Challenge",
+        description: "Fast revision of IoT architecture, low-power networking, and protocol concepts.",
+        subject: "iot",
+        subjectName: "IoT & Architecture",
+        type: "truefalse",
+        typeName: "True-False",
+        icon: "TF",
+        color: "#d9534f",
+        questionsCount: 24,
+        difficulty: "Intermediate",
+        tags: ["Final", "IoT Protocols", "Low Power"],
+        quizPath: "iot/iot_tf_quiz_final",
+        quizPage: "tfquiz.html",
+        featured: true
+    },
     {
         id: 1,
         title: "Theory of Computation (ToC) - Fill in the Blanks",
@@ -925,6 +1154,8 @@ function escapeHtml(value) {
 }
 
 function getTypeLabel(type) {
+    if (type === "longanswer") return "Long Answer";
+    if (type === "sa") return "Short Answer";
     if (type === "fillblank") return "Fill in the Blanks";
     if (type === "truefalse") return "True-False";
     return "MCQ";
@@ -950,6 +1181,8 @@ function filterQuizzes() {
             matchesFilter = true;
         } else if (currentFilter === "fillblank" && quiz.type === "fillblank") {
             matchesFilter = true;
+        } else if (currentFilter === "sa" && quiz.type === "sa") {
+            matchesFilter = true;
         } else if (currentFilter === "mcq" && (quiz.type === "mcq" || quiz.type === "truefalse")) {
             matchesFilter = true;
         }
@@ -973,19 +1206,17 @@ function filterQuizzes() {
     });
 }
 
-function renderQuizzes() {
-    const grid = document.getElementById("quizGrid");
-    const filtered = filterQuizzes();
+function getFeaturedQuizzes() {
+    return quizzes.filter(function(quiz) {
+        return quiz.featured;
+    });
+}
 
-    if (!filtered.length) {
-        grid.innerHTML = '<div class="empty-state"><h3>No quizzes found</h3><p>Try a different search term or filter.</p></div>';
-        return;
-    }
-
-    grid.innerHTML = filtered.map(function(quiz) {
-        return `
-            <div class="quiz-card" data-id="${quiz.id}">
+function createQuizCard(quiz, isFeatured) {
+    return `
+            <div class="quiz-card${isFeatured ? ' featured-card' : ''}" data-id="${quiz.id}">
                 <div class="quiz-card-header" style="background: linear-gradient(135deg, ${quiz.color}, var(--primary-dark));">
+                    ${isFeatured ? '<div class="featured-tag">Latest</div>' : ''}
                     <div class="quiz-badge">${escapeHtml(quiz.typeName)}</div>
                     <div class="quiz-subject">${escapeHtml(quiz.subjectName)}</div>
                     <div class="quiz-title">${escapeHtml(quiz.icon)} ${escapeHtml(quiz.title)}</div>
@@ -1008,9 +1239,14 @@ function renderQuizzes() {
                 </div>
             </div>
         `;
-    }).join("");
+}
 
-    document.querySelectorAll(".quiz-card").forEach(function(card) {
+function bindQuizCardActions(container) {
+    if (!container) {
+        return;
+    }
+
+    container.querySelectorAll(".quiz-card").forEach(function(card) {
         card.addEventListener("click", function(event) {
             if (event.target.classList.contains("start-btn")) {
                 return;
@@ -1026,7 +1262,7 @@ function renderQuizzes() {
         });
     });
 
-    document.querySelectorAll(".start-btn").forEach(function(button) {
+    container.querySelectorAll(".start-btn").forEach(function(button) {
         button.addEventListener("click", function(event) {
             event.stopPropagation();
             const quizId = parseInt(button.dataset.id, 10);
@@ -1038,6 +1274,47 @@ function renderQuizzes() {
             }
         });
     });
+}
+
+function renderFeaturedQuizzes() {
+    const grid = document.getElementById("featuredQuizGrid");
+    const count = document.getElementById("featuredQuizzesCount");
+    const featured = getFeaturedQuizzes();
+
+    if (count) {
+        count.textContent = `${featured.length} featured`;
+    }
+
+    if (!grid) {
+        return;
+    }
+
+    if (!featured.length) {
+        grid.innerHTML = '<div class="empty-state"><h3>No featured quizzes yet</h3><p>New quizzes will appear here first.</p></div>';
+        return;
+    }
+
+    grid.innerHTML = featured.map(function(quiz) {
+        return createQuizCard(quiz, true);
+    }).join("");
+
+    bindQuizCardActions(grid);
+}
+
+function renderQuizzes() {
+    const grid = document.getElementById("quizGrid");
+    const filtered = filterQuizzes();
+
+    if (!filtered.length) {
+        grid.innerHTML = '<div class="empty-state"><h3>No quizzes found</h3><p>Try a different search term or filter.</p></div>';
+        return;
+    }
+
+    grid.innerHTML = filtered.map(function(quiz) {
+        return createQuizCard(quiz, false);
+    }).join("");
+
+    bindQuizCardActions(grid);
 }
 
 function openQuizModal(quiz) {
@@ -1082,6 +1359,7 @@ document.getElementById("startQuizBtn").addEventListener("click", function() {
 });
 
 updateStats();
+renderFeaturedQuizzes();
 renderQuizzes();
 </script>
 <script src="nav-mobile.js?v=20260416"></script>

@@ -1,0 +1,157 @@
+{
+  "title": "Short Answer Questions | Theory of Computation",
+  "heading": "Short Answer Practice - TOC",
+  "description": "Practice short answer questions for Theory of Computation. Write your answers and compare with sample solutions.",
+  "questions": [
+    {
+      "topic": "Basic Definitions",
+      "question": "What is an alphabet in formal language theory?",
+      "sampleAnswer": "An alphabet is a finite, non-empty set of symbols. It is denoted by the Greek letter Σ (sigma). For example, Σ = {0, 1} is a binary alphabet, and Σ = {a, b, c} is an alphabetic alphabet. Strings are formed by concatenating symbols from the alphabet."
+    },
+    {
+      "topic": "Basic Definitions",
+      "question": "Define a string.",
+      "sampleAnswer": "A string (or word) is a finite sequence of symbols drawn from an alphabet. The length of a string is the number of symbols in it. The empty string, denoted by ε (epsilon), is a string of length zero. For example, '0110' is a string over the alphabet {0, 1}."
+    },
+    {
+      "topic": "Finite Automata",
+      "question": "What is a deterministic finite automaton (DFA)?",
+      "sampleAnswer": "A DFA is a 5-tuple (Q, Σ, δ, q0, F) where: Q is a finite set of states, Σ is a finite alphabet, δ: Q × Σ → Q is the transition function (deterministic), q0 ∈ Q is the start state, and F ⊆ Q is the set of accepting states. For each state and input symbol, there is exactly one transition."
+    },
+    {
+      "topic": "Finite Automata",
+      "question": "What is the difference between DFA and NDFA?",
+      "sampleAnswer": "DFA (Deterministic Finite Automaton) has exactly one transition per input symbol from each state. NDFA/NFA (Nondeterministic Finite Automaton) can have zero, one, or multiple transitions for a given symbol, and can have ε-transitions. Every NFA can be converted to an equivalent DFA, though the DFA may have exponentially more states."
+    },
+    {
+      "topic": "Finite Automata",
+      "question": "What is meant by minimization of automata?",
+      "sampleAnswer": "Minimization of automata is the process of reducing the number of states in a DFA while preserving the language it accepts. It involves identifying and merging equivalent states (states that produce the same behavior for all input strings). The minimized DFA is unique and has the fewest possible states."
+    },
+    {
+      "topic": "Regular Expressions",
+      "question": "What is a regular expression?",
+      "sampleAnswer": "A regular expression is a pattern that describes a regular language. It uses symbols from an alphabet along with operators: concatenation (·), alternation (|), and Kleene star (*). For example, (0+1)* represents all binary strings, and 01* represents the set {0, 01, 011, 0111, ...}."
+    },
+    {
+      "topic": "Context-Free Grammars",
+      "question": "What is a context-free grammar (CFG)?",
+      "sampleAnswer": "A CFG is a 4-tuple (V, Σ, R, S) where: V is a finite set of nonterminal variables, Σ is a finite set of terminals (alphabet), R is a finite set of production rules of the form A → α (where A ∈ V and α ∈ (V ∪ Σ)*), and S ∈ V is the start symbol. CFGs generate context-free languages."
+    },
+    {
+      "topic": "Context-Free Grammars",
+      "question": "What is a derivation tree?",
+      "sampleAnswer": "A derivation tree (or parse tree) is a graphical representation of how a string is derived from the start symbol of a CFG. The root is the start symbol. Internal nodes are nonterminals, children correspond to the right-hand side of a production, and leaves are terminals or ε. It shows the syntactic structure of the string."
+    },
+    {
+      "topic": "Context-Free Grammars",
+      "question": "Define ambiguity in grammar.",
+      "sampleAnswer": "A grammar is ambiguous if there exists at least one string in its language that has two or more distinct derivation trees (or leftmost derivations). Ambiguity can cause problems in compilers and parsing. Some languages are inherently ambiguous (all grammars for them are ambiguous)."
+    },
+    {
+      "topic": "Pushdown Automata",
+      "question": "What is a pushdown automaton (PDA)?",
+      "sampleAnswer": "A PDA is a finite automaton with an additional stack memory. It is defined as a 7-tuple (Q, Σ, Γ, δ, q0, Z0, F). PDAs recognize context-free languages. They can be deterministic (DPDA) or nondeterministic (NPDA). DPDAs recognize deterministic CFLs, while NPDAs recognize all CFLs."
+    },
+    {
+      "topic": "Normal Forms",
+      "question": "What is Chomsky Normal Form (CNF)?",
+      "sampleAnswer": "Chomsky Normal Form is a standardized form for CFGs where every production is of the form: A → BC (two nonterminals) or A → a (one terminal), where A, B, C are nonterminals and a is a terminal. Additionally, S → ε is allowed if ε is in the language. Every CFG can be converted to CNF."
+    },
+    {
+      "topic": "Normal Forms",
+      "question": "What is Greibach Normal Form (GNF)?",
+      "sampleAnswer": "Greibach Normal Form is a form where every production is of the form A → aα, where A is a nonterminal, a is a terminal, and α is a string of zero or more nonterminals. In GNF, every production begins with a terminal. Every CFG (without ε) can be converted to GNF, which is useful for constructing PDAs."
+    },
+    {
+      "topic": "Turing Machines",
+      "question": "What is a Turing Machine?",
+      "sampleAnswer": "A Turing Machine (TM) is a mathematical model of computation consisting of: an infinite tape divided into cells, a read/write head, a finite set of states, and a transition function. It can read, write, and move left/right on the tape. TMs define the class of computable functions and are used to decide recursive languages."
+    },
+    {
+      "topic": "Turing Machines",
+      "question": "What is the Church-Turing Thesis?",
+      "sampleAnswer": "The Church-Turing Thesis states that any function that can be computed by an algorithm (effectively computable) can be computed by a Turing Machine. It is a thesis, not a theorem, and forms the foundation of computability theory. Most computational models (lambda calculus, recursive functions, etc.) are equivalent in power."
+    },
+    {
+      "topic": "Recursive Languages",
+      "question": "What are recursively enumerable languages?",
+      "sampleAnswer": "Recursively enumerable (RE) languages are languages accepted by Turing Machines. For a string in the language, the TM halts and accepts. For a string not in the language, the TM may either reject or loop forever (never halt). RE languages are also called Turing-recognizable languages."
+    },
+    {
+      "topic": "Recursive Languages",
+      "question": "Define recursive language.",
+      "sampleAnswer": "A recursive language (decidable language) is a language for which there exists a Turing Machine that always halts (either accepts or rejects) for every input string. Recursive languages are a subset of recursively enumerable languages. They can be decided by an algorithm that always terminates."
+    },
+    {
+      "topic": "Decidability",
+      "question": "What is the Halting Problem?",
+      "sampleAnswer": "The Halting Problem asks: Given a description of a Turing Machine and its input, determine whether the machine will eventually halt (stop) or run forever. Alan Turing proved that the Halting Problem is undecidable - no algorithm can solve it for all possible inputs. This is the most famous undecidable problem."
+    },
+    {
+      "topic": "Decidability",
+      "question": "What is an undecidable problem?",
+      "sampleAnswer": "An undecidable problem is a decision problem for which no algorithm can provide a correct yes/no answer for all possible inputs. Such problems cannot be solved by any Turing Machine. Examples include the Halting Problem, the Post Correspondence Problem, and the problem of checking equivalence of two CFGs."
+    },
+    {
+      "topic": "Complexity Theory",
+      "question": "What is time complexity?",
+      "sampleAnswer": "Time complexity measures the number of computational steps (or time) an algorithm takes to run as a function of the input size n. It is expressed using Big-O notation, such as O(n), O(n²), O(2ⁿ). It helps classify problems into complexity classes like P, NP, and EXP based on how quickly the required time grows."
+    },
+    {
+      "topic": "Complexity Classes",
+      "question": "Define class P.",
+      "sampleAnswer": "P (Polynomial time) is the class of decision problems that can be solved by a deterministic Turing Machine in time polynomial in the input size (O(nᵏ) for some constant k). Problems in P are considered 'tractable' or efficiently solvable. Examples include sorting, searching, and shortest path problems."
+    },
+    {
+      "topic": "Complexity Classes",
+      "question": "What is class NP?",
+      "sampleAnswer": "NP (Nondeterministic Polynomial time) is the class of decision problems whose solutions can be verified by a deterministic Turing Machine in polynomial time. Equivalently, they can be solved by a nondeterministic Turing Machine in polynomial time. Examples include the Traveling Salesman Problem, Boolean Satisfiability (SAT), and Subset Sum."
+    },
+    {
+      "topic": "Complexity Classes",
+      "question": "What is Co-NP?",
+      "sampleAnswer": "Co-NP is the class of decision problems whose complements are in NP. That is, a problem is in Co-NP if a 'no' answer can be verified efficiently. It is unknown whether NP = Co-NP. Examples of Co-NP problems include checking if a Boolean formula is a tautology and checking if a number is composite."
+    },
+    {
+      "topic": "Complexity Theory",
+      "question": "What is meant by intractable problems?",
+      "sampleAnswer": "Intractable problems are decision problems that cannot be solved in polynomial time by any algorithm. They are considered 'hard' problems. This includes NP-hard and NP-complete problems (unless P = NP). Such problems may require exponential time (O(2ⁿ) or worse), making them impractical for large inputs."
+    },
+    {
+      "topic": "Computability",
+      "question": "What is computability?",
+      "sampleAnswer": "Computability theory (recursion theory) studies what problems can be solved by computers (Turing Machines) and what problems cannot. It distinguishes between computable (decidable) functions that have an algorithm and uncomputable (undecidable) functions that do not, such as the Halting Problem."
+    },
+    {
+      "topic": "NP-Completeness",
+      "question": "What does Cook's Theorem state?",
+      "sampleAnswer": "Cook's Theorem (1971) states that the Boolean Satisfiability Problem (SAT) is NP-complete. It was the first problem proven to be NP-complete. The theorem shows that if SAT can be solved in polynomial time, then every problem in NP can be solved in polynomial time (P = NP)."
+    },
+    {
+      "topic": "Space Complexity",
+      "question": "What is PSPACE?",
+      "sampleAnswer": "PSPACE is the class of decision problems that can be solved by a deterministic Turing Machine using polynomial space (memory) as a function of input size. PSPACE contains both P and NP, but it is unknown whether they are equal. PSPACE-complete problems include Quantified Boolean Formula (QBF) and Generalized Geography."
+    },
+    {
+      "topic": "Space Complexity",
+      "question": "What is SPACE complexity?",
+      "sampleAnswer": "SPACE complexity measures the amount of memory (tape cells) an algorithm uses as a function of input size n. Like time complexity, it is expressed using Big-O notation. SPACE(f(n)) is the set of problems solvable by a deterministic Turing Machine using O(f(n)) space. Non-deterministic space is denoted by NSPACE."
+    },
+    {
+      "topic": "Space Complexity",
+      "question": "What is Savitch's Theorem?",
+      "sampleAnswer": "Savitch's Theorem states that for any function f(n) ≥ log n, NSPACE(f(n)) ⊆ SPACE(f(n)²). This means that nondeterministic space can be simulated deterministically with only a quadratic increase in space. A key consequence is that NPSPACE = PSPACE, so the nondeterministic version of PSPACE is equivalent to PSPACE."
+    },
+    {
+      "topic": "Space Complexity",
+      "question": "What is class L?",
+      "sampleAnswer": "L (LOGSPACE) is the class of decision problems that can be solved by a deterministic Turing Machine using O(log n) space (logarithmic space). These are problems that require only a constant number of pointers into the input. Examples include checking if a path exists in an undirected graph and checking balanced parentheses."
+    },
+    {
+      "topic": "Space Complexity",
+      "question": "What is NL?",
+      "sampleAnswer": "NL (Nondeterministic LOGSPACE) is the class of decision problems solvable by a nondeterministic Turing Machine using O(log n) space. It is known that L ⊆ NL ⊆ P. The most famous NL-complete problem is the directed graph reachability (st-connectivity) problem. Immerman-Szelepcsényi theorem proves that NL = Co-NL."
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "title": "Theory of Computation True or False Quiz",
+  "description": "True/False practice questions covering Finite Automata, Context Free Grammars, Turing Machines, and Complexity Classes.",
+  "heading": "Theory of Computation True or False",
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "Every NDFA can be converted into an equivalent DFA.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The subset construction algorithm guarantees that any non-deterministic finite automaton can be simulated by an equivalent deterministic finite automaton."
+    },
+    {
+      "type": "truefalse",
+      "question": "A string is a set of symbols taken from an alphabet.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: A string is an ordered finite sequence of symbols, not an unordered set."
+    },
+    {
+      "type": "truefalse",
+      "question": "DFA may have multiple transitions for the same input symbol from a state.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: By definition, a Deterministic Finite Automaton (DFA) has exactly one unique transition out of a state for each input symbol."
+    },
+    {
+      "type": "truefalse",
+      "question": "Moore and Mealy machines are equivalent in computational power.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Any Mealy machine can be converted into an equivalent Moore machine and vice versa, meaning they accept or generate matching regular language translations."
+    },
+    {
+      "type": "truefalse",
+      "question": "Pumping Lemma is used to prove that a language is regular.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The Pumping Lemma is a negative test used via contradiction to prove a language is non-regular; it cannot prove a language is regular."
+    },
+    {
+      "type": "truefalse",
+      "question": "A derivation tree represents the structure of a string in CFG.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: A derivation tree (or parse tree) graphically presents the hierarchical grammatical structure of a valid string derived from a Context-Free Grammar."
+    },
+    {
+      "type": "truefalse",
+      "question": "A grammar is ambiguous if a string has more than one parse tree.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Structural ambiguity is defined by the existence of two or more distinct parse trees (or leftmost/rightmost derivations) for at least one string in the language."
+    },
+    {
+      "type": "truefalse",
+      "question": "Chomsky Normal Form allows productions of the form A → ABC.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Chomsky Normal Form (CNF) strictly limits production configurations to either a single terminal (A → a) or exactly two non-terminals (A → BC)."
+    },
+    {
+      "type": "truefalse",
+      "question": "Pushdown Automata use a stack as memory.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: A PDA is essentially a finite automaton augmented with an external LIFO (Last-In, First-Out) stack memory structure."
+    },
+    {
+      "type": "truefalse",
+      "question": "Every CFG has an equivalent PDA.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Context-Free Languages are precisely the class of languages recognized by Pushdown Automata, meaning every CFG can be converted into a matching PDA."
+    },
+    {
+      "type": "truefalse",
+      "question": "A Turing Machine has infinite tape.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: A Turing Machine features a tape memory structure that is unbounded and extends infinitely, acting as unrestricted workspace memory."
+    },
+    {
+      "type": "truefalse",
+      "question": "The Halting Problem is decidable.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Alan Turing famously proved that the Halting Problem is undecidable; there exists no general algorithm capable of correctly guessing if every arbitrary program stalls or executes indefinitely."
+    },
+    {
+      "type": "truefalse",
+      "question": "Recursive languages are always decidable.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: By definition, a language is recursive if and only if there is a corresponding Turing Machine that decides it, meaning it halts and gives a clear answer for all inputs."
+    },
+    {
+      "type": "truefalse",
+      "question": "Recursively enumerable languages are always decidable.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Recursively enumerable languages are only semi-decidable; their corresponding Turing Machine is guaranteed to halt if the string belongs to the language, but it may loop infinitely if it does not."
+    },
+    {
+      "type": "truefalse",
+      "question": "All variants of Turing Machines are equivalent in power.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Variations like multi-tape, non-deterministic, or semi-infinite tape Turing Machines change the design efficiency or ease, but they all accept the exact same class of languages."
+    },
+    {
+      "type": "truefalse",
+      "question": "Class P consists of problems solvable in polynomial time.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The complexity class P contains all decision problems that can be solved efficiently on a deterministic Turing machine within an upper bound of O(n^k) computational steps."
+    },
+    {
+      "type": "truefalse",
+      "question": "NP problems cannot be verified in polynomial time.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The core definition of NP (Nondeterministic Polynomial time) is the group of problems whose solution certificates can be verified quickly in polynomial time by a deterministic machine."
+    },
+    {
+      "type": "truefalse",
+      "question": "Co-NP contains complements of NP problems.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Co-NP is the computational complexity class containing the decision problem complements of the problems in class NP."
+    },
+    {
+      "type": "truefalse",
+      "question": "Intractable problems are always unsolvable.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Intractable problems are solvable, but they cannot be completed efficiently; they require worse-than-polynomial scaling resources (like exponential time) as input size grows."
+    },
+    {
+      "type": "truefalse",
+      "question": "Time complexity measures the amount of memory used by an algorithm.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Time complexity measures the scale of operational execution steps or computation runtime; memory utilization is measured separately by space complexity."
+    },
+    {
+      "type": "truefalse",
+      "question": "Cook’s Theorem proves that SAT is NP-complete.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Cook's Theorem established the Boolean Satisfiability problem (SAT) as the very first NP-complete problem, laying the groundwork for complexity theory."
+    },
+    {
+      "type": "truefalse",
+      "question": "PSPACE includes problems solvable using polynomial space.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: PSPACE represents the class of decision problems solvable by a Turing Machine using a total memory storage footprint bounded by a polynomial function of input size."
+    },
+    {
+      "type": "truefalse",
+      "question": "Savitch’s Theorem shows NP = P.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Savitch's Theorem relates deterministic and non-deterministic space boundaries, proving that NSPACE(f(n)) ⊆ SPACE(f(n)^2). It does not resolve the P vs NP time issue."
+    },
+    {
+      "type": "truefalse",
+      "question": "L class consists of problems solvable in logarithmic space.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The complexity class L denotes problems that can be processed using only a highly restricted workspace memory footprint scaling to O(log n)."
+    },
+    {
+      "type": "truefalse",
+      "question": "NL is the same as deterministic log-space class.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: NL represents Nondeterministic Logarithmic space, which utilizes parallel computational choice steps. Whether L equals NL remains an open question in computer science."
+    }
+  ]
+}

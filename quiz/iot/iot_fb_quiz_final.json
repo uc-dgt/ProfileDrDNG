@@ -1,0 +1,132 @@
+{
+  "title": "IoT Concepts & Architecture Fill in the Blanks Quiz",
+  "description": "Fill in the blanks practice questions covering IoT architecture, reference models, networking layers, protocols, and security.",
+  "heading": "Concept of IoT & Architecture Fill in the Blanks",
+  "questions": [
+    {
+      "question": "The term __________ refers to providing services like software and infrastructure over the internet.",
+      "correctAnswer": "XaaS",
+      "hint": "Stands for 'Everything as a Service'."
+    },
+    {
+      "question": "IoT systems mainly connect physical devices using __________ and internet technologies.",
+      "correctAnswer": "sensors",
+      "hint": "Devices that detect or measure physical properties."
+    },
+    {
+      "question": "M2M stands for __________ communication.",
+      "correctAnswer": "Machine-to-Machine",
+      "hint": "Direct communication between devices without human intervention."
+    },
+    {
+      "question": "IoT analytics is used to convert data into __________.",
+      "correctAnswer": "knowledge",
+      "hint": "The third level of the DIKW pyramid structure."
+    },
+    {
+      "question": "A key IoT design principle is __________, which allows system expansion.",
+      "correctAnswer": "scalability",
+      "hint": "The ability to handle a growing number of devices and data streams."
+    },
+    {
+      "question": "The IoT Reference Architecture includes Functional View, Information View, and __________ View.",
+      "correctAnswer": "Deployment",
+      "hint": "Focuses on the physical distribution of components."
+    },
+    {
+      "question": "IoT reference model provides a __________ representation of the system.",
+      "correctAnswer": "conceptual",
+      "hint": "An abstract, high-level structural blueprint."
+    },
+    {
+      "question": "The view that focuses on runtime behavior is the __________ view.",
+      "correctAnswer": "operational",
+      "hint": "Describes how components work together dynamically at runtime."
+    },
+    {
+      "question": "Data visualization in IoT helps in __________ of information.",
+      "correctAnswer": "analysis",
+      "hint": "Transforming complex raw metrics into actionable analytical insights."
+    },
+    {
+      "question": "Interaction and remote control are part of the IoT __________ layer.",
+      "correctAnswer": "application",
+      "hint": "The user-facing layer that delivers operational services."
+    },
+    {
+      "question": "6LoWPAN enables IPv6 over __________ networks.",
+      "correctAnswer": "low-power wireless",
+      "hint": "Optimized networks handling constrained, energy-conscious radio standard packets."
+    },
+    {
+      "question": "IPv6 uses __________-bit addressing.",
+      "correctAnswer": "128",
+      "hint": "Provides a vastly expanded space compared to 32-bit schemes."
+    },
+    {
+      "question": "RPL is a routing protocol used in __________ networks.",
+      "correctAnswer": "low-power and lossy",
+      "hint": "Networks containing constrained links prone to high packet loss rates (LLNs)."
+    },
+    {
+      "question": "Bluetooth Low Energy is designed for __________ consumption.",
+      "correctAnswer": "low power",
+      "hint": "Engineered for small electronics relying on long-term coin-cell batteries."
+    },
+    {
+      "question": "Zigbee is based on IEEE __________ standard.",
+      "correctAnswer": "802.15.4",
+      "hint": "The underlying standard defining physical and MAC layer properties for low-rate wireless PANs."
+    },
+    {
+      "question": "__________ is a lightweight messaging protocol widely used in IoT for publish-subscribe communication.",
+      "correctAnswer": "MQTT",
+      "hint": "Uses a centralized broker to pass structured updates on named paths/topics."
+    },
+    {
+      "question": "__________ is used for assigning IP addresses automatically to devices in a network.",
+      "correctAnswer": "DHCP",
+      "hint": "Dynamically coordinates structural identification blocks across networks."
+    },
+    {
+      "question": "TCP is a __________-oriented protocol.",
+      "correctAnswer": "connection",
+      "hint": "Requires an established hand-shake sequence to verify data sequencing reliability."
+    },
+    {
+      "question": "CoAP is designed for __________ devices.",
+      "correctAnswer": "constrained",
+      "hint": "Devices running with severe memory, computation, and battery resource footprints."
+    },
+    {
+      "question": "DTLS is used to secure __________-based communication.",
+      "correctAnswer": "UDP",
+      "hint": "Provides transport layer protection over datagram-based execution paths."
+    },
+    {
+      "question": "The __________ layer is responsible for transmitting data between devices over a network.",
+      "correctAnswer": "network",
+      "hint": "Handles addressing and packet routing functions across network infrastructures."
+    },
+    {
+      "question": "oneM2M is a __________ layer standard for IoT.",
+      "correctAnswer": "service",
+      "hint": "Focuses on middleware layer standardization across different device domains."
+    },
+    {
+      "question": "ETSI M2M focuses on __________-to-machine communication architecture.",
+      "correctAnswer": "machine",
+      "hint": "Provides structural architecture rules for automated device interactions."
+    },
+    {
+      "question": "802.15.4 MAC security ensures __________ and integrity of data.",
+      "correctAnswer": "confidentiality",
+      "hint": "Protects sensitive telemetry assets from unauthorized eavesdropping via frame payload encryption."
+    },
+    {
+      "question": "The application layer provides __________ services to end users.",
+      "correctAnswer": "application",
+      "hint": "Delivers context-specific system logic and user interface actions directly to consumers."
+    }
+  ]
+}

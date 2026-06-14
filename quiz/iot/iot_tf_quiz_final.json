@@ -1,0 +1,175 @@
+{
+  "title": "IoT Concepts & Architecture True or False Quiz",
+  "description": "True/False practice questions covering IoT architecture, reference models, networking layers, protocols, and security principles.",
+  "heading": "Concept of IoT & Architecture True or False",
+  "questions": [
+    {
+      "type": "truefalse",
+      "question": "IPv6 is preferred over IPv4 in IoT because it provides a larger address space.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: IPv6 uses 128-bit addressing, providing a virtually inexhaustible pool of unique IP addresses required for billions of scaling IoT nodes."
+    },
+    {
+      "type": "truefalse",
+      "question": "IoT architecture ignores standards and interoperability requirements.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Standards and interoperability are core pillars of IoT architecture to ensure heterogeneous devices can connect, communicate, and work together seamlessly."
+    },
+    {
+      "type": "truefalse",
+      "question": "M2M communication refers to machine-to-machine interaction without human involvement.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Machine-to-Machine (M2M) communication emphasizes automated data exchange and interaction directly between physical hardware devices without requiring human action."
+    },
+    {
+      "type": "truefalse",
+      "question": "XaaS stands for “Everything as a Service” model in IoT systems.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: XaaS represents Everything (or Anything) as a Service, moving business models from capital-expenditure product ownership to operational-expenditure service utilities."
+    },
+    {
+      "type": "truefalse",
+      "question": "IoT analytics is used to convert raw data into useful insights.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The primary objective of IoT analytics is processing and modeling massive streams of raw sensory metrics into structured information, knowledge, and actionable business insights."
+    },
+    {
+      "type": "truefalse",
+      "question": "oneM2M is a standard related to the service layer in IoT architecture.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: oneM2M is a major global partnership project standardizing the horizontal service layer (middleware) to ensure inter-domain application interoperability."
+    },
+    {
+      "type": "truefalse",
+      "question": "IoT reference architecture includes Functional, Information, Deployment, and Operational views.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Reference architectures like the Industrial Internet Reference Architecture (IIRA) outline these distinct viewpoints to cover technical component layout, data flows, implementation distribution, and runtime management."
+    },
+    {
+      "type": "truefalse",
+      "question": "Functional view describes physical device placement in IoT systems.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The Functional view maps out structural abstract system functionalities and components. Physical device mapping and network asset distributions are instead described by the Deployment view."
+    },
+    {
+      "type": "truefalse",
+      "question": "Deployment view focuses on how components are physically distributed.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The Deployment view specifically addresses how structural processing nodes, software components, networks, and hardware modules are physically deployed and distributed in the operational ecosystem."
+    },
+    {
+      "type": "truefalse",
+      "question": "Zigbee is commonly used for low-power, short-range communication in IoT.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Zigbee is a low-power, low-data-rate wireless network standard designed for short distances, commonly configured in mesh networks for home and building automation."
+    },
+    {
+      "type": "truefalse",
+      "question": "IPv6 has a smaller address space than IPv4.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: IPv4 relies on a restricted 32-bit architecture (~4.3 billion addresses), while IPv6 expands to a massive 128-bit architecture space."
+    },
+    {
+      "type": "truefalse",
+      "question": "6LoWPAN enables IPv6 communication over low-power wireless networks.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: 6LoWPAN provides translation header compression layer functions, allowing small, payload-constrained IEEE 802.15.4 low-power radio frames to transmit native IPv6 packets."
+    },
+    {
+      "type": "truefalse",
+      "question": "Bluetooth Low Energy is designed for high power consumption applications.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: Bluetooth Low Energy (BLE) was engineered from the ground up specifically to support hyper-low power consumption for small hardware assets running off long-term small cell batteries."
+    },
+    {
+      "type": "truefalse",
+      "question": "RPL is a routing protocol designed for low-power and lossy networks.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: RPL is a distance-vector network routing standard intentionally tuned for Low-power and Lossy Networks (LLNs) that face limited computing power and prone error links."
+    },
+    {
+      "type": "truefalse",
+      "question": "UDP is a connection-oriented protocol used in the transport layer.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: UDP is a lightweight, connectionless transport protocol that prioritizes fast delivery speed and low latency over stream initialization verification or transmission receipts."
+    },
+    {
+      "type": "truefalse",
+      "question": "CoAP is a heavy-weight protocol designed for high-bandwidth applications.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: The Constrained Application Protocol (CoAP) is intentionally designed as an ultra-lightweight web transfer protocol for resource-constrained embedded systems handling tight network overhead limits."
+    },
+    {
+      "type": "truefalse",
+      "question": "MQTT uses a publish-subscribe communication model.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Message Queuing Telemetry Transport (MQTT) avoids direct point-to-point connections by coordinating communication through an intermediary central broker using a decoupled publish-subscribe schema."
+    },
+    {
+      "type": "truefalse",
+      "question": "TCP provides reliable and connection-oriented communication.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Transmission Control Protocol (TCP) uses an initial three-way handshake sequence to ensure streaming validity, error checking, and verified arrival receipts."
+    },
+    {
+      "type": "truefalse",
+      "question": "DTLS is used to secure UDP-based communication.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: Datagram Transport Layer Security (DTLS) intentionally adapts stream-based TLS cryptographic framework logic to cleanly secure packet datagram structures."
+    },
+    {
+      "type": "truefalse",
+      "question": "ETSI M2M is related to IoT service layer architecture.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: ETSI M2M specifies a comprehensive, standards-based framework focusing on machine-to-machine service capabilities and common structural middleware layer requirements."
+    },
+    {
+      "type": "truefalse",
+      "question": "MAC layer security in IEEE 802.15.4 ensures confidentiality and integrity.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The IEEE 802.15.4 MAC layer incorporates strong cryptographic protection modes like AES-CCM to safeguard frame data payloads from tampering and unauthorized intercept visibility."
+    },
+    {
+      "type": "truefalse",
+      "question": "6LoWPAN does not support any security mechanisms.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: 6LoWPAN heavily interacts with and relies on link-layer encryption capabilities, along with upper transport/network schemes like DTLS or IPSec to ensure proper structural protection."
+    },
+    {
+      "type": "truefalse",
+      "question": "RPL is only used for application layer communication.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False: RPL is explicitly a Network layer routing protocol designed to construct and maintain logical destination routing trees for data packet forwarding."
+    },
+    {
+      "type": "truefalse",
+      "question": "The application layer provides services and interfaces to end users in IoT systems.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True: The application layer is the top user-facing tier responsible for rendering specific business logic services, interfaces, operational triggers, and tracking dashboards directly to consumer endpoints."
+    }
+  ]
+}

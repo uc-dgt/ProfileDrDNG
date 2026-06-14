@@ -1,0 +1,257 @@
+{
+  "title": "Theory of Computation Comprehensive Quiz",
+  "description": "Comprehensive practice questions spanning Finite Automata, Context Free Grammars, Turing Machines, Complexity Classes, and Cook's Theorem.",
+  "heading": "Theory of Computation Practice Questions (Units 1-5)",
+  "questions": [
+    {
+      "question": "Which of the following represents a finite set of symbols?",
+      "options": ["Language", "String", "Alphabet", "Grammar"],
+      "answer": 2
+    },
+    {
+      "question": "A string is best defined as:",
+      "options": ["Set of languages", "Finite sequence of symbols", "Infinite sequence", "Automaton"],
+      "answer": 1
+    },
+    {
+      "question": "Chomsky hierarchy classifies languages into:",
+      "options": ["2 types", "3 types", "4 types", "5 types"],
+      "answer": 2
+    },
+    {
+      "question": "Which machine accepts regular languages?",
+      "options": ["PDA", "Turing Machine", "Finite Automata", "LBA"],
+      "answer": 2
+    },
+    {
+      "question": "NDFA differs from DFA in:",
+      "options": ["Input alphabet", "Determinism", "Output", "Memory"],
+      "answer": 1
+    },
+    {
+      "question": "DFA and NDFA are:",
+      "options": ["Not equivalent", "Equivalent in power", "NDFA is stronger", "DFA is weaker"],
+      "answer": 1
+    },
+    {
+      "question": "Minimization of DFA reduces:",
+      "options": ["Alphabet", "States", "Language", "Transitions only"],
+      "answer": 1
+    },
+    {
+      "question": "Moore and Mealy machines differ in:",
+      "options": ["Input", "Output placement", "Alphabet", "States only"],
+      "answer": 1
+    },
+    {
+      "question": "Kleene’s Theorem relates:",
+      "options": ["CFG and PDA", "RE and FA", "TM and PDA", "DFA and CFG"],
+      "answer": 1
+    },
+    {
+      "question": "Pumping Lemma is used to:",
+      "options": ["Prove regularity", "Convert DFA to NFA", "Prove non-regularity", "Minimize DFA"],
+      "answer": 2
+    },
+    {
+      "question": "CFG stands for:",
+      "options": ["Computer Flow Grammar", "Context Free Grammar", "Control Flow Grammar", "Complex Formal Grammar"],
+      "answer": 1
+    },
+    {
+      "question": "A derivation tree is also called:",
+      "options": ["State diagram", "Parse tree", "Transition graph", "Stack tree"],
+      "answer": 1
+    },
+    {
+      "question": "Ambiguity in grammar means:",
+      "options": ["No derivation", "Multiple parse trees", "Infinite strings", "No terminal symbols"],
+      "answer": 1
+    },
+    {
+      "question": "Chomsky Normal Form allows production rules of type:",
+      "options": ["A → a", "A → BC", "Both", "None"],
+      "answer": 2
+    },
+    {
+      "question": "Greibach Normal Form begins productions with:",
+      "options": ["Non-terminal", "Terminal", "ε only", "Empty symbol"],
+      "answer": 1
+    },
+    {
+      "question": "PDA uses:",
+      "options": ["Queue", "Stack", "Array", "Graph"],
+      "answer": 1
+    },
+    {
+      "question": "CFG is equivalent to:",
+      "options": ["DFA", "PDA", "TM", "FA"],
+      "answer": 1
+    },
+    {
+      "question": "LEX is used for:",
+      "options": ["Parsing", "Lexical analysis", "Compilation only", "Execution"],
+      "answer": 1
+    },
+    {
+      "question": "YACC is used for:",
+      "options": ["Code generation", "Lexical analysis", "Syntax analysis", "Optimization"],
+      "answer": 2
+    },
+    {
+      "question": "CFL closure property includes closure under:",
+      "options": ["Union", "Intersection (always)", "Complement", "None"],
+      "answer": 0
+    },
+    {
+      "question": "Turing Machine was proposed by:",
+      "options": ["Chomsky", "Turing", "Kleene", "Moore"],
+      "answer": 1
+    },
+    {
+      "question": "A TM has:",
+      "options": ["Finite memory", "Infinite tape", "Stack only", "Queue only"],
+      "answer": 1
+    },
+    {
+      "question": "Church-Turing thesis relates to:",
+      "options": ["Grammar", "Computability", "Automata", "Parsing"],
+      "answer": 1
+    },
+    {
+      "question": "Recursive languages are:",
+      "options": ["Not decidable", "Decidable", "Non-recognizable", "Context-free only"],
+      "answer": 1
+    },
+    {
+      "question": "Recursively enumerable languages are:",
+      "options": ["Always decidable", "May not halt", "Finite only", "Regular only"],
+      "answer": 1
+    },
+    {
+      "question": "Halting problem is:",
+      "options": ["Decidable", "Undecidable", "Regular", "Context-free"],
+      "answer": 1
+    },
+    {
+      "question": "TM variants are:",
+      "options": ["Less powerful", "Equivalent in power", "Not useful", "Finite only"],
+      "answer": 1
+    },
+    {
+      "question": "TM can simulate:",
+      "options": ["DFA only", "PDA only", "Any computation", "No computation"],
+      "answer": 2
+    },
+    {
+      "question": "Undecidable problems mean:",
+      "options": ["Always solvable", "No algorithm exists", "Finite steps", "Regular languages"],
+      "answer": 1
+    },
+    {
+      "question": "TM uses:",
+      "options": ["Stack", "Tape", "Queue", "Registers only"],
+      "answer": 1
+    },
+    {
+      "question": "Complexity theory studies:",
+      "options": ["Grammar", "Resource usage", "Automata only", "Parsing"],
+      "answer": 1
+    },
+    {
+      "question": "P class problems are solved in:",
+      "options": ["Exponential time", "Polynomial time", "Infinite time", "Non-deterministic time only"],
+      "answer": 1
+    },
+    {
+      "question": "NP class means:",
+      "options": ["Not Polynomial", "Nondeterministic Polynomial", "No Problem", "Non-Processing"],
+      "answer": 1
+    },
+    {
+      "question": "NP problems are:",
+      "options": ["Easy to verify", "Impossible", "Unsolvable", "Regular"],
+      "answer": 0
+    },
+    {
+      "question": "Co-NP contains problems whose:",
+      "options": ["Complement is in NP", "Are easy", "Are undecidable", "Are regular"],
+      "answer": 0
+    },
+    {
+      "question": "Intractable problems are:",
+      "options": ["Easy", "Hard to solve efficiently", "Always solvable", "Regular"],
+      "answer": 1
+    },
+    {
+      "question": "Time complexity measures:",
+      "options": ["Memory", "Time required", "Alphabet size", "Stack depth"],
+      "answer": 1
+    },
+    {
+      "question": "P vs NP problem asks:",
+      "options": ["Memory vs stack", "P = NP or not", "DFA vs NFA", "CFG vs PDA"],
+      "answer": 1
+    },
+    {
+      "question": "NP-complete problems are:",
+      "options": ["Easiest in NP", "Hardest in NP", "Undecidable", "Regular"],
+      "answer": 1
+    },
+    {
+      "question": "Complexity classes depend on:",
+      "options": ["Input size", "Alphabet", "Grammar", "Stack only"],
+      "answer": 0
+    },
+    {
+      "question": "Cook’s Theorem is related to:",
+      "options": ["DFA", "NP-completeness", "PDA", "CFG"],
+      "answer": 1
+    },
+    {
+      "question": "Cook’s Theorem proves that SAT is:",
+      "options": ["Regular", "NP-complete", "Decidable", "Finite"],
+      "answer": 1
+    },
+    {
+      "question": "SPACE complexity measures:",
+      "options": ["Time", "Memory usage", "Alphabet", "Grammar size"],
+      "answer": 1
+    },
+    {
+      "question": "PSPACE includes problems solvable in:",
+      "options": ["Polynomial space", "Exponential time only", "Finite time", "Regular space"],
+      "answer": 0
+    },
+    {
+      "question": "Savitch’s Theorem relates:",
+      "options": ["NP and P", "NSPACE and SPACE", "DFA and NFA", "CFG and PDA"],
+      "answer": 1
+    },
+    {
+      "question": "L class refers to:",
+      "options": ["Linear space", "Logarithmic space", "Large space", "Language class"],
+      "answer": 1
+    },
+    {
+      "question": "NL means:",
+      "options": ["Non-Language", "Nondeterministic Log space", "Normal Language", "Natural Language"],
+      "answer": 1
+    },
+    {
+      "question": "Co-NL is:",
+      "options": ["Equal to NL", "Complement of NL", "Equal to P", "Undecidable"],
+      "answer": 1
+    },
+    {
+      "question": "PSPACE contains:",
+      "options": ["Only regular languages", "Problems solvable using polynomial memory", "Only DFA", "Only CFG"],
+      "answer": 1
+    },
+    {
+      "question": "Cook’s Theorem connects SAT with:",
+      "options": ["DFA", "NP-completeness theory", "PDA", "Regular expressions"],
+      "answer": 1
+    }
+  ]
+}

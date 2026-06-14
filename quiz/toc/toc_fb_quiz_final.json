@@ -1,0 +1,132 @@
+{
+  "title": "Theory of Computation Fill in the Blanks Quiz",
+  "description": "Fill in the blanks practice questions covering Finite Automata, CFGs, Turing Machines, and Complexity Classes.",
+  "heading": "Theory of Computation Fill in the Blanks",
+  "questions": [
+    {
+      "question": "A finite non-empty set of symbols is called an ____________.",
+      "correctAnswer": "Alphabet",
+      "hint": "It is denoted by Sigma (Σ)."
+    },
+    {
+      "question": "A sequence of symbols from an alphabet is called a ____________.",
+      "correctAnswer": "String",
+      "hint": "It is a finite sequence, also sometimes called a word."
+    },
+    {
+      "question": "Chomsky classification divides languages into ____________ types.",
+      "correctAnswer": "Four",
+      "hint": "Classes range from Type-0 to Type-3."
+    },
+    {
+      "question": "A deterministic finite automaton has exactly ____________ transition for each input symbol.",
+      "correctAnswer": "one",
+      "hint": "There is no choice or ambiguity for the next state transition."
+    },
+    {
+      "question": "The process of reducing states in a DFA without changing its language is called ____________.",
+      "correctAnswer": "minimization",
+      "hint": "It creates an equivalent automaton with the smallest possible number of states."
+    },
+    {
+      "question": "A grammar that generates context-free languages is called ____________.",
+      "correctAnswer": "Context Free Grammar (CFG)",
+      "hint": "Its production rules are of the form A → α, where A is a single non-terminal."
+    },
+    {
+      "question": "The tree that shows derivation of a string is called a ____________.",
+      "correctAnswer": "Parse tree (Derivation tree)",
+      "hint": "A graphical representation of the sequential substitution steps."
+    },
+    {
+      "question": "A grammar is ____________ if a string has more than one parse tree.",
+      "correctAnswer": "Ambiguous",
+      "hint": "It provides multiple distinct structural meanings for the same input string."
+    },
+    {
+      "question": "A pushdown automaton uses a ____________ as memory structure.",
+      "correctAnswer": "Stack",
+      "hint": "A Last-In, First-Out (LIFO) storage structure."
+    },
+    {
+      "question": "Chomsky Normal Form allows productions of type A → BC or A → ____________.",
+      "correctAnswer": "a (terminal)",
+      "hint": "The right-hand side can only be exactly two variables or a single unit symbol."
+    },
+    {
+      "question": "A Turing Machine consists of an infinite ____________.",
+      "correctAnswer": "tape",
+      "hint": "An unbounded storage medium divided into sequential cells."
+    },
+    {
+      "question": "The Church-Turing thesis relates to ____________.",
+      "correctAnswer": "computability",
+      "hint": "It defines what can effectively be calculated by any mechanical device."
+    },
+    {
+      "question": "Languages accepted by Turing Machines are called ____________ languages.",
+      "correctAnswer": "recursively enumerable",
+      "hint": "Also known as Type-0 or semi-decidable languages."
+    },
+    {
+      "question": "The problem of deciding whether a program halts is called ____________ problem.",
+      "correctAnswer": "Halting",
+      "hint": "Alan Turing proved that this specific problem has no general algorithmic solution."
+    },
+    {
+      "question": "A problem for which no algorithm exists is called ____________.",
+      "correctAnswer": "Undecidable",
+      "hint": "It is impossible to construct a correct yes/no answer for every input instance."
+    },
+    {
+      "question": "Class P consists of problems solvable in ____________ time.",
+      "correctAnswer": "polynomial",
+      "hint": "Considered the baseline class for computationally tractable problems."
+    },
+    {
+      "question": "NP stands for ____________ Polynomial time.",
+      "correctAnswer": "Nondeterministic",
+      "hint": "Refers to the behavior of the abstract machine executing parallel choice routes."
+    },
+    {
+      "question": "Problems whose solutions can be verified quickly belong to class ____________.",
+      "correctAnswer": "NP",
+      "hint": "A deterministic machine can verify a given solution certificate in polynomial time."
+    },
+    {
+      "question": "Co-NP is the class of complements of problems in ____________.",
+      "correctAnswer": "NP",
+      "hint": "Includes problems whose 'no' instances can be verified in polynomial time."
+    },
+    {
+      "question": "Time complexity measures the amount of ____________ required by an algorithm.",
+      "correctAnswer": "time",
+      "hint": "Quantifies steps or runtime relative to the operational scale of input size."
+    },
+    {
+      "question": "Cook’s Theorem shows that SAT is ____________-complete.",
+      "correctAnswer": "NP",
+      "hint": "It was the first problem proven to be the hardest in class NP."
+    },
+    {
+      "question": "PSPACE refers to problems solvable using polynomial ____________.",
+      "correctAnswer": "space",
+      "hint": "Focuses on runtime memory constraints rather than execution step limits."
+    },
+    {
+      "question": "Savitch’s Theorem relates NSPACE with ____________ space.",
+      "correctAnswer": "deterministic",
+      "hint": "Shows that non-deterministic space can be simulated deterministically with a squaring factor."
+    },
+    {
+      "question": "The class L refers to problems solvable in ____________ space.",
+      "correctAnswer": "logarithmic",
+      "hint": "Deterministic memory proportional to log(n)."
+    },
+    {
+      "question": "NL is the class of problems solvable using ____________ logarithmic space.",
+      "correctAnswer": "nondeterministic",
+      "hint": "Corresponds to space scaling bounds using non-deterministic decision routes."
+    }
+  ]
+}

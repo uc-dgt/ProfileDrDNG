@@ -1,0 +1,257 @@
+{
+  "title": "IoT Architecture & Concepts Comprehensive Quiz",
+  "description": "Advanced MCQs covering 5-layer architecture, views, protocols (PHY/MAC, Network, Transport, Session, Service), design constraints, and security.",
+  "heading": "Concept of IoT & Architecture Question Bank",
+  "questions": [
+    {
+      "question": "Which of the following is a key design principle in IoT architecture?",
+      "options": ["Centralized processing", "Scalability and interoperability", "Limited connectivity", "Manual data handling"],
+      "answer": 1
+    },
+    {
+      "question": "In IoT systems, the role of gateways is to:",
+      "options": ["Replace sensors", "Provide user interfaces", "Perform protocol translation", "Store largescale data"],
+      "answer": 2
+    },
+    {
+      "question": "Which concept allows delivering computing resources like storage and processing over IoT?",
+      "options": ["M2M", "XaaS", "RPL", "ICMP"],
+      "answer": 1
+    },
+    {
+      "question": "IoT Reference Architecture view focusing on data structure and flow is:",
+      "options": ["Functional", "Deployment", "Information", "Operational"],
+      "answer": 2
+    },
+    {
+      "question": "A real-world IoT design constraint is:",
+      "options": ["Unlimited battery", "Infinite bandwidth", "Hardware limitations", "No latency issues"],
+      "answer": 2
+    },
+    {
+      "question": "IoT analytics primarily transforms data into:",
+      "options": ["Hardware", "Knowledge", "Signals", "Packets"],
+      "answer": 1
+    },
+    {
+      "question": "In IoT, M2M refers to:",
+      "options": ["Human-machine interaction", "Machine-to-machine communication", "Mobile-to-mobile", "Middleware-to-machine"],
+      "answer": 1
+    },
+    {
+      "question": "Which layer handles business processes in IoT?",
+      "options": ["Perception", "Application", "Business layer", "Network layer"],
+      "answer": 2
+    },
+    {
+      "question": "IoT scalability mainly depends on:",
+      "options": ["Device cost", "Architecture design", "Color of sensors", "UI design"],
+      "answer": 1
+    },
+    {
+      "question": "XaaS stands for:",
+      "options": ["Anything as a Service", "Exchange as a Service", "Extended as a Service", "Extra as a Service"],
+      "answer": 0
+    },
+    {
+      "question": "Functional view in IoT architecture defines:",
+      "options": ["Deployment sites", "System functions", "Hardware design", "IP addressing"],
+      "answer": 1
+    },
+    {
+      "question": "Deployment view focuses on:",
+      "options": ["Data flow", "Physical distribution of components", "Algorithms", "Security keys"],
+      "answer": 1
+    },
+    {
+      "question": "Operational view describes:",
+      "options": ["System runtime behavior", "Hardware specs", "Protocol design", "Sensors"],
+      "answer": 0
+    },
+    {
+      "question": "IoT architecture is primarily:",
+      "options": ["Monolithic", "Layered and modular", "Centralized only", "Static"],
+      "answer": 1
+    },
+    {
+      "question": "Which is NOT a design constraint in IoT?",
+      "options": ["Power limitation", "Bandwidth", "Unlimited storage", "Latency"],
+      "answer": 2
+    },
+    {
+      "question": "“Hardware is popular again” is due to:",
+      "options": ["Decline of software", "Rise of IoT and embedded systems", "Internet slowdown", "Cloud failure"],
+      "answer": 1
+    },
+    {
+      "question": "Data visualization in IoT is used for:",
+      "options": ["Sensor manufacturing", "Insight generation", "Protocol conversion", "Encryption"],
+      "answer": 1
+    },
+    {
+      "question": "Interaction in IoT refers to:",
+      "options": ["Sensor cleaning", "Remote control and user commands", "Cable setup", "CPU design"],
+      "answer": 1
+    },
+    {
+      "question": "Reference model is:",
+      "options": ["Physical system", "Conceptual abstraction", "Programming language", "Database"],
+      "answer": 1
+    },
+    {
+      "question": "IoT systems must support:",
+      "options": ["Static devices only", "Dynamic scalability", "No connectivity", "Manual processing"],
+      "answer": 1
+    },
+    {
+      "question": "Which protocol is used for low-power wireless communication?",
+      "options": ["Ethernet", "Bluetooth LE", "HTTP", "FTP"],
+      "answer": 1
+    },
+    {
+      "question": "6LoWPAN is used to:",
+      "options": ["Encrypt data", "Enable IPv6 over low-power networks", "Replace TCP", "Store data"],
+      "answer": 1
+    },
+    {
+      "question": "IPv6 provides:",
+      "options": ["Smaller address space", "Larger address space", "No routing", "No security"],
+      "answer": 1
+    },
+    {
+      "question": "RPL is used for:",
+      "options": ["Video streaming", "IoT routing", "File transfer", "Encryption"],
+      "answer": 1
+    },
+    {
+      "question": "CORPL improves:",
+      "options": ["CPU speed", "Routing efficiency", "Storage", "Display"],
+      "answer": 1
+    },
+    {
+      "question": "Zigbee is based on:",
+      "options": ["IEEE 802.15.4", "IEEE 802.11", "TCP", "LTE"],
+      "answer": 0
+    },
+    {
+      "question": "WirelessHART is used in:",
+      "options": ["Home networks", "Industrial automation", "Social media", "Gaming"],
+      "answer": 1
+    },
+    {
+      "question": "MAC layer controls:",
+      "options": ["IP addressing", "Medium access", "Encryption only", "Storage"],
+      "answer": 1
+    },
+    {
+      "question": "PHY layer deals with:",
+      "options": ["Applications", "Physical signal transmission", "Databases", "UI"],
+      "answer": 1
+    },
+    {
+      "question": "6TiSCH is related to:",
+      "options": ["Industrial IoT scheduling", "Web browsing", "Cloud storage", "Email"],
+      "answer": 0
+    },
+    {
+      "question": "Transport protocol with reliability is:",
+      "options": ["UDP", "TCP", "ICMP", "HTTP"],
+      "answer": 1
+    },
+    {
+      "question": "UDP advantage is:",
+      "options": ["Reliability", "Low latency", "Encryption", "Routing"],
+      "answer": 1
+    },
+    {
+      "question": "MQTT uses:",
+      "options": ["Peer-to-peer", "Publish/Subscribe", "Circuit switching", "FTP model"],
+      "answer": 1
+    },
+    {
+      "question": "CoApp is used for:",
+      "options": ["Heavy systems", "Constrained IoT devices", "Video streaming", "OS design"],
+      "answer": 1
+    },
+    {
+      "question": "TLS provides:",
+      "options": ["Routing", "Encryption", "Addressing", "Compression"],
+      "answer": 1
+    },
+    {
+      "question": "DTLS is for:",
+      "options": ["TCP", "UDP", "HTTP", "FTP"],
+      "answer": 1
+    },
+    {
+      "question": "SCTP supports:",
+      "options": ["Single stream", "Multi-streaming", "No reliability", "Only UDP"],
+      "answer": 1
+    },
+    {
+      "question": "HTTP is used in:",
+      "options": ["Web communication", "Sensor hardware", "Routing", "MAC layer"],
+      "answer": 0
+    },
+    {
+      "question": "AMQP is a:",
+      "options": ["Transport protocol", "Messaging protocol", "Routing protocol", "Sensor protocol"],
+      "answer": 1
+    },
+    {
+      "question": "XMPP is used for:",
+      "options": ["File storage", "Real-time messaging", "Encryption", "Addressing"],
+      "answer": 1
+    },
+    {
+      "question": "oneM2M primarily provides:",
+      "options": ["Physical layer", "Service layer standardization", "Routing", "Storage"],
+      "answer": 1
+    },
+    {
+      "question": "ETSI M2M focuses on:",
+      "options": ["Hardware", "Service architecture", "UI design", "Sensors"],
+      "answer": 1
+    },
+    {
+      "question": "BBF deals with:",
+      "options": ["Broadband standards", "Encryption", "AI", "Sensors"],
+      "answer": 0
+    },
+    {
+      "question": "OMA is related to:",
+      "options": ["Mobile service enablers", "Routing", "MAC", "IPv6"],
+      "answer": 0
+    },
+    {
+      "question": "MAC security ensures:",
+      "options": ["Speed", "Confidentiality and integrity", "Storage", "UI"],
+      "answer": 1
+    },
+    {
+      "question": "6LoWPAN security depends on:",
+      "options": ["Application layer", "Lower layer security", "Cloud", "DNS"],
+      "answer": 1
+    },
+    {
+      "question": "RPL security prevents:",
+      "options": ["UI attack", "Routing attacks", "Storage", "Hardware faults"],
+      "answer": 1
+    },
+    {
+      "question": "Sybil attack affects:",
+      "options": ["Routing networks", "UI", "Storage", "CPU"],
+      "answer": 0
+    },
+    {
+      "question": "Application layer provides:",
+      "options": ["Hardware", "User services", "Routing", "MAC"],
+      "answer": 1
+    },
+    {
+      "question": "MQTT belongs to:",
+      "options": ["Transport layer", "Application layer", "Network layer", "PHY layer"],
+      "answer": 1
+    }
+  ]
+}

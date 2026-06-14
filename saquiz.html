@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DKLQ8GG6H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DKLQ8GG6H');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Short Answer Questions practice for Theory of Computation and IoT. Test your knowledge with written answers and compare with sample solutions.">
+<meta name="keywords" content="short answer questions, theory of computation short questions, iot short questions, computer science practice, dr deena nath gupta">
+<meta name="author" content="Dr. Deena Nath Gupta">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0b2b3b">
+<link rel="canonical" href="https://deenanathgupta.in/short-answers.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Short Answer Questions | Dr. Deena Nath Gupta">
+<meta property="og:description" content="Practice short answer questions with sample solutions for exam preparation.">
+<meta property="og:url" content="https://deenanathgupta.in/short-answers.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>Short Answer Questions | Dr. Deena Nath Gupta - MUIT Noida</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary-dark:#0d47a1;
+--primary-light:#1565c0;
+--primary-mid:#0a3a82;
+--primary-accent:#00897b;
+--light-bg:#f7fafc;
+--border-soft:#e2e8f0;
+--navy:#0d47a1;
+--ink:#1a1a2e;
+--ink-muted:#4a5568;
+--gold:#d4a852;
+--success-green:#2e7d32;
+--error-red:#dc3545;
+--warning-orange:#f0ad4e;
+}
+
+*{
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Source Sans 3',sans-serif;
+background:var(--light-bg);
+color:var(--ink);
+font-size:15.5px;
+line-height:1.6;
+}
+
+.wrap{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+/* NAVBAR */
+.nav{
+background:rgba(247,250,252,0.96);
+padding:14px 0;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+border-bottom:1px solid var(--border-soft);
+backdrop-filter:blur(14px);
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.nav-brand{
+color:var(--navy);
+font-family:'Lora',serif;
+font-size:20px;
+font-weight:700;
+text-decoration:none;
+transition:opacity 0.2s;
+}
+
+.nav-brand:hover{
+opacity:0.8;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+color:var(--ink-muted);
+text-decoration:none;
+font-weight:500;
+font-size:14px;
+transition:color 0.2s, border-bottom 0.2s;
+border-bottom:2px solid transparent;
+padding-bottom:2px;
+}
+
+.nav-links a:hover{
+color:var(--navy);
+border-bottom-color:var(--gold);
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+background:var(--primary-dark);
+color:white;
+padding:30px 0;
+}
+
+.hero-grid{
+display:flex;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-monogram{
+width:70px;
+height:70px;
+border-radius:16px;
+background:var(--primary-accent);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-family:'Lora',serif;
+font-weight:700;
+}
+
+.hero-monogram img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:5px;
+display:block;
+}
+
+.hero-name{
+font-family:'Lora',serif;
+font-size:26px;
+font-weight:700;
+margin-bottom:5px;
+}
+
+.hero-role{
+opacity:.9;
+font-size:14px;
+}
+
+/* QUIZ CARD */
+.section{
+padding:40px 0;
+}
+
+.quiz-card{
+background:white;
+border-radius:12px;
+border:1px solid var(--border-soft);
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quiz-header{
+background:var(--primary-mid);
+color:white;
+padding:16px 20px;
+font-weight:600;
+font-size:18px;
+}
+
+.quiz-body{
+padding:20px;
+}
+
+.question{
+margin-bottom:28px;
+padding-bottom:20px;
+border-bottom:1px solid var(--border-soft);
+}
+
+.question:last-child{
+border-bottom:none;
+margin-bottom:0;
+padding-bottom:0;
+}
+
+.question h3{
+font-size:16px;
+margin-bottom:12px;
+font-weight:600;
+color:var(--primary-dark);
+}
+
+.question-text{
+background:#f7fafc;
+padding:12px 15px;
+border-radius:10px;
+margin-bottom:12px;
+font-size:15px;
+border-left:3px solid var(--primary-accent);
+}
+
+.short-answer-input{
+width:100%;
+padding:10px 14px;
+font-size:14px;
+font-family:'Source Sans 3',monospace;
+border:2px solid var(--border-soft);
+border-radius:8px;
+transition:all 0.2s;
+background:white;
+resize:vertical;
+}
+
+.short-answer-input:focus{
+outline:none;
+border-color:var(--primary-accent);
+box-shadow:0 0 0 3px rgba(31,79,110,0.1);
+}
+
+.short-answer-input.disabled-input{
+background:#f0f2f5;
+color:#6c757d;
+cursor:not-allowed;
+border-color:#dee2e6;
+}
+
+/* FEEDBACK STYLES */
+.feedback{
+margin-top:12px;
+padding:8px 12px;
+border-radius:8px;
+font-size:13px;
+font-weight:500;
+display:none;
+}
+
+.feedback.correct{
+background:#dff9e6;
+color:var(--success-green);
+border-left:4px solid var(--success-green);
+display:block;
+}
+
+.feedback.show-feedback{
+display:block;
+}
+
+.sample-answer{
+margin-top:12px;
+padding:12px 16px;
+background:#eef2fa;
+border-radius:8px;
+font-size:13px;
+border-left:3px solid var(--primary-accent);
+display:none;
+}
+
+.sample-answer.show-sample{
+display:block;
+}
+
+.sample-answer strong{
+color:var(--primary-dark);
+}
+
+/* BUTTONS */
+.button-group{
+display:flex;
+gap:12px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+button{
+background:white;
+border:1px solid var(--border-soft);
+padding:11px 24px;
+font-weight:600;
+border-radius:8px;
+cursor:pointer;
+color:var(--primary-mid);
+font-family:inherit;
+font-size:14px;
+transition:all 0.25s ease;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+position:relative;
+overflow:hidden;
+}
+
+button::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.15);
+transition:left 0.3s ease;
+}
+
+button:hover::before{
+left:100%;
+}
+
+button:hover{
+background:#eef4fa;
+transform:translateY(-1px);
+box-shadow:0 4px 12px rgba(13,71,161,0.15);
+}
+
+.reset-btn{
+background:#f0f2f5;
+border:1px solid var(--border-soft);
+}
+
+.check-single-btn{
+background:linear-gradient(135deg, var(--primary-accent) 0%, #00695c 100%);
+color:white;
+border:none;
+padding:8px 20px;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+font-weight:600;
+transition:all 0.2s ease;
+}
+
+.check-single-btn:hover{
+background:linear-gradient(135deg, #00695c 0%, #004d40 100%);
+transform:translateY(-1px);
+}
+
+/* PROGRESS BAR */
+.progress-bar{
+background:#eef0f2;
+border-radius:10px;
+height:8px;
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+background:var(--primary-accent);
+width:0%;
+height:100%;
+transition:width 0.3s ease;
+}
+
+.progress-stats{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+font-size:13px;
+color:var(--primary-mid);
+font-weight:500;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.badge-saq{
+background:var(--success-green);
+color:white;
+font-size:10px;
+padding:2px 8px;
+border-radius:20px;
+margin-left:8px;
+vertical-align:middle;
+}
+
+/* FOOTER */
+.footer{
+background:var(--primary-dark);
+color:#cbdbe0;
+text-align:center;
+padding:25px 0;
+margin-top:50px;
+font-size:13px;
+}
+
+.footer a{
+color:#cbdbe0;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:white;
+text-decoration:underline;
+}
+
+@media(max-width:700px){
+.nav-links{
+gap:14px;
+}
+.hero-grid{
+flex-direction:column;
+align-items:flex-start;
+}
+.button-group{
+flex-direction:column;
+}
+.question-text{
+font-size:14px;
+}
+}
+
+.note-text{
+font-size:11px;
+color:#6c757d;
+margin-top:6px;
+font-style:italic;
+}
+</style>
+
+<link rel="stylesheet" href="nav-mobile.css?v=20260416">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="https://deenanathgupta.in" class="nav-brand" target="_blank" rel="noopener noreferrer">
+Dr. Deena Nath Gupta
+</a>
+<ul class="nav-links">
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="index.html#impact">IMPACT</a></li>
+      <li><a href="index.html#publications">PUBLICATIONS</a></li>
+      <li><a href="index.html#service">SERVICE</a></li>
+      <li><a href="index.html#honors">HONORS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="quizzes.html">QUIZ FOR STUDENTS</a></li>
+</ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navSidebar">
+  <span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<div class="nav-sidebar" id="navSidebar" role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden="true">
+  <div class="nav-sidebar-header">
+    <span class="nav-sidebar-title">Navigation</span>
+    <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close navigation menu">&#10005;</button>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="index.html#impact">IMPACT</a></li>
+      <li><a href="index.html#publications">PUBLICATIONS</a></li>
+      <li><a href="index.html#service">SERVICE</a></li>
+      <li><a href="index.html#honors">HONORS</a></li>
+      <li><a href="index.html#contact">CONTACT</a></li>
+      <li><a href="quizzes.html">QUIZ FOR STUDENTS</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+<header class="hero">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-monogram"><img src="./android-chrome-512x512.png" alt="Dr. Deena Nath Gupta"></div>
+<div>
+<div class="hero-name">Short Answer Questions</div>
+<div class="hero-role">Write your answers, then click "Check Answer" to compare with sample solutions. Perfect for exam preparation.</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- SHORT ANSWER QUESTIONS SECTION -->
+<section class="section">
+<div class="wrap">
+
+<div class="quiz-card">
+<div class="quiz-header">📖 Short Answer Practice</div>
+<div class="quiz-body">
+<div class="progress-stats">
+<span id="answeredCount">0</span> / <span id="totalQuestions">0</span> reviewed
+<span id="lockedIndicator">✏️ Click "Check Answer" to see sample solution</span>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<div id="questionsContainer"></div>
+<div class="button-group">
+<button type="button" id="resetAllBtn" class="reset-btn">Reset All</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="wrap">
+<div>
+<strong>Dr. Deena Nath Gupta</strong> · Associate Professor
+</div>
+<div>
+Maharishi University of Information Technology, Noida
+</div>
+<div style="margin-top:8px;font-size:12px;opacity:.6;">
+© 2026 Dr. Deena Nath Gupta | <a href="https://deenanathgupta.in" target="_blank" rel="noopener noreferrer">deenanathgupta.in</a> | Short Answer Practice
+</div>
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+/* ------------------------------
+   SHORT ANSWER QUESTIONS SYSTEM
+   Write answers and click "Check Answer" to see sample solution
+   --------------------------- */
+
+$(document).ready(function() {
+    // Short Answer Questions Data
+    const demoQuestionsData = [
+        {
+            question: "What is the difference between a DFA and an NFA?",
+            sampleAnswer: "DFA (Deterministic Finite Automaton) has exactly one transition per input symbol from each state, while NFA (Nondeterministic Finite Automaton) can have zero, one, or multiple transitions. Every NFA can be converted to an equivalent DFA."
+        },
+        {
+            question: "Explain the term 'IoT Gateway' and its role.",
+            sampleAnswer: "An IoT Gateway acts as a bridge between IoT devices and the cloud. It performs protocol translation, data aggregation, filtering, and security functions. It connects devices using different communication protocols (like Zigbee, BLE) to the internet."
+        },
+        {
+            question: "What is the Pumping Lemma used for in Theory of Computation?",
+            sampleAnswer: "The Pumping Lemma is used to prove that a language is NOT regular. It states that for any regular language, there exists a pumping length such that any string longer than that can be divided into parts that can be 'pumped' (repeated) while staying in the language. If a language violates this, it is non-regular."
+        },
+        {
+            question: "What is the difference between descriptive analytics and predictive analytics?",
+            sampleAnswer: "Descriptive analytics answers 'What happened?' by summarizing historical data using dashboards and reports. Predictive analytics answers 'What will happen?' by using statistical models and machine learning to forecast future outcomes based on historical patterns."
+        },
+        {
+            question: "What is a pushdown automaton (PDA) and what languages does it recognize?",
+            sampleAnswer: "A pushdown automaton (PDA) is a finite automaton with an additional stack memory. It recognizes context-free languages (CFLs), which are more powerful than regular languages. PDAs can handle nested structures like parentheses matching."
+        },
+        {
+            question: "List three major challenges in IoT implementation.",
+            sampleAnswer: "1) Security and privacy concerns due to many connected devices. 2) Interoperability between different protocols and vendors. 3) Power management for battery-operated sensors and edge devices. Additional challenges include scalability and data management."
+        },
+        {
+            question: "What is XaaS in cloud computing?",
+            sampleAnswer: "XaaS stands for 'Anything as a Service'. It represents the delivery of various IT resources and services over the internet on a pay-as-you-go basis. It converts capital expenditure (CapEx) to operational expenditure (OpEx). Examples include SaaS, PaaS, IaaS."
+        },
+        {
+            question: "What is the difference between a deterministic Turing machine and a nondeterministic Turing machine?",
+            sampleAnswer: "A deterministic Turing machine has exactly one possible transition from each configuration, while a nondeterministic Turing machine can have multiple possible transitions. However, they have equivalent computational power - any language recognized by an NTM can be recognized by a DTM, though possibly with exponential time overhead."
+        }
+    ];
+
+    function getShortAnswerJsonUrl() {
+        const baseUrl = 'https://raw.githubusercontent.com/uc-dgt/ProfileDrDNG/refs/heads/main';
+        const params = new URLSearchParams(window.location.search);
+        const quizPath = (params.get('q') || 'toc/toc_sa_quiz_final').trim();
+        return `${baseUrl}/quiz/${quizPath}.json`;
+    }
+
+    function loadShortAnswerQuiz() {
+        $.getJSON(getShortAnswerJsonUrl(), function(data) {
+            if (data && Array.isArray(data.questions) && data.questions.length > 0) {
+                initializeShortAnswerQuiz(data.questions);
+                return;
+            }
+
+            initializeShortAnswerQuiz(demoQuestionsData);
+        }).fail(function() {
+            initializeShortAnswerQuiz(demoQuestionsData);
+        });
+    }
+
+    function initializeShortAnswerQuiz(questionsData) {
+        questionsData = Array.isArray(questionsData) && questionsData.length > 0 ? questionsData : demoQuestionsData;
+
+        let totalQuestions = questionsData.length;
+    let userAnswers = new Array(totalQuestions).fill("");
+    let questionChecked = new Array(totalQuestions).fill(false);
+    
+    const questionsContainer = document.getElementById('questionsContainer');
+    const resetAllBtn = document.getElementById('resetAllBtn');
+    const answeredCountSpan = document.getElementById('answeredCount');
+    const progressFill = document.getElementById('progressFill');
+    const totalQuestionsSpan = document.getElementById('totalQuestions');
+
+    if (questionsData.length && questionsData[0].marks) {
+        document.querySelector('.hero-role').innerHTML = 'Write detailed responses, then click "Check Answer" to compare with the sample solution.';
+        document.title = 'Long Answer Questions | Dr. Deena Nath Gupta - MUIT Noida';
+        const heading = document.querySelector('.hero-name');
+        if (heading) {
+            heading.textContent = 'Long Answer Questions';
+        }
+    }
+    
+    totalQuestionsSpan.textContent = totalQuestions;
+    
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/\n/g, '<br>');
+    }
+    
+    function updateProgress() {
+        const reviewed = questionChecked.filter(checked => checked === true).length;
+        answeredCountSpan.textContent = reviewed;
+        const percent = (reviewed / totalQuestions) * 100;
+        progressFill.style.width = percent + '%';
+    }
+    
+    // Function to check a single question and show sample answer
+    window.checkSingleQuestion = function(idx) {
+        if (questionChecked[idx]) return;
+        
+        const answerText = userAnswers[idx];
+        if (!answerText || answerText.trim() === '') {
+            alert('Please write your answer before checking.');
+            return;
+        }
+        
+        // Mark as checked
+        questionChecked[idx] = true;
+        
+        // Disable textarea
+        const textarea = document.getElementById(`answer_${idx}`);
+        if (textarea) {
+            textarea.disabled = true;
+            textarea.classList.add('disabled-input');
+        }
+        
+        // Hide check button
+        const checkBtn = document.getElementById(`checkBtn_${idx}`);
+        if (checkBtn) {
+            checkBtn.style.display = 'none';
+        }
+        
+        // Show sample answer
+        const sampleDiv = document.getElementById(`sample_${idx}`);
+        if (sampleDiv) {
+            sampleDiv.innerHTML = `<strong>📖 Sample Answer:</strong><br>${escapeHtml(questionsData[idx].sampleAnswer)}`;
+            sampleDiv.classList.add('show-sample');
+        }
+        
+        // Show feedback
+        const feedbackDiv = document.getElementById(`feedback_${idx}`);
+        if (feedbackDiv) {
+            feedbackDiv.innerHTML = '✅ Answer recorded. Compare your answer with the sample above to assess your understanding.';
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.style.display = 'block';
+        }
+        
+        updateProgress();
+    };
+    
+    // Function to reset a single question
+    function resetSingleQuestion(idx) {
+        questionChecked[idx] = false;
+        userAnswers[idx] = "";
+        
+        // Re-enable textarea
+        const textarea = document.getElementById(`answer_${idx}`);
+        if (textarea) {
+            textarea.disabled = false;
+            textarea.classList.remove('disabled-input');
+            textarea.value = "";
+        }
+        
+        // Show check button again
+        const checkBtn = document.getElementById(`checkBtn_${idx}`);
+        if (checkBtn) {
+            checkBtn.style.display = 'inline-block';
+        }
+        
+        // Hide sample answer
+        const sampleDiv = document.getElementById(`sample_${idx}`);
+        if (sampleDiv) {
+            sampleDiv.classList.remove('show-sample');
+            sampleDiv.innerHTML = '';
+        }
+        
+        // Hide feedback
+        const feedbackDiv = document.getElementById(`feedback_${idx}`);
+        if (feedbackDiv) {
+            feedbackDiv.style.display = 'none';
+            feedbackDiv.innerHTML = '';
+        }
+    }
+    
+    function renderQuestions() {
+        let html = '';
+        for (let i = 0; i < totalQuestions; i++) {
+            const q = questionsData[i];
+            const userVal = userAnswers[i];
+            const isChecked = questionChecked[i];
+            const inputDisabled = isChecked ? 'disabled' : '';
+            const inputClass = isChecked ? 'short-answer-input disabled-input' : 'short-answer-input';
+            const checkBtnDisplay = isChecked ? 'none' : 'inline-block';
+            const sampleContent = isChecked ? `<strong>📖 Sample Answer:</strong><br>${escapeHtml(q.sampleAnswer)}` : '';
+            const sampleClass = isChecked ? 'sample-answer show-sample' : 'sample-answer';
+            const feedbackDisplay = isChecked ? 'block' : 'none';
+            const feedbackText = isChecked ? '✅ Answer recorded. Compare your answer with the sample above to assess your understanding.' : '';
+            
+            html += `
+                <div class="question" data-qidx="${i}">
+                    <h3>Question ${i+1} <span class="badge-saq">Short Answer</span></h3>
+                    <div class="question-text">${escapeHtml(q.question)}</div>
+                    <textarea id="answer_${i}" class="${inputClass}" rows="3" placeholder="Type your short answer here..." ${inputDisabled}>${escapeHtml(userVal)}</textarea>
+                    <div class="note-text">✏️ Write your answer, then click "Check Answer" to see the sample solution.</div>
+                    <button id="checkBtn_${i}" class="check-single-btn" style="margin-top:8px;display:${checkBtnDisplay};" onclick="checkSingleQuestion(${i})">✓ Check Answer</button>
+                    <div id="sample_${i}" class="${sampleClass}">${sampleContent}</div>
+                    <div id="feedback_${i}" class="feedback" style="display:${feedbackDisplay};">${feedbackText}</div>
+                </div>
+            `;
+        }
+        
+        questionsContainer.innerHTML = html;
+        
+        // Add input event listeners
+        for (let i = 0; i < totalQuestions; i++) {
+            const textarea = document.getElementById(`answer_${i}`);
+            if (textarea && !questionChecked[i]) {
+                textarea.addEventListener('input', function(e) {
+                    if (!questionChecked[i]) {
+                        userAnswers[i] = e.target.value;
+                    }
+                });
+            }
+        }
+        
+        updateProgress();
+    }
+    
+    function resetAll() {
+        if (confirm('Reset all your answers? This will clear all written answers and checked status.')) {
+            for (let i = 0; i < totalQuestions; i++) {
+                resetSingleQuestion(i);
+            }
+            userAnswers = new Array(totalQuestions).fill("");
+            questionChecked = new Array(totalQuestions).fill(false);
+            updateProgress();
+        }
+    }
+    
+    // Event listeners
+    resetAllBtn.addEventListener('click', resetAll);
+    
+    // Initial render
+    renderQuestions();
+    }
+
+    loadShortAnswerQuiz();
+});
+
+</script>
+<script src="nav-mobile.js?v=20260416"></script>
+
+</body>
+</html>
