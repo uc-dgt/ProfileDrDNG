@@ -263,6 +263,10 @@ body {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1px solid var(--border-soft);
+    position: relative;
+}
 
 .featured-section {
     padding-top: 34px;
@@ -311,39 +315,8 @@ body {
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-}
-
-.quiz-card.featured-card {
-    position: relative;
-    border: 1px solid rgba(13, 71, 161, 0.14);
-    box-shadow: 0 10px 24px rgba(13, 71, 161, 0.08);
-}
-
-.quiz-card.featured-card .quiz-card-header {
-    min-height: 210px;
-}
-
-.featured-tag {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.16);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    backdrop-filter: blur(8px);
-}
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    border: 1px solid var(--border-soft);
-    position: relative;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
 }
 
 .quiz-card::before {
@@ -1214,9 +1187,8 @@ function getFeaturedQuizzes() {
 
 function createQuizCard(quiz, isFeatured) {
     return `
-            <div class="quiz-card${isFeatured ? ' featured-card' : ''}" data-id="${quiz.id}">
+            <div class="quiz-card" data-id="${quiz.id}">
                 <div class="quiz-card-header" style="background: linear-gradient(135deg, ${quiz.color}, var(--primary-dark));">
-                    ${isFeatured ? '<div class="featured-tag">Latest</div>' : ''}
                     <div class="quiz-badge">${escapeHtml(quiz.typeName)}</div>
                     <div class="quiz-subject">${escapeHtml(quiz.subjectName)}</div>
                     <div class="quiz-title">${escapeHtml(quiz.icon)} ${escapeHtml(quiz.title)}</div>
