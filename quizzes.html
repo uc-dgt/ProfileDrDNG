@@ -1348,10 +1348,12 @@ function renderFeaturedQuizzes() {
 
 function renderQuizzes() {
     const grid = document.getElementById("quizGrid");
-    const filtered = filterQuizzes();
+    const filtered = filterQuizzes().filter(function(quiz) {
+        return !quiz.featured;
+    });
 
     if (!filtered.length) {
-        grid.innerHTML = '<div class="empty-state"><h3>No quizzes found</h3><p>Try a different search term or filter.</p></div>';
+        grid.innerHTML = '<div class="empty-state"><h3>No additional quizzes found</h3><p>Featured quizzes above match your current filter.</p></div>';
         return;
     }
 
