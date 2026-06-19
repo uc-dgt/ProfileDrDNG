@@ -613,12 +613,19 @@ $(document).ready(function() {
     const progressFill = document.getElementById('progressFill');
     const totalQuestionsSpan = document.getElementById('totalQuestions');
 
-    if (questionsData.length && questionsData[0].marks) {
+    let isLongAnswer = questionsData.length && questionsData[0].marks;
+    
+    if (isLongAnswer) {
         document.querySelector('.hero-role').innerHTML = 'Write detailed responses, then click "Check Answer" to compare with the sample solution.';
         document.title = 'Long Answer Questions | Dr. Deena Nath Gupta - MUIT Noida';
+        document.querySelector('meta[name="description"]').setAttribute('content', 'Long Answer Questions practice. Write detailed answers and compare with sample solutions.');
         const heading = document.querySelector('.hero-name');
         if (heading) {
             heading.textContent = 'Long Answer Questions';
+        }
+        const quizHeader = document.querySelector('.quiz-header');
+        if (quizHeader) {
+            quizHeader.textContent = '📖 Long Answer Practice';
         }
     }
     
@@ -721,6 +728,7 @@ $(document).ready(function() {
     
     function renderQuestions() {
         let html = '';
+        const answerType = isLongAnswer ? 'Long Answer' : 'Short Answer';
         for (let i = 0; i < totalQuestions; i++) {
             const q = questionsData[i];
             const userVal = userAnswers[i];
@@ -735,7 +743,7 @@ $(document).ready(function() {
             
             html += `
                 <div class="question" data-qidx="${i}">
-                    <h3>Question ${i+1} <span class="badge-saq">Short Answer</span></h3>
+                    <h3>Question ${i+1} <span class="badge-saq">${answerType}</span></h3>
                     <div class="question-text">${escapeHtml(q.question)}</div>
                     <textarea id="answer_${i}" class="${inputClass}" rows="3" placeholder="Type your short answer here..." ${inputDisabled}>${escapeHtml(userVal)}</textarea>
                     <div class="note-text">✏️ Write your answer, then click "Check Answer" to see the sample solution.</div>
