@@ -590,17 +590,17 @@ $(document).ready(function() {
     function loadShortAnswerQuiz() {
         $.getJSON(getShortAnswerJsonUrl(), function(data) {
             if (data && Array.isArray(data.questions) && data.questions.length > 0) {
-                initializeShortAnswerQuiz(data.questions);
+                initializeShortAnswerQuiz(data.questions, data);
                 return;
             }
 
-            initializeShortAnswerQuiz(demoQuestionsData);
+            initializeShortAnswerQuiz(demoQuestionsData, null);
         }).fail(function() {
-            initializeShortAnswerQuiz(demoQuestionsData);
+            initializeShortAnswerQuiz(demoQuestionsData, null);
         });
     }
 
-    function initializeShortAnswerQuiz(questionsData) {
+    function initializeShortAnswerQuiz(questionsData, jsonData) {
         questionsData = Array.isArray(questionsData) && questionsData.length > 0 ? questionsData : demoQuestionsData;
 
         let totalQuestions = questionsData.length;
@@ -614,19 +614,39 @@ $(document).ready(function() {
     const totalQuestionsSpan = document.getElementById('totalQuestions');
 
     let isLongAnswer = questionsData.length && questionsData[0].marks;
+    let pageTitle = 'Short Answer Questions';
+    let quizHeaderText = '❓ Short Answer Practice';
+    let roleText = 'Write concise answers, then click "Check Answer" to compare with the sample solution.';
+    let metaDescription = 'Short Answer Questions practice. Write concise answers and compare with sample solutions.';
     
     if (isLongAnswer) {
-        document.querySelector('.hero-role').innerHTML = 'Write detailed responses, then click "Check Answer" to compare with the sample solution.';
-        document.title = 'Long Answer Questions | Dr. Deena Nath Gupta - MUIT Noida';
-        document.querySelector('meta[name="description"]').setAttribute('content', 'Long Answer Questions practice. Write detailed answers and compare with sample solutions.');
-        const heading = document.querySelector('.hero-name');
-        if (heading) {
-            heading.textContent = 'Long Answer Questions';
-        }
-        const quizHeader = document.querySelector('.quiz-header');
-        if (quizHeader) {
-            quizHeader.textContent = '📖 Long Answer Practice';
-        }
+        pageTitle = 'Long Answer Questions';
+        quizHeaderText = '📖 Long Answer Practice';
+        roleText = 'Write detailed responses, then click "Check Answer" to compare with the sample solution.';
+        metaDescription = 'Long Answer Questions practice. Write detailed answers and compare with sample solutions.';
+    }
+    
+    // Use JSON metadata if available
+    if (jsonData && jsonData.title) {
+        pageTitle = jsonData.title;
+    }
+    if (jsonData && jsonData.heading) {
+        quizHeaderText = jsonData.heading;
+    }
+    if (jsonData && jsonData.description) {
+        metaDescription = jsonData.description;
+    }
+    
+    document.querySelector('.hero-role').innerHTML = roleText;
+    document.title = pageTitle + ' | Dr. Deena Nath Gupta - MUIT Noida';
+    document.querySelector('meta[name="description"]').setAttribute('content', metaDescription);
+    const heading = document.querySelector('.hero-name');
+    if (heading) {
+        heading.textContent = pageTitle;
+    }
+    const quizHeader = document.querySelector('.quiz-header');
+    if (quizHeader) {
+        quizHeader.textContent = quizHeaderText;
     }
     
     totalQuestionsSpan.textContent = totalQuestions;
